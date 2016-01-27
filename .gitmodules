@@ -1,0 +1,63 @@
+[submodule "src/bower_components/font-roboto"]
+	path = src/bower_components/font-roboto
+	url = https://github.com/PolymerElements/font-roboto.git
+[submodule "src/bower_components/iron-a11y-keys-behavior"]
+	path = src/bower_components/iron-a11y-keys-behavior
+	url = https://github.com/PolymerElements/iron-a11y-keys-behavior.git
+[submodule "src/bower_components/iron-behaviors"]
+	path = src/bower_components/iron-behaviors
+	url = https://github.com/PolymerElements/iron-behaviors.git
+[submodule "src/bower_components/iron-checked-element-behavior"]
+	path = src/bower_components/iron-checked-element-behavior
+	url = https://github.com/PolymerElements/iron-checked-element-behavior.git
+[submodule "src/bower_components/iron-flex-layout"]
+	path = src/bower_components/iron-flex-layout
+	url = https://github.com/PolymerElements/iron-flex-layout.git
+[submodule "src/bower_components/iron-form-element-behavior"]
+	path = src/bower_components/iron-form-element-behavior
+	url = https://github.com/PolymerElements/iron-form-element-behavior.git
+[submodule "src/bower_components/iron-icon"]
+	path = src/bower_components/iron-icon
+	url = https://github.com/PolymerElements/iron-icon.git
+[submodule "src/bower_components/iron-icons"]
+	path = src/bower_components/iron-icons
+	url = https://github.com/PolymerElements/iron-icons.git
+[submodule "src/bower_components/iron-iconset-svg"]
+	path = src/bower_components/iron-iconset-svg
+	url = https://github.com/PolymerElements/iron-iconset-svg.git
+[submodule "src/bower_components/iron-media-query"]
+	path = src/bower_components/iron-media-query
+	url = https://github.com/PolymerElements/iron-media-query.git
+[submodule "src/bower_components/iron-meta"]
+	path = src/bower_components/iron-meta
+	url = https://github.com/PolymerElements/iron-meta.git
+[submodule "src/bower_components/iron-resizable-behavior"]
+	path = src/bower_components/iron-resizable-behavior
+	url = https://github.com/PolymerElements/iron-resizable-behavior.git
+[submodule "src/bower_components/iron-selector"]
+	path = src/bower_components/iron-selector
+	url = https://github.com/PolymerElements/iron-selector.git
+[submodule "src/bower_components/iron-validatable-behavior"]
+	path = src/bower_components/iron-validatable-behavior
+	url = https://github.com/PolymerElements/iron-validatable-behavior.git
+[submodule "src/bower_components/paper-behaviors"]
+	path = src/bower_components/paper-behaviors
+	url = https://github.com/PolymerElements/paper-behaviors.git
+[submodule "src/bower_components/paper-button"]
+	path = src/bower_components/paper-button
+	url = https://github.com/PolymerElements/paper-button.git
+[submodule "src/bower_components/paper-material"]
+	path = src/bower_components/paper-material
+	url = https://github.com/PolymerElements/paper-material.git
+[submodule "src/bower_components/paper-ripple"]
+	path = src/bower_components/paper-ripple
+	url = https://github.com/PolymerElements/paper-ripple.git
+[submodule "src/bower_components/paper-styles"]
+	path = src/bower_components/paper-styles
+	url = https://github.com/PolymerElements/paper-styles.git
+[submodule "src/bower_components/polymer"]
+	path = src/bower_components/polymer
+	url = https://github.com/Polymer/polymer.git
+[submodule "src/bower_components/webcomponentsjs"]
+	path = src/bower_components/webcomponentsjs
+	url = https://github.com/webcomponents/webcomponentsjs.git
