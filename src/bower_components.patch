@@ -1,0 +1,1087 @@
+From eb8cd2996dde72a9179a6a65ff905e8a396970af Mon Sep 17 00:00:00 2001
+From: Rajiv M Ranganath <rajiv.ranganath@atihita.com>
+Date: Wed, 27 Jan 2016 17:06:23 +0000
+Subject: [PATCH] Add `.bower.json`
+
+---
+ font-roboto/.bower.json                   | 31 ++++++++++++++++++
+ iron-a11y-keys-behavior/.bower.json       | 43 +++++++++++++++++++++++++
+ iron-behaviors/.bower.json                | 42 +++++++++++++++++++++++++
+ iron-checked-element-behavior/.bower.json | 43 +++++++++++++++++++++++++
+ iron-flex-layout/.bower.json              | 42 +++++++++++++++++++++++++
+ iron-form-element-behavior/.bower.json    | 41 ++++++++++++++++++++++++
+ iron-icon/.bower.json                     | 44 ++++++++++++++++++++++++++
+ iron-icons/.bower.json                    | 48 ++++++++++++++++++++++++++++
+ iron-iconset-svg/.bower.json              | 43 +++++++++++++++++++++++++
+ iron-media-query/.bower.json              | 42 +++++++++++++++++++++++++
+ iron-meta/.bower.json                     | 39 +++++++++++++++++++++++
+ iron-resizable-behavior/.bower.json       | 41 ++++++++++++++++++++++++
+ iron-selector/.bower.json                 | 43 +++++++++++++++++++++++++
+ iron-validatable-behavior/.bower.json     | 44 ++++++++++++++++++++++++++
+ paper-behaviors/.bower.json               | 51 ++++++++++++++++++++++++++++++
+ paper-button/.bower.json                  | 52 +++++++++++++++++++++++++++++++
+ paper-material/.bower.json                | 44 ++++++++++++++++++++++++++
+ paper-ripple/.bower.json                  | 45 ++++++++++++++++++++++++++
+ paper-styles/.bower.json                  | 42 +++++++++++++++++++++++++
+ polymer/.bower.json                       | 37 ++++++++++++++++++++++
+ webcomponentsjs/.bower.json               | 30 ++++++++++++++++++
+ 21 files changed, 887 insertions(+)
+ create mode 100644 font-roboto/.bower.json
+ create mode 100644 iron-a11y-keys-behavior/.bower.json
+ create mode 100644 iron-behaviors/.bower.json
+ create mode 100644 iron-checked-element-behavior/.bower.json
+ create mode 100644 iron-flex-layout/.bower.json
+ create mode 100644 iron-form-element-behavior/.bower.json
+ create mode 100644 iron-icon/.bower.json
+ create mode 100644 iron-icons/.bower.json
+ create mode 100644 iron-iconset-svg/.bower.json
+ create mode 100644 iron-media-query/.bower.json
+ create mode 100644 iron-meta/.bower.json
+ create mode 100644 iron-resizable-behavior/.bower.json
+ create mode 100644 iron-selector/.bower.json
+ create mode 100644 iron-validatable-behavior/.bower.json
+ create mode 100644 paper-behaviors/.bower.json
+ create mode 100644 paper-button/.bower.json
+ create mode 100644 paper-material/.bower.json
+ create mode 100644 paper-ripple/.bower.json
+ create mode 100644 paper-styles/.bower.json
+ create mode 100644 polymer/.bower.json
+ create mode 100644 webcomponentsjs/.bower.json
+
+diff --git a/font-roboto/.bower.json b/font-roboto/.bower.json
+new file mode 100644
+index 0000000..eafbb18
+--- /dev/null
++++ b/font-roboto/.bower.json
+@@ -0,0 +1,31 @@
++{
++  "name": "font-roboto",
++  "version": "1.0.1",
++  "description": "An HTML import for Roboto",
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "keywords": [
++    "font",
++    "roboto"
++  ],
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/font-roboto.git"
++  },
++  "main": "roboto.html",
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "homepage": "https://github.com/PolymerElements/font-roboto/",
++  "ignore": [
++    "/.*"
++  ],
++  "_release": "1.0.1",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.0.1",
++    "commit": "21ce9b51a417fa9995cf6606e886aba0728f70a1"
++  },
++  "_source": "git://github.com/PolymerElements/font-roboto.git",
++  "_target": "^1.0.1",
++  "_originalSource": "PolymerElements/font-roboto"
++}
+\ No newline at end of file
+diff --git a/iron-a11y-keys-behavior/.bower.json b/iron-a11y-keys-behavior/.bower.json
+new file mode 100644
+index 0000000..ce81906
+--- /dev/null
++++ b/iron-a11y-keys-behavior/.bower.json
+@@ -0,0 +1,43 @@
++{
++  "name": "iron-a11y-keys-behavior",
++  "version": "1.1.1",
++  "description": "A behavior that enables keybindings for greater a11y.",
++  "keywords": [
++    "web-components",
++    "web-component",
++    "polymer",
++    "a11y",
++    "input"
++  ],
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/iron-a11y-keys-behavior.git"
++  },
++  "main": "iron-a11y-keys-behavior.html",
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "dependencies": {
++    "polymer": "Polymer/polymer#^1.0.0"
++  },
++  "devDependencies": {
++    "paper-styles": "PolymerElements/paper-styles#^1.0.2",
++    "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
++    "iron-test-helpers": "polymerelements/iron-test-helpers#^1.0.0",
++    "test-fixture": "polymerelements/test-fixture#^1.0.0",
++    "web-component-tester": "polymer/web-component-tester#^3.4.0",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
++  },
++  "ignore": [],
++  "homepage": "https://github.com/polymerelements/iron-a11y-keys-behavior",
++  "_release": "1.1.1",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.1.1",
++    "commit": "12af7cb19b2c6b3887e37a5ea1501ffe676d1e8a"
++  },
++  "_source": "git://github.com/polymerelements/iron-a11y-keys-behavior.git",
++  "_target": "^1.0.0",
++  "_originalSource": "polymerelements/iron-a11y-keys-behavior"
++}
+\ No newline at end of file
+diff --git a/iron-behaviors/.bower.json b/iron-behaviors/.bower.json
+new file mode 100644
+index 0000000..db08f21
+--- /dev/null
++++ b/iron-behaviors/.bower.json
+@@ -0,0 +1,42 @@
++{
++  "name": "iron-behaviors",
++  "version": "1.0.12",
++  "description": "Provides a set of behaviors for the iron elements",
++  "private": true,
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/iron-behaviors.git"
++  },
++  "main": [
++    "iron-button-state.html",
++    "iron-control-state.html"
++  ],
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "dependencies": {
++    "polymer": "Polymer/polymer#^1.2.0",
++    "iron-a11y-keys-behavior": "PolymerElements/iron-a11y-keys-behavior#^1.0.0"
++  },
++  "devDependencies": {
++    "paper-styles": "polymerelements/paper-styles#^1.0.2",
++    "paper-input": "polymerelements/paper-input#^1.0.0",
++    "iron-test-helpers": "polymerelements/iron-test-helpers#^1.0.0",
++    "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
++    "test-fixture": "polymerelements/test-fixture#^1.0.0",
++    "web-component-tester": "polymer/web-component-tester#^3.4.0",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
++  },
++  "ignore": [],
++  "homepage": "https://github.com/PolymerElements/iron-behaviors",
++  "_release": "1.0.12",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.0.12",
++    "commit": "657f526a2382a659cdf4e13be87ecc89261588a3"
++  },
++  "_source": "git://github.com/PolymerElements/iron-behaviors.git",
++  "_target": "^1.0.0",
++  "_originalSource": "PolymerElements/iron-behaviors"
++}
+\ No newline at end of file
+diff --git a/iron-checked-element-behavior/.bower.json b/iron-checked-element-behavior/.bower.json
+new file mode 100644
+index 0000000..31b32b0
+--- /dev/null
++++ b/iron-checked-element-behavior/.bower.json
+@@ -0,0 +1,43 @@
++{
++  "name": "iron-checked-element-behavior",
++  "version": "1.0.4",
++  "description": "Implements an element that has a checked attribute and can be added to a form",
++  "authors": "The Polymer Authors",
++  "keywords": [
++    "web-components",
++    "polymer",
++    "iron",
++    "behavior"
++  ],
++  "main": "iron-checked-element-behavior.html",
++  "private": true,
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/iron-checked-element-behavior.git"
++  },
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "homepage": "https://github.com/PolymerElements/iron-checked-element-behavior",
++  "ignore": [],
++  "dependencies": {
++    "polymer": "Polymer/polymer#^1.0.0",
++    "iron-validatable-behavior": "PolymerElements/iron-validatable-behavior#^1.0.0",
++    "iron-form-element-behavior": "PolymerElements/iron-form-element-behavior#^1.0.0"
++  },
++  "devDependencies": {
++    "paper-styles": "PolymerElements/paper-styles#^1.0.0",
++    "paper-button": "PolymerElements/paper-button#^1.0.0",
++    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
++    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
++    "web-component-tester": "*",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
++  },
++  "_release": "1.0.4",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.0.4",
++    "commit": "cc30263ec2871ae8f8f944948f44299d3f3cdf0d"
++  },
++  "_source": "git://github.com/PolymerElements/iron-checked-element-behavior.git",
++  "_target": "^1.0.0",
++  "_originalSource": "PolymerElements/iron-checked-element-behavior"
++}
+\ No newline at end of file
+diff --git a/iron-flex-layout/.bower.json b/iron-flex-layout/.bower.json
+new file mode 100644
+index 0000000..b942e75
+--- /dev/null
++++ b/iron-flex-layout/.bower.json
+@@ -0,0 +1,42 @@
++{
++  "name": "iron-flex-layout",
++  "version": "1.2.2",
++  "description": "Provide flexbox-based layouts",
++  "keywords": [
++    "web-components",
++    "polymer",
++    "layout"
++  ],
++  "main": "iron-flex-layout.html",
++  "private": true,
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/iron-flex-layout.git"
++  },
++  "dependencies": {
++    "polymer": "Polymer/polymer#^1.1.0"
++  },
++  "devDependencies": {
++    "paper-styles": "polymerelements/paper-styles#^1.0.0",
++    "marked-element": "polymerelements/marked-element#^1.0.0",
++    "prism-element": "PolymerElements/prism-element#^1.0.0",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
++    "iron-component-page": "polymerelements/iron-component-page#^1.0.0"
++  },
++  "ignore": [],
++  "homepage": "https://github.com/PolymerElements/iron-flex-layout",
++  "_release": "1.2.2",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.2.2",
++    "commit": "41c4f35be1368afb770312b907a258175565dbdf"
++  },
++  "_source": "git://github.com/PolymerElements/iron-flex-layout.git",
++  "_target": "~1.2.2",
++  "_originalSource": "PolymerElements/iron-flex-layout",
++  "_direct": true
++}
+\ No newline at end of file
+diff --git a/iron-form-element-behavior/.bower.json b/iron-form-element-behavior/.bower.json
+new file mode 100644
+index 0000000..e09f62a
+--- /dev/null
++++ b/iron-form-element-behavior/.bower.json
+@@ -0,0 +1,41 @@
++{
++  "name": "iron-form-element-behavior",
++  "version": "1.0.6",
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "private": true,
++  "main": "iron-form-element-behavior.html",
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "description": "Enables a custom element to be included in an iron-form",
++  "keywords": [
++    "web-components",
++    "polymer",
++    "form"
++  ],
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/iron-form-element-behavior.git"
++  },
++  "dependencies": {
++    "polymer": "Polymer/polymer#^1.0.0"
++  },
++  "devDependencies": {
++    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
++    "paper-styles": "PolymerElements/paper-styles#^1.0.0",
++    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
++    "web-component-tester": "polymer/web-component-tester#^3.4.0",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
++  },
++  "ignore": [],
++  "homepage": "https://github.com/PolymerElements/iron-form-element-behavior",
++  "_release": "1.0.6",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.0.6",
++    "commit": "cf9e09ded62daf3363852ce98260aaad1ed0fae1"
++  },
++  "_source": "git://github.com/PolymerElements/iron-form-element-behavior.git",
++  "_target": "^1.0.0",
++  "_originalSource": "PolymerElements/iron-form-element-behavior"
++}
+\ No newline at end of file
+diff --git a/iron-icon/.bower.json b/iron-icon/.bower.json
+new file mode 100644
+index 0000000..1dd6bd3
+--- /dev/null
++++ b/iron-icon/.bower.json
+@@ -0,0 +1,44 @@
++{
++  "name": "iron-icon",
++  "private": true,
++  "version": "1.0.7",
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "description": "An element that supports displaying an icon",
++  "main": "iron-icon.html",
++  "author": [
++    "The Polymer Authors"
++  ],
++  "keywords": [
++    "web-components",
++    "polymer",
++    "icon"
++  ],
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/iron-icon.git"
++  },
++  "dependencies": {
++    "iron-flex-layout": "polymerelements/iron-flex-layout#^1.0.0",
++    "iron-meta": "polymerelements/iron-meta#^1.0.0",
++    "polymer": "Polymer/polymer#^1.0.0"
++  },
++  "devDependencies": {
++    "test-fixture": "polymerelements/test-fixture#^1.0.0",
++    "promise-polyfill": "polymerlabs/promise-polyfill#^1.0.0",
++    "iron-iconset": "polymerelements/iron-iconset#^1.0.0",
++    "iron-icons": "polymerelements/iron-icons#^1.0.0",
++    "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
++    "web-component-tester": "*",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
++  },
++  "homepage": "https://github.com/polymerelements/iron-icon",
++  "_release": "1.0.7",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.0.7",
++    "commit": "6f4d152dc3998a6cc12a5a585a654f893dc99381"
++  },
++  "_source": "git://github.com/polymerelements/iron-icon.git",
++  "_target": "^1.0.0",
++  "_originalSource": "polymerelements/iron-icon"
++}
+\ No newline at end of file
+diff --git a/iron-icons/.bower.json b/iron-icons/.bower.json
+new file mode 100644
+index 0000000..fcaaa8e
+--- /dev/null
++++ b/iron-icons/.bower.json
+@@ -0,0 +1,48 @@
++{
++  "name": "iron-icons",
++  "version": "1.1.2",
++  "description": "A set of icons for use with iron-icon",
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "keywords": [
++    "web-components",
++    "polymer",
++    "icon"
++  ],
++  "main": "iron-icons.html",
++  "private": true,
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/iron-icons"
++  },
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "homepage": "https://github.com/PolymerElements/paper-icons",
++  "dependencies": {
++    "iron-icon": "polymerelements/iron-icon#^1.0.0",
++    "iron-iconset-svg": "polymerelements/iron-iconset-svg#^1.0.0",
++    "polymer": "Polymer/polymer#^1.0.0"
++  },
++  "devDependencies": {
++    "paper-styles": "polymerelements/paper-styles#^1.0.2",
++    "iron-component-page": "polymerelements/iron-component-page#1.0.0",
++    "iron-flex-layout": "polymerelements/iron-flex-layout#^1.0.0",
++    "iron-meta": "polymerelements/iron-meta#^1.0.0",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
++    "web-component-tester": "^4.0.0"
++  },
++  "ignore": [
++    "util",
++    "update-icons.sh"
++  ],
++  "_release": "1.1.2",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.1.2",
++    "commit": "14a4138f7da753ee8bebeb9ed4abd6053b2496dd"
++  },
++  "_source": "git://github.com/PolymerElements/iron-icons.git",
++  "_target": "~1.1.2",
++  "_originalSource": "PolymerElements/iron-icons",
++  "_direct": true
++}
+\ No newline at end of file
+diff --git a/iron-iconset-svg/.bower.json b/iron-iconset-svg/.bower.json
+new file mode 100644
+index 0000000..b142eb2
+--- /dev/null
++++ b/iron-iconset-svg/.bower.json
+@@ -0,0 +1,43 @@
++{
++  "name": "iron-iconset-svg",
++  "description": "Manages a set of svg icons",
++  "version": "1.0.9",
++  "keywords": [
++    "web-components",
++    "polymer",
++    "icon"
++  ],
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "private": true,
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/iron-iconset-svg.git"
++  },
++  "dependencies": {
++    "polymer": "polymer/polymer#^1.0.0",
++    "iron-meta": "polymerelements/iron-meta#^1.0.0"
++  },
++  "devDependencies": {
++    "paper-styles": "polymerelements/paper-styles#^1.0.2",
++    "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
++    "iron-icon": "polymerelements/iron-icon#^1.0.0",
++    "promise-polyfill": "polymerlabs/promise-polyfill#^1.0.0",
++    "test-fixture": "polymerelements/test-fixture#^1.0.0",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
++    "web-component-tester": "*"
++  },
++  "main": "iron-iconset-svg.html",
++  "homepage": "https://github.com/polymerelements/iron-iconset-svg",
++  "_release": "1.0.9",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.0.9",
++    "commit": "ce9b2ea1f73d936cffdd05f3fe34b1f69d1d32db"
++  },
++  "_source": "git://github.com/polymerelements/iron-iconset-svg.git",
++  "_target": "^1.0.0",
++  "_originalSource": "polymerelements/iron-iconset-svg"
++}
+\ No newline at end of file
+diff --git a/iron-media-query/.bower.json b/iron-media-query/.bower.json
+new file mode 100644
+index 0000000..b5db356
+--- /dev/null
++++ b/iron-media-query/.bower.json
+@@ -0,0 +1,42 @@
++{
++  "name": "iron-media-query",
++  "version": "1.0.8",
++  "description": "Lets you bind to a CSS media query",
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "keywords": [
++    "web-components",
++    "polymer",
++    "media"
++  ],
++  "private": true,
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/iron-media-query"
++  },
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "homepage": "https://github.com/PolymerElements/iron-media-query",
++  "ignore": [],
++  "dependencies": {
++    "polymer": "Polymer/polymer#^1.0.0"
++  },
++  "devDependencies": {
++    "paper-styles": "polymerelements/paper-styles#^1.0.2",
++    "web-component-tester": "polymer/web-component-tester#^3.4.0",
++    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
++    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
++  },
++  "main": "iron-media-query.html",
++  "_release": "1.0.8",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.0.8",
++    "commit": "3f916be171af7a3e03eb019acdfea71055d3c744"
++  },
++  "_source": "git://github.com/PolymerElements/iron-media-query.git",
++  "_target": "~1.0.8",
++  "_originalSource": "PolymerElements/iron-media-query",
++  "_direct": true
++}
+\ No newline at end of file
+diff --git a/iron-meta/.bower.json b/iron-meta/.bower.json
+new file mode 100644
+index 0000000..f4bfef4
+--- /dev/null
++++ b/iron-meta/.bower.json
+@@ -0,0 +1,39 @@
++{
++  "name": "iron-meta",
++  "version": "1.1.1",
++  "keywords": [
++    "web-components",
++    "polymer"
++  ],
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "description": "Useful for sharing information across a DOM tree",
++  "private": true,
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/iron-meta.git"
++  },
++  "dependencies": {
++    "polymer": "Polymer/polymer#^1.0.0"
++  },
++  "devDependencies": {
++    "paper-styles": "polymerelements/paper-styles#^1.0.4",
++    "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
++    "test-fixture": "polymerelements/test-fixture#^1.0.0",
++    "web-component-tester": "*",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
++  },
++  "main": "iron-meta.html",
++  "homepage": "https://github.com/polymerelements/iron-meta",
++  "_release": "1.1.1",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.1.1",
++    "commit": "e171ee234b482219c9514e6f9551df48ef48bd9f"
++  },
++  "_source": "git://github.com/polymerelements/iron-meta.git",
++  "_target": "^1.0.0",
++  "_originalSource": "polymerelements/iron-meta"
++}
+\ No newline at end of file
+diff --git a/iron-resizable-behavior/.bower.json b/iron-resizable-behavior/.bower.json
+new file mode 100644
+index 0000000..7c16c1a
+--- /dev/null
++++ b/iron-resizable-behavior/.bower.json
+@@ -0,0 +1,41 @@
++{
++  "name": "iron-resizable-behavior",
++  "version": "1.0.2",
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "description": "Coordinates the flow of resizeable elements",
++  "private": true,
++  "main": "iron-resizable-behavior.html",
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "keywords": [
++    "web-components",
++    "polymer",
++    "iron",
++    "behavior"
++  ],
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/iron-resizable-behavior.git"
++  },
++  "dependencies": {
++    "polymer": "Polymer/polymer#^1.0.0"
++  },
++  "devDependencies": {
++    "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
++    "test-fixture": "polymerelements/test-fixture#^1.0.0",
++    "web-component-tester": "*",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
++  },
++  "homepage": "https://github.com/PolymerElements/iron-resizable-behavior",
++  "_release": "1.0.2",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.0.2",
++    "commit": "85de8ba28be2bf17c81d6436ef1119022b003674"
++  },
++  "_source": "git://github.com/PolymerElements/iron-resizable-behavior.git",
++  "_target": "~1.0.2",
++  "_originalSource": "PolymerElements/iron-resizable-behavior",
++  "_direct": true
++}
+\ No newline at end of file
+diff --git a/iron-selector/.bower.json b/iron-selector/.bower.json
+new file mode 100644
+index 0000000..2142fa8
+--- /dev/null
++++ b/iron-selector/.bower.json
+@@ -0,0 +1,43 @@
++{
++  "name": "iron-selector",
++  "version": "1.0.8",
++  "description": "Manages a set of elements that can be selected",
++  "private": true,
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "main": "iron-selector.html",
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "keywords": [
++    "web-components",
++    "polymer",
++    "selector"
++  ],
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/iron-selector.git"
++  },
++  "homepage": "https://github.com/PolymerElements/iron-selector",
++  "ignore": [],
++  "dependencies": {
++    "polymer": "Polymer/polymer#^1.2.0"
++  },
++  "devDependencies": {
++    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
++    "iron-test-helpers": "polymerelements/iron-test-helpers#^1.0.0",
++    "paper-styles": "PolymerElements/paper-styles#^1.0.4",
++    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
++    "web-component-tester": "*",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
++  },
++  "_release": "1.0.8",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.0.8",
++    "commit": "e9a66727f3da0446f04956d4e4f1dcd51cdec2ff"
++  },
++  "_source": "git://github.com/PolymerElements/iron-selector.git",
++  "_target": "~1.0.8",
++  "_originalSource": "PolymerElements/iron-selector",
++  "_direct": true
++}
+\ No newline at end of file
+diff --git a/iron-validatable-behavior/.bower.json b/iron-validatable-behavior/.bower.json
+new file mode 100644
+index 0000000..62842a4
+--- /dev/null
++++ b/iron-validatable-behavior/.bower.json
+@@ -0,0 +1,44 @@
++{
++  "name": "iron-validatable-behavior",
++  "version": "1.0.5",
++  "description": "Provides a behavior for an element that validates user input",
++  "authors": "The Polymer Authors",
++  "keywords": [
++    "web-components",
++    "polymer",
++    "iron",
++    "behavior"
++  ],
++  "main": [
++    "iron-validatable-behavior.html"
++  ],
++  "private": true,
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/iron-validatable-behavior.git"
++  },
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "homepage": "https://github.com/PolymerElements/iron-validatable-behavior",
++  "ignore": [],
++  "dependencies": {
++    "iron-meta": "PolymerElements/iron-meta#^1.0.0",
++    "polymer": "Polymer/polymer#^1.0.0"
++  },
++  "devDependencies": {
++    "paper-styles": "PolymerElements/paper-styles#^1.0.4",
++    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
++    "iron-validator-behavior": "PolymerElements/iron-validator-behavior#^1.0.0",
++    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
++    "web-component-tester": "*",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
++  },
++  "_release": "1.0.5",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.0.5",
++    "commit": "c1334b835892b3d7a329a8e6b8741d4be3a8d99c"
++  },
++  "_source": "git://github.com/PolymerElements/iron-validatable-behavior.git",
++  "_target": "^1.0.0",
++  "_originalSource": "PolymerElements/iron-validatable-behavior"
++}
+\ No newline at end of file
+diff --git a/paper-behaviors/.bower.json b/paper-behaviors/.bower.json
+new file mode 100644
+index 0000000..a76af97
+--- /dev/null
++++ b/paper-behaviors/.bower.json
+@@ -0,0 +1,51 @@
++{
++  "name": "paper-behaviors",
++  "version": "1.0.10",
++  "description": "Common behaviors across the paper elements",
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "main": [
++    "paper-button-behavior.html",
++    "paper-checked-element-behavior.html",
++    "paper-inky-focus-behavior.html"
++  ],
++  "keywords": [
++    "web-components",
++    "web-component",
++    "polymer",
++    "paper",
++    "behavior"
++  ],
++  "private": true,
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/paper-behaviors"
++  },
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "homepage": "https://github.com/PolymerElements/paper-behaviors",
++  "dependencies": {
++    "iron-behaviors": "PolymerElements/iron-behaviors#^1.0.0",
++    "iron-checked-element-behavior": "PolymerElements/iron-checked-element-behavior#^1.0.0",
++    "polymer": "Polymer/polymer#^1.2.1"
++  },
++  "devDependencies": {
++    "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
++    "iron-test-helpers": "polymerelements/iron-test-helpers#^1.0.0",
++    "paper-material": "PolymerElements/paper-material#^1.0.0",
++    "paper-ripple": "PolymerElements/paper-ripple#^1.0.0",
++    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
++    "web-component-tester": "^3.4.0",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
++  },
++  "ignore": [],
++  "_release": "1.0.10",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.0.10",
++    "commit": "4b244a542af2c6c271498dfb98b00ed284df1d6a"
++  },
++  "_source": "git://github.com/polymerelements/paper-behaviors.git",
++  "_target": "^1.0.0",
++  "_originalSource": "polymerelements/paper-behaviors"
++}
+\ No newline at end of file
+diff --git a/paper-button/.bower.json b/paper-button/.bower.json
+new file mode 100644
+index 0000000..2c0423f
+--- /dev/null
++++ b/paper-button/.bower.json
+@@ -0,0 +1,52 @@
++{
++  "name": "paper-button",
++  "version": "1.0.11",
++  "description": "Material design button",
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "keywords": [
++    "web-components",
++    "web-component",
++    "polymer",
++    "paper",
++    "button"
++  ],
++  "main": "paper-button.html",
++  "private": true,
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/paper-button"
++  },
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "homepage": "https://github.com/PolymerElements/paper-button",
++  "dependencies": {
++    "polymer": "Polymer/polymer#^1.1.0",
++    "paper-ripple": "polymerelements/paper-ripple#^1.0.0",
++    "paper-material": "polymerelements/paper-material#^1.0.0",
++    "paper-behaviors": "polymerelements/paper-behaviors#^1.0.0",
++    "iron-flex-layout": "polymerelements/iron-flex-layout#^1.0.0"
++  },
++  "devDependencies": {
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
++    "web-component-tester": "polymer/web-component-tester#^3.4.0",
++    "test-fixture": "polymerelements/test-fixture#^1.0.0",
++    "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
++    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
++    "iron-icon": "polymerelements/iron-icon#^1.0.0",
++    "iron-icons": "polymerelements/iron-icons#^1.0.0",
++    "iron-test-helpers": "polymerelements/iron-test-helpers#^1.0.0",
++    "paper-styles": "polymerelements/paper-styles#^1.0.0"
++  },
++  "ignore": [],
++  "_release": "1.0.11",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.0.11",
++    "commit": "7d0f75300372d91835ae7298593d50987d4a610f"
++  },
++  "_source": "git://github.com/PolymerElements/paper-button.git",
++  "_target": "~1.0.11",
++  "_originalSource": "PolymerElements/paper-button",
++  "_direct": true
++}
+\ No newline at end of file
+diff --git a/paper-material/.bower.json b/paper-material/.bower.json
+new file mode 100644
+index 0000000..d088967
+--- /dev/null
++++ b/paper-material/.bower.json
+@@ -0,0 +1,44 @@
++{
++  "name": "paper-material",
++  "version": "1.0.6",
++  "description": "A material design container that looks like a lifted sheet of paper",
++  "private": true,
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "keywords": [
++    "web-components",
++    "web-component",
++    "polymer",
++    "paper",
++    "container"
++  ],
++  "main": "paper-material.html",
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/paper-material"
++  },
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "homepage": "https://github.com/PolymerElements/paper-material",
++  "ignore": [],
++  "dependencies": {
++    "polymer": "Polymer/polymer#^1.1.0",
++    "paper-styles": "polymerelements/paper-styles#^1.0.0"
++  },
++  "devDependencies": {
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
++    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
++    "web-component-tester": "^4.0.0",
++    "test-fixture": "polymerelements/test-fixture#^1.0.0",
++    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0"
++  },
++  "_release": "1.0.6",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.0.6",
++    "commit": "6aef0896fcbc25f9f5bd1dd55f7679e6ab7f92ad"
++  },
++  "_source": "git://github.com/polymerelements/paper-material.git",
++  "_target": "^1.0.0",
++  "_originalSource": "polymerelements/paper-material"
++}
+\ No newline at end of file
+diff --git a/paper-ripple/.bower.json b/paper-ripple/.bower.json
+new file mode 100644
+index 0000000..2f654d7
+--- /dev/null
++++ b/paper-ripple/.bower.json
+@@ -0,0 +1,45 @@
++{
++  "name": "paper-ripple",
++  "version": "1.0.5",
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "description": "Adds a material design ripple to any container",
++  "private": true,
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "keywords": [
++    "web-components",
++    "polymer",
++    "ripple"
++  ],
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/paper-ripple.git"
++  },
++  "main": "paper-ripple.html",
++  "dependencies": {
++    "polymer": "Polymer/polymer#^1.1.0",
++    "iron-a11y-keys-behavior": "polymerelements/iron-a11y-keys-behavior#^1.0.0"
++  },
++  "devDependencies": {
++    "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
++    "iron-icon": "polymerelements/iron-icon#^1.0.0",
++    "iron-icons": "polymerelements/iron-icons#^1.0.0",
++    "paper-styles": "polymerelements/paper-styles#^1.0.0",
++    "test-fixture": "polymerelements/test-fixture#^1.0.0",
++    "web-component-tester": "polymer/web-component-tester#^3.4.0",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
++    "iron-test-helpers": "PolymerElements/iron-test-helpers#^1.0.0"
++  },
++  "ignore": [],
++  "homepage": "https://github.com/polymerelements/paper-ripple",
++  "_release": "1.0.5",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.0.5",
++    "commit": "d72e7a9a8ab518b901ed18dde492df3b87a93be5"
++  },
++  "_source": "git://github.com/polymerelements/paper-ripple.git",
++  "_target": "^1.0.0",
++  "_originalSource": "polymerelements/paper-ripple"
++}
+\ No newline at end of file
+diff --git a/paper-styles/.bower.json b/paper-styles/.bower.json
+new file mode 100644
+index 0000000..b188267
+--- /dev/null
++++ b/paper-styles/.bower.json
+@@ -0,0 +1,42 @@
++{
++  "name": "paper-styles",
++  "version": "1.1.2",
++  "description": "Common (global) styles for Material Design elements.",
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "keywords": [
++    "web-component",
++    "polymer",
++    "style"
++  ],
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/paper-styles.git"
++  },
++  "main": "paper-styles.html",
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "homepage": "https://github.com/polymerelements/paper-styles/",
++  "ignore": [
++    "/.*"
++  ],
++  "dependencies": {
++    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.0.0",
++    "font-roboto": "PolymerElements/font-roboto#^1.0.1",
++    "polymer": "Polymer/polymer#^1.0.0"
++  },
++  "devDependencies": {
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
++    "iron-component-page": "polymerelements/iron-component-page#^1.0.0"
++  },
++  "_release": "1.1.2",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.1.2",
++    "commit": "7b97fa9d2c190bec9ef2d771d91f47b40a27f3be"
++  },
++  "_source": "git://github.com/PolymerElements/paper-styles.git",
++  "_target": "~1.1.2",
++  "_originalSource": "PolymerElements/paper-styles",
++  "_direct": true
++}
+\ No newline at end of file
+diff --git a/polymer/.bower.json b/polymer/.bower.json
+new file mode 100644
+index 0000000..22026ed
+--- /dev/null
++++ b/polymer/.bower.json
+@@ -0,0 +1,37 @@
++{
++  "name": "polymer",
++  "version": "1.2.3",
++  "main": [
++    "polymer.html"
++  ],
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "ignore": [
++    "/.*",
++    "/test/",
++    "gen-changelog.sh"
++  ],
++  "authors": [
++    "The Polymer Authors (http://polymer.github.io/AUTHORS.txt)"
++  ],
++  "repository": {
++    "type": "git",
++    "url": "https://github.com/Polymer/polymer.git"
++  },
++  "dependencies": {
++    "webcomponentsjs": "^0.7.18"
++  },
++  "devDependencies": {
++    "web-component-tester": "*"
++  },
++  "private": true,
++  "homepage": "https://github.com/Polymer/polymer",
++  "_release": "1.2.3",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.2.3",
++    "commit": "aa535d1675342007cbf64dc9c66497cf74cbc616"
++  },
++  "_source": "git://github.com/Polymer/polymer.git",
++  "_target": "^1.1.0",
++  "_originalSource": "Polymer/polymer"
++}
+\ No newline at end of file
+diff --git a/webcomponentsjs/.bower.json b/webcomponentsjs/.bower.json
+new file mode 100644
+index 0000000..91bfdc0
+--- /dev/null
++++ b/webcomponentsjs/.bower.json
+@@ -0,0 +1,30 @@
++{
++  "name": "webcomponentsjs",
++  "main": "webcomponents.js",
++  "version": "0.7.20",
++  "homepage": "http://webcomponents.org",
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "repository": {
++    "type": "git",
++    "url": "https://github.com/webcomponents/webcomponentsjs.git"
++  },
++  "keywords": [
++    "webcomponents"
++  ],
++  "license": "BSD",
++  "ignore": [],
++  "devDependencies": {
++    "web-component-tester": "^4.0.1"
++  },
++  "_release": "0.7.20",
++  "_resolution": {
++    "type": "version",
++    "tag": "v0.7.20",
++    "commit": "ce9c8597696ec4bafc772c2126a3b1c7b0e948c0"
++  },
++  "_source": "git://github.com/Polymer/webcomponentsjs.git",
++  "_target": "^0.7.18",
++  "_originalSource": "webcomponentsjs"
++}
+\ No newline at end of file
+-- 
+2.4.3
+
