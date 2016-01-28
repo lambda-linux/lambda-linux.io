@@ -61,3 +61,6 @@
 [submodule "src/bower_components/webcomponentsjs"]
 	path = src/bower_components/webcomponentsjs
 	url = https://github.com/webcomponents/webcomponentsjs.git
+[submodule "src/bower_components/app-layout"]
+	path = src/bower_components/app-layout
+	url = https://github.com/PolymerLabs/app-layout.git
