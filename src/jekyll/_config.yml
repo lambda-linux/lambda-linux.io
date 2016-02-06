@@ -1,0 +1,12 @@
+#
+# http://jekyllrb.com/docs/configuration/
+#
+# Site settings
+title: Lambda Linux
+description: Lambda Linux
+# Outputting
+permalink: "/blog/:year/:month/:day/:title/"
+paginate_path: "/blog/page/:num/"
+timezone: America/Los_Angeles
+paginate: 1
+gems: [jekyll-paginate]

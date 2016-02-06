@@ -1,4 +1,9 @@
+#
+# Files in `src/jekyll/_layouts` is autogerated using the gulp build system
+#
+
 dist/
 node_modules/
+src/jekyll/_layouts/
 third_party/
 tmp/
