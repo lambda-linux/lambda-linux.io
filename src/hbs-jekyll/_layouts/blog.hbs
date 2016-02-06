@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0" name="viewport">
+<meta content="IE=Edge" http-equiv="X-UA-Compatible">
+<title>\{{ page.title }}</title>
+
+<link rel="stylesheet" href="{{ assetPath "css/main.css" }}">
+
+<script src="{{ assetPath "js/webcomponents-lite.min.js" }}"></script>
+<link href="{{ assetPath "elements/elements.html" }}" rel="import">
+
+<style is="custom-style" include="shared-styles"></style>
+<link href="{{ assetPath "elements/blog/elements.html" }}" rel="import">
+
+</head>
+
+<body unresolved>
+
+<template is="dom-bind" id="app">
+
+  <app-drawer-layout id="drawyerLayout" force-narrow drawer-position="right">
+
+{{> html-app_side_nav}}
+
+    <app-header-layout main>
+
+{{> html-app_main_header}}
+
+      <blog-post>
+        {% for page in paginator.posts %}
+          <div class="layout vertical">
+            <h1 class="blog-post-content-title"><a href="\{{ page.url | prepend: site.baseurl }}">\{{ page.title }}</a></h1>
+          </div>
+          <div class="layout horizontal center blog-post-content-meta">
+              <div>
+              <iron-icon icon="icons:today" class="blog-post-content-meta-icon"></iron-icon>
+              </div>
+              <div>\{{ page.date | date: "%B %e, %Y" }}</div>
+          </div>
+          <div class="layout vertical">
+            <div class="markdown-body">
+              \{{ page.content }}
+            </div>
+          </div>
+        {% endfor %}
+
+        <div class="layout vertical pagination">
+          <div class="layout horizontal center">
+            {% if paginator.previous_page %}
+              <div class="flex self-start previous pagination-text">
+                <a href="\{{ paginator.previous_page_path }}">
+                  &laquo; PREVIOUS
+                </a>
+              </div>
+            {% endif %}
+            {% if paginator.next_page %}
+              <div class="flex self-end next pagination-text">
+                <a href="\{{ paginator.next_page_path }}">
+                  NEXT &raquo;
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </blog-post>
+
+{{> html-app_footer}}
+
+    </app-header-layout>
+  </app-drawer-layout>
+  {% raw %}
+
+{{> html-app_media_query}}
+
+  {% endraw %}
+</template>
+<script>
+
+{{> js-app_drawer}}
+
+</script>
+</body>
+</html>

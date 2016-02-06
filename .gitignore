@@ -2,6 +2,7 @@
 # Files in `src/jekyll/_layouts` is autogerated using the gulp build system
 #
 
+.jekyll-metadata
 dist/
 node_modules/
 src/jekyll/_layouts/
