@@ -1,6 +1,6 @@
-From eb8cd2996dde72a9179a6a65ff905e8a396970af Mon Sep 17 00:00:00 2001
+From 3eec6c9ca250d184c96b7ec5a1e45c7b28a58335 Mon Sep 17 00:00:00 2001
 From: Rajiv M Ranganath <rajiv.ranganath@atihita.com>
-Date: Wed, 27 Jan 2016 17:06:23 +0000
+Date: Tue, 23 Feb 2016 19:47:44 +0000
 Subject: [PATCH] Add `.bower.json`
 
 ---
@@ -8,6 +8,7 @@ Subject: [PATCH] Add `.bower.json`
  iron-a11y-keys-behavior/.bower.json       | 43 +++++++++++++++++++++++++
  iron-behaviors/.bower.json                | 42 +++++++++++++++++++++++++
  iron-checked-element-behavior/.bower.json | 43 +++++++++++++++++++++++++
+ iron-collapse/.bower.json                 | 43 +++++++++++++++++++++++++
  iron-flex-layout/.bower.json              | 42 +++++++++++++++++++++++++
  iron-form-element-behavior/.bower.json    | 41 ++++++++++++++++++++++++
  iron-icon/.bower.json                     | 44 ++++++++++++++++++++++++++
@@ -25,11 +26,12 @@ Subject: [PATCH] Add `.bower.json`
  paper-styles/.bower.json                  | 42 +++++++++++++++++++++++++
  polymer/.bower.json                       | 37 ++++++++++++++++++++++
  webcomponentsjs/.bower.json               | 30 ++++++++++++++++++
- 21 files changed, 887 insertions(+)
+ 22 files changed, 930 insertions(+)
  create mode 100644 font-roboto/.bower.json
  create mode 100644 iron-a11y-keys-behavior/.bower.json
  create mode 100644 iron-behaviors/.bower.json
  create mode 100644 iron-checked-element-behavior/.bower.json
+ create mode 100644 iron-collapse/.bower.json
  create mode 100644 iron-flex-layout/.bower.json
  create mode 100644 iron-form-element-behavior/.bower.json
  create mode 100644 iron-icon/.bower.json
@@ -233,6 +235,56 @@ index 0000000..31b32b0
 +  "_source": "git://github.com/PolymerElements/iron-checked-element-behavior.git",
 +  "_target": "^1.0.0",
 +  "_originalSource": "PolymerElements/iron-checked-element-behavior"
++}
+\ No newline at end of file
+diff --git a/iron-collapse/.bower.json b/iron-collapse/.bower.json
+new file mode 100644
+index 0000000..5dd87ad
+--- /dev/null
++++ b/iron-collapse/.bower.json
+@@ -0,0 +1,43 @@
++{
++  "name": "iron-collapse",
++  "version": "1.0.6",
++  "description": "Provides a collapsable container",
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "keywords": [
++    "web-components",
++    "polymer",
++    "container"
++  ],
++  "private": true,
++  "repository": {
++    "type": "git",
++    "url": "https://github.com/PolymerElements/iron-collapse"
++  },
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "homepage": "https://github.com/PolymerElements/iron-collapse",
++  "ignore": [],
++  "dependencies": {
++    "iron-resizable-behavior": "PolymerElements/iron-resizable-behavior#^1.0.0",
++    "polymer": "Polymer/polymer#^1.0.0"
++  },
++  "devDependencies": {
++    "web-component-tester": "^4.0.0",
++    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
++    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
++    "paper-styles": "PolymerElements/paper-styles#^1.0.0",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
++  },
++  "main": "iron-collapse.html",
++  "_release": "1.0.6",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.0.6",
++    "commit": "afd2b928c84fb1a1d6069b05a36c37b269f25209"
++  },
++  "_source": "git://github.com/PolymerElements/iron-collapse.git",
++  "_target": "~1.0.6",
++  "_originalSource": "PolymerElements/iron-collapse",
++  "_direct": true
 +}
 \ No newline at end of file
 diff --git a/iron-flex-layout/.bower.json b/iron-flex-layout/.bower.json
