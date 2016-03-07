@@ -1,0 +1,40 @@
+// dot 2.38.0 on Linux 3.14.35-28.38.amzn1.x86_64
+// SchemaSpy rev Unknown
+digraph "job" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "job" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">job</TD></TR>
+      <TR><TD PORT="job_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">job_id</TD></TR>
+      <TR><TD PORT="job_cmd" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_cmd</TD></TR>
+      <TR><TD PORT="job_namespace" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_namespace</TD></TR>
+      <TR><TD PORT="job_title" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_title</TD></TR>
+      <TR><TD PORT="job_timestamp" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_timestamp</TD></TR>
+      <TR><TD PORT="job_params" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_params</TD></TR>
+      <TR><TD PORT="job_random" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_random</TD></TR>
+      <TR><TD PORT="job_attempts" COLSPAN="3" ALIGN="LEFT">job_attempts</TD></TR>
+      <TR><TD PORT="job_token" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_token</TD></TR>
+      <TR><TD PORT="job_token_timestamp" COLSPAN="3" ALIGN="LEFT">job_token_timestamp</TD></TR>
+      <TR><TD PORT="job_sha1" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">job_sha1</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/job.html"
+    tooltip="job"
+  ];
+}

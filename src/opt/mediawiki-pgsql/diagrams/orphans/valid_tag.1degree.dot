@@ -1,0 +1,30 @@
+// dot 2.38.0 on Linux 3.14.35-28.38.amzn1.x86_64
+// SchemaSpy rev Unknown
+digraph "valid_tag" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "valid_tag" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">valid_tag</TD></TR>
+      <TR><TD PORT="vt_tag" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">vt_tag</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/valid_tag.html"
+    tooltip="valid_tag"
+  ];
+}

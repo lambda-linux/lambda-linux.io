@@ -1,0 +1,31 @@
+// dot 2.38.0 on Linux 3.14.35-28.38.amzn1.x86_64
+// SchemaSpy rev Unknown
+digraph "querycache_info" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "querycache_info" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">querycache_info</TD></TR>
+      <TR><TD PORT="qci_type" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">qci_type</TD></TR>
+      <TR><TD PORT="qci_timestamp" COLSPAN="3" ALIGN="LEFT">qci_timestamp</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/querycache_info.html"
+    tooltip="querycache_info"
+  ];
+}

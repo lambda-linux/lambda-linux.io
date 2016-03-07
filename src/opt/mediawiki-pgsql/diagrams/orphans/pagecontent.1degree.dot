@@ -1,0 +1,33 @@
+// dot 2.38.0 on Linux 3.14.35-28.38.amzn1.x86_64
+// SchemaSpy rev Unknown
+digraph "pagecontent" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "pagecontent" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">pagecontent</TD></TR>
+      <TR><TD PORT="old_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">old_id</TD></TR>
+      <TR><TD PORT="old_text" COLSPAN="3" ALIGN="LEFT">old_text</TD></TR>
+      <TR><TD PORT="old_flags" COLSPAN="3" ALIGN="LEFT">old_flags</TD></TR>
+      <TR><TD PORT="textvector" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">textvector</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/pagecontent.html"
+    tooltip="pagecontent"
+  ];
+}

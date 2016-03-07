@@ -1,0 +1,1072 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="mediawiki" schema="public" type="PostgreSQL - 9.3.6">
+   <tables>
+      <table name="archive" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('archive_ar_id_seq'::regclass)" digits="0" id="0" name="ar_id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="ar_namespace" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="2" name="ar_title" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="ar_text" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="ar_page_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="5" name="ar_parent_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="''::text" digits="0" id="6" name="ar_sha1" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="7" name="ar_comment" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="8" name="ar_user" nullable="true" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="archive_ar_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="mwuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="9" name="ar_user_text" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="10" name="ar_timestamp" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="11" name="ar_minor_edit" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="12" name="ar_flags" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="13" name="ar_rev_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="14" name="ar_text_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="15" name="ar_deleted" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="16" name="ar_len" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="17" name="ar_content_model" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="18" name="ar_content_format" nullable="true" remarks="" size="2147483647" type="text"/>
+         <primaryKey column="ar_id" sequenceNumberInPK="1"/>
+         <index name="archive_pkey" unique="true">
+            <column ascending="true" name="ar_id"/>
+         </index>
+         <index name="archive_name_title_timestamp" unique="false">
+            <column ascending="true" name="ar_namespace"/>
+            <column ascending="true" name="ar_title"/>
+            <column ascending="true" name="ar_timestamp"/>
+         </index>
+         <index name="archive_user_text" unique="false">
+            <column ascending="true" name="ar_user_text"/>
+         </index>
+      </table>
+      <table name="category" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('category_cat_id_seq'::regclass)" digits="0" id="0" name="cat_id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="cat_title" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="2" name="cat_pages" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="3" name="cat_subcats" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="4" name="cat_files" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="5" name="cat_hidden" nullable="false" remarks="" size="5" type="int2"/>
+         <primaryKey column="cat_id" sequenceNumberInPK="1"/>
+         <index name="category_pkey" unique="true">
+            <column ascending="true" name="cat_id"/>
+         </index>
+         <index name="category_pages" unique="false">
+            <column ascending="true" name="cat_pages"/>
+         </index>
+         <index name="category_title" unique="true">
+            <column ascending="true" name="cat_title"/>
+         </index>
+      </table>
+      <table name="categorylinks" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="cl_from" nullable="false" remarks="" size="10" type="int4">
+            <parent column="page_id" foreignKey="categorylinks_cl_from_fkey" implied="false" onDeleteCascade="true" schema="public" table="page"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="cl_to" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="cl_sortkey" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="3" name="cl_timestamp" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" defaultValue="''::text" digits="0" id="4" name="cl_sortkey_prefix" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="5" name="cl_collation" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="'page'::text" digits="0" id="6" name="cl_type" nullable="false" remarks="" size="2147483647" type="text"/>
+         <index name="cl_from" unique="true">
+            <column ascending="true" name="cl_from"/>
+            <column ascending="true" name="cl_to"/>
+         </index>
+         <index name="cl_sortkey" unique="false">
+            <column ascending="true" name="cl_to"/>
+            <column ascending="true" name="cl_sortkey"/>
+            <column ascending="true" name="cl_from"/>
+         </index>
+      </table>
+      <table name="change_tag" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="ct_rc_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="1" name="ct_log_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="ct_rev_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="ct_tag" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="ct_params" nullable="true" remarks="" size="2147483647" type="text"/>
+         <index name="change_tag_log_tag" unique="true">
+            <column ascending="true" name="ct_log_id"/>
+            <column ascending="true" name="ct_tag"/>
+         </index>
+         <index name="change_tag_rc_tag" unique="true">
+            <column ascending="true" name="ct_rc_id"/>
+            <column ascending="true" name="ct_tag"/>
+         </index>
+         <index name="change_tag_rev_tag" unique="true">
+            <column ascending="true" name="ct_rev_id"/>
+            <column ascending="true" name="ct_tag"/>
+         </index>
+         <index name="change_tag_tag_id" unique="false">
+            <column ascending="true" name="ct_tag"/>
+            <column ascending="true" name="ct_rc_id"/>
+            <column ascending="true" name="ct_rev_id"/>
+            <column ascending="true" name="ct_log_id"/>
+         </index>
+      </table>
+      <table name="externallinks" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('externallinks_el_id_seq'::regclass)" digits="0" id="0" name="el_id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="el_from" nullable="false" remarks="" size="10" type="int4">
+            <parent column="page_id" foreignKey="externallinks_el_from_fkey" implied="false" onDeleteCascade="true" schema="public" table="page"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="el_to" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="el_index" nullable="false" remarks="" size="2147483647" type="text"/>
+         <primaryKey column="el_id" sequenceNumberInPK="1"/>
+         <index name="externallinks_pkey" unique="true">
+            <column ascending="true" name="el_id"/>
+         </index>
+         <index name="externallinks_from_to" unique="false">
+            <column ascending="true" name="el_from"/>
+            <column ascending="true" name="el_to"/>
+         </index>
+         <index name="externallinks_index" unique="false">
+            <column ascending="true" name="el_index"/>
+         </index>
+      </table>
+      <table name="filearchive" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('filearchive_fa_id_seq'::regclass)" digits="0" id="0" name="fa_id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="fa_name" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="fa_archive_name" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="fa_storage_group" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="fa_storage_key" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="5" name="fa_deleted_user" nullable="true" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="filearchive_fa_deleted_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="mwuser"/>
+         </column>
+         <column autoUpdated="false" digits="6" id="6" name="fa_deleted_timestamp" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="0" id="7" name="fa_deleted_reason" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="8" name="fa_size" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="9" name="fa_width" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="10" name="fa_height" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="'\x'::bytea" digits="0" id="11" name="fa_metadata" nullable="false" remarks="" size="2147483647" type="bytea"/>
+         <column autoUpdated="false" digits="0" id="12" name="fa_bits" nullable="true" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="13" name="fa_media_type" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="'unknown'::text" digits="0" id="14" name="fa_major_mime" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="'unknown'::text" digits="0" id="15" name="fa_minor_mime" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="16" name="fa_description" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="17" name="fa_user" nullable="true" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="filearchive_fa_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="mwuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="18" name="fa_user_text" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="19" name="fa_timestamp" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="20" name="fa_deleted" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" defaultValue="''::text" digits="0" id="21" name="fa_sha1" nullable="false" remarks="" size="2147483647" type="text"/>
+         <primaryKey column="fa_id" sequenceNumberInPK="1"/>
+         <index name="filearchive_pkey" unique="true">
+            <column ascending="true" name="fa_id"/>
+         </index>
+         <index name="fa_dupe" unique="false">
+            <column ascending="true" name="fa_storage_group"/>
+            <column ascending="true" name="fa_storage_key"/>
+         </index>
+         <index name="fa_name_time" unique="false">
+            <column ascending="true" name="fa_name"/>
+            <column ascending="true" name="fa_timestamp"/>
+         </index>
+         <index name="fa_notime" unique="false">
+            <column ascending="true" name="fa_deleted_timestamp"/>
+         </index>
+         <index name="fa_nouser" unique="false">
+            <column ascending="true" name="fa_deleted_user"/>
+         </index>
+         <index name="fa_sha1" unique="false">
+            <column ascending="true" name="fa_sha1"/>
+         </index>
+      </table>
+      <table name="image" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="img_name" nullable="false" remarks="" size="2147483647" type="text">
+            <child column="oi_name" foreignKey="oldimage_oi_name_fkey_cascaded" implied="false" onDeleteCascade="true" schema="public" table="oldimage"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="img_size" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="img_width" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="img_height" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="'\x'::bytea" digits="0" id="4" name="img_metadata" nullable="false" remarks="" size="2147483647" type="bytea"/>
+         <column autoUpdated="false" digits="0" id="5" name="img_bits" nullable="true" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="6" name="img_media_type" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="'unknown'::text" digits="0" id="7" name="img_major_mime" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="'unknown'::text" digits="0" id="8" name="img_minor_mime" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="9" name="img_description" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="10" name="img_user" nullable="true" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="image_img_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="mwuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="11" name="img_user_text" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="12" name="img_timestamp" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" defaultValue="''::text" digits="0" id="13" name="img_sha1" nullable="false" remarks="" size="2147483647" type="text"/>
+         <primaryKey column="img_name" sequenceNumberInPK="1"/>
+         <index name="image_pkey" unique="true">
+            <column ascending="true" name="img_name"/>
+         </index>
+         <index name="img_sha1" unique="false">
+            <column ascending="true" name="img_sha1"/>
+         </index>
+         <index name="img_size_idx" unique="false">
+            <column ascending="true" name="img_size"/>
+         </index>
+         <index name="img_timestamp_idx" unique="false">
+            <column ascending="true" name="img_timestamp"/>
+         </index>
+      </table>
+      <table name="imagelinks" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="il_from" nullable="false" remarks="" size="10" type="int4">
+            <parent column="page_id" foreignKey="imagelinks_il_from_fkey" implied="false" onDeleteCascade="true" schema="public" table="page"/>
+         </column>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="1" name="il_from_namespace" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="il_to" nullable="false" remarks="" size="2147483647" type="text"/>
+         <index name="il_from" unique="true">
+            <column ascending="true" name="il_to"/>
+            <column ascending="true" name="il_from"/>
+         </index>
+      </table>
+      <table name="interwiki" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="iw_prefix" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="1" name="iw_url" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="iw_local" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="3" name="iw_trans" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" defaultValue="''::text" digits="0" id="4" name="iw_api" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="''::text" digits="0" id="5" name="iw_wikiid" nullable="false" remarks="" size="2147483647" type="text"/>
+         <index name="interwiki_iw_prefix_key" unique="true">
+            <column ascending="true" name="iw_prefix"/>
+         </index>
+      </table>
+      <table name="ipblocks" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('ipblocks_ipb_id_seq'::regclass)" digits="0" id="0" name="ipb_id" nullable="false" remarks="" size="10" type="serial">
+            <child column="ipb_parent_block_id" foreignKey="ipblocks_ipb_parent_block_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="ipblocks"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="ipb_address" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="ipb_user" nullable="true" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="ipblocks_ipb_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="mwuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="ipb_by" nullable="false" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="ipblocks_ipb_by_fkey" implied="false" onDeleteCascade="true" schema="public" table="mwuser"/>
+         </column>
+         <column autoUpdated="false" defaultValue="''::text" digits="0" id="4" name="ipb_by_text" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="5" name="ipb_reason" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="6" name="ipb_timestamp" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="7" name="ipb_auto" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="8" name="ipb_anon_only" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" defaultValue="1" digits="0" id="9" name="ipb_create_account" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" defaultValue="1" digits="0" id="10" name="ipb_enable_autoblock" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="6" id="11" name="ipb_expiry" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="0" id="12" name="ipb_range_start" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="13" name="ipb_range_end" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="14" name="ipb_deleted" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="15" name="ipb_block_email" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="16" name="ipb_allow_usertalk" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="17" name="ipb_parent_block_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="ipb_id" foreignKey="ipblocks_ipb_parent_block_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="ipblocks"/>
+         </column>
+         <primaryKey column="ipb_id" sequenceNumberInPK="1"/>
+         <index name="ipblocks_pkey" unique="true">
+            <column ascending="true" name="ipb_id"/>
+         </index>
+         <index name="ipb_address_unique" unique="true">
+            <column ascending="true" name="ipb_address"/>
+            <column ascending="true" name="ipb_user"/>
+            <column ascending="true" name="ipb_auto"/>
+            <column ascending="true" name="ipb_anon_only"/>
+         </index>
+         <index name="ipb_parent_block_id" unique="false">
+            <column ascending="true" name="ipb_parent_block_id"/>
+         </index>
+         <index name="ipb_range" unique="false">
+            <column ascending="true" name="ipb_range_start"/>
+            <column ascending="true" name="ipb_range_end"/>
+         </index>
+         <index name="ipb_user" unique="false">
+            <column ascending="true" name="ipb_user"/>
+         </index>
+      </table>
+      <table name="iwlinks" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" defaultValue="0" digits="0" id="0" name="iwl_from" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="''::text" digits="0" id="1" name="iwl_prefix" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="''::text" digits="0" id="2" name="iwl_title" nullable="false" remarks="" size="2147483647" type="text"/>
+         <index name="iwl_from" unique="true">
+            <column ascending="true" name="iwl_from"/>
+            <column ascending="true" name="iwl_prefix"/>
+            <column ascending="true" name="iwl_title"/>
+         </index>
+         <index name="iwl_prefix_from_title" unique="true">
+            <column ascending="true" name="iwl_prefix"/>
+            <column ascending="true" name="iwl_from"/>
+            <column ascending="true" name="iwl_title"/>
+         </index>
+         <index name="iwl_prefix_title_from" unique="true">
+            <column ascending="true" name="iwl_prefix"/>
+            <column ascending="true" name="iwl_title"/>
+            <column ascending="true" name="iwl_from"/>
+         </index>
+      </table>
+      <table name="job" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('job_job_id_seq'::regclass)" digits="0" id="0" name="job_id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="job_cmd" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="job_namespace" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="3" name="job_title" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="4" name="job_timestamp" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="0" id="5" name="job_params" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="6" name="job_random" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="7" name="job_attempts" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="''::text" digits="0" id="8" name="job_token" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="9" name="job_token_timestamp" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" defaultValue="''::text" digits="0" id="10" name="job_sha1" nullable="false" remarks="" size="2147483647" type="text"/>
+         <primaryKey column="job_id" sequenceNumberInPK="1"/>
+         <index name="job_pkey" unique="true">
+            <column ascending="true" name="job_id"/>
+         </index>
+         <index name="job_cmd_namespace_title" unique="false">
+            <column ascending="true" name="job_cmd"/>
+            <column ascending="true" name="job_namespace"/>
+            <column ascending="true" name="job_title"/>
+         </index>
+         <index name="job_cmd_token" unique="false">
+            <column ascending="true" name="job_cmd"/>
+            <column ascending="true" name="job_token"/>
+            <column ascending="true" name="job_random"/>
+         </index>
+         <index name="job_cmd_token_id" unique="false">
+            <column ascending="true" name="job_cmd"/>
+            <column ascending="true" name="job_token"/>
+            <column ascending="true" name="job_id"/>
+         </index>
+         <index name="job_sha1" unique="false">
+            <column ascending="true" name="job_sha1"/>
+         </index>
+         <index name="job_timestamp_idx" unique="false">
+            <column ascending="true" name="job_timestamp"/>
+         </index>
+      </table>
+      <table name="l10n_cache" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="lc_lang" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="1" name="lc_key" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="lc_value" nullable="false" remarks="" size="2147483647" type="bytea"/>
+         <index name="l10n_cache_lc_lang_key" unique="false">
+            <column ascending="true" name="lc_lang"/>
+            <column ascending="true" name="lc_key"/>
+         </index>
+      </table>
+      <table name="langlinks" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="ll_from" nullable="false" remarks="" size="10" type="int4">
+            <parent column="page_id" foreignKey="langlinks_ll_from_fkey" implied="false" onDeleteCascade="true" schema="public" table="page"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="ll_lang" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="ll_title" nullable="true" remarks="" size="2147483647" type="text"/>
+         <index name="langlinks_lang_title" unique="false">
+            <column ascending="true" name="ll_lang"/>
+            <column ascending="true" name="ll_title"/>
+         </index>
+         <index name="langlinks_unique" unique="true">
+            <column ascending="true" name="ll_from"/>
+            <column ascending="true" name="ll_lang"/>
+         </index>
+      </table>
+      <table name="log_search" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="ls_field" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="1" name="ls_value" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="2" name="ls_log_id" nullable="false" remarks="" size="10" type="int4"/>
+         <primaryKey column="ls_field" sequenceNumberInPK="1"/>
+         <primaryKey column="ls_value" sequenceNumberInPK="2"/>
+         <primaryKey column="ls_log_id" sequenceNumberInPK="3"/>
+         <index name="log_search_pkey" unique="true">
+            <column ascending="true" name="ls_field"/>
+            <column ascending="true" name="ls_value"/>
+            <column ascending="true" name="ls_log_id"/>
+         </index>
+         <index name="ls_log_id" unique="false">
+            <column ascending="true" name="ls_log_id"/>
+         </index>
+      </table>
+      <table name="logging" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('logging_log_id_seq'::regclass)" digits="0" id="0" name="log_id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="log_type" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="log_action" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="3" name="log_timestamp" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="0" id="4" name="log_user" nullable="true" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="logging_log_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="mwuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="log_namespace" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="6" name="log_title" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="7" name="log_comment" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="8" name="log_params" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="9" name="log_deleted" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" defaultValue="''::text" digits="0" id="10" name="log_user_text" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="11" name="log_page" nullable="true" remarks="" size="10" type="int4"/>
+         <primaryKey column="log_id" sequenceNumberInPK="1"/>
+         <index name="logging_pkey" unique="true">
+            <column ascending="true" name="log_id"/>
+         </index>
+         <index name="logging_page_id_time" unique="false">
+            <column ascending="true" name="log_page"/>
+            <column ascending="true" name="log_timestamp"/>
+         </index>
+         <index name="logging_page_time" unique="false">
+            <column ascending="true" name="log_namespace"/>
+            <column ascending="true" name="log_title"/>
+            <column ascending="true" name="log_timestamp"/>
+         </index>
+         <index name="logging_times" unique="false">
+            <column ascending="true" name="log_timestamp"/>
+         </index>
+         <index name="logging_type_name" unique="false">
+            <column ascending="true" name="log_type"/>
+            <column ascending="true" name="log_timestamp"/>
+         </index>
+         <index name="logging_user_text_time" unique="false">
+            <column ascending="true" name="log_user_text"/>
+            <column ascending="true" name="log_timestamp"/>
+         </index>
+         <index name="logging_user_text_type_time" unique="false">
+            <column ascending="true" name="log_user_text"/>
+            <column ascending="true" name="log_type"/>
+            <column ascending="true" name="log_timestamp"/>
+         </index>
+         <index name="logging_user_time" unique="false">
+            <column ascending="true" name="log_timestamp"/>
+            <column ascending="true" name="log_user"/>
+         </index>
+         <index name="logging_user_type_time" unique="false">
+            <column ascending="true" name="log_user"/>
+            <column ascending="true" name="log_type"/>
+            <column ascending="true" name="log_timestamp"/>
+         </index>
+      </table>
+      <table name="module_deps" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="md_module" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="1" name="md_skin" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="md_deps" nullable="false" remarks="" size="2147483647" type="text"/>
+         <index name="md_module_skin" unique="true">
+            <column ascending="true" name="md_module"/>
+            <column ascending="true" name="md_skin"/>
+         </index>
+      </table>
+      <table name="msg_resource" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="mr_resource" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="1" name="mr_lang" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="mr_blob" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="3" name="mr_timestamp" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <index name="mr_resource_lang" unique="true">
+            <column ascending="true" name="mr_resource"/>
+            <column ascending="true" name="mr_lang"/>
+         </index>
+      </table>
+      <table name="msg_resource_links" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="mrl_resource" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="1" name="mrl_message" nullable="false" remarks="" size="2147483647" type="text"/>
+         <index name="mrl_message_resource" unique="true">
+            <column ascending="true" name="mrl_message"/>
+            <column ascending="true" name="mrl_resource"/>
+         </index>
+      </table>
+      <table name="mwuser" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('user_user_id_seq'::regclass)" digits="0" id="0" name="user_id" nullable="false" remarks="" size="10" type="serial">
+            <child column="ar_user" foreignKey="archive_ar_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="archive"/>
+            <child column="fa_deleted_user" foreignKey="filearchive_fa_deleted_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="filearchive"/>
+            <child column="fa_user" foreignKey="filearchive_fa_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="filearchive"/>
+            <child column="img_user" foreignKey="image_img_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="image"/>
+            <child column="ipb_by" foreignKey="ipblocks_ipb_by_fkey" implied="false" onDeleteCascade="true" schema="public" table="ipblocks"/>
+            <child column="ipb_user" foreignKey="ipblocks_ipb_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="ipblocks"/>
+            <child column="log_user" foreignKey="logging_log_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="logging"/>
+            <child column="oi_user" foreignKey="oldimage_oi_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="oldimage"/>
+            <child column="pt_user" foreignKey="protected_titles_pt_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="protected_titles"/>
+            <child column="rc_user" foreignKey="recentchanges_rc_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="recentchanges"/>
+            <child column="rev_user" foreignKey="revision_rev_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="revision"/>
+            <child column="ufg_user" foreignKey="user_former_groups_ufg_user_fkey" implied="false" onDeleteCascade="true" schema="public" table="user_former_groups"/>
+            <child column="ug_user" foreignKey="user_groups_ug_user_fkey" implied="false" onDeleteCascade="true" schema="public" table="user_groups"/>
+            <child column="user_id" foreignKey="user_newtalk_user_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="user_newtalk"/>
+            <child column="up_user" foreignKey="user_properties_up_user_fkey" implied="false" onDeleteCascade="true" schema="public" table="user_properties"/>
+            <child column="wl_user" foreignKey="watchlist_wl_user_fkey" implied="false" onDeleteCascade="true" schema="public" table="watchlist"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="user_name" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="user_real_name" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="user_password" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="user_newpassword" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="5" name="user_newpass_time" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="0" id="6" name="user_token" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="7" name="user_email" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="8" name="user_email_token" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="9" name="user_email_token_expires" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="6" id="10" name="user_email_authenticated" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="6" id="11" name="user_touched" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="6" id="12" name="user_registration" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="0" id="13" name="user_editcount" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="6" id="14" name="user_password_expires" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <primaryKey column="user_id" sequenceNumberInPK="1"/>
+         <index name="mwuser_pkey" unique="true">
+            <column ascending="true" name="user_id"/>
+         </index>
+         <index name="mwuser_user_name_key" unique="true">
+            <column ascending="true" name="user_name"/>
+         </index>
+         <index name="user_email_token_idx" unique="false">
+            <column ascending="true" name="user_email_token"/>
+         </index>
+      </table>
+      <table name="objectcache" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="keyname" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="'\x'::bytea" digits="0" id="1" name="value" nullable="false" remarks="" size="2147483647" type="bytea"/>
+         <column autoUpdated="false" digits="6" id="2" name="exptime" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <index name="objectcacache_exptime" unique="false">
+            <column ascending="true" name="exptime"/>
+         </index>
+         <index name="objectcache_keyname_key" unique="true">
+            <column ascending="true" name="keyname"/>
+         </index>
+      </table>
+      <table name="oldimage" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="oi_name" nullable="false" remarks="" size="2147483647" type="text">
+            <parent column="img_name" foreignKey="oldimage_oi_name_fkey_cascaded" implied="false" onDeleteCascade="true" schema="public" table="image"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="oi_archive_name" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="oi_size" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="oi_width" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="4" name="oi_height" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="5" name="oi_bits" nullable="true" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="6" name="oi_description" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="7" name="oi_user" nullable="true" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="oldimage_oi_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="mwuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="8" name="oi_user_text" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="9" name="oi_timestamp" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" defaultValue="'\x'::bytea" digits="0" id="10" name="oi_metadata" nullable="false" remarks="" size="2147483647" type="bytea"/>
+         <column autoUpdated="false" digits="0" id="11" name="oi_media_type" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="'unknown'::text" digits="0" id="12" name="oi_major_mime" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="'unknown'::text" digits="0" id="13" name="oi_minor_mime" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="14" name="oi_deleted" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" defaultValue="''::text" digits="0" id="15" name="oi_sha1" nullable="false" remarks="" size="2147483647" type="text"/>
+         <index name="oi_name_archive_name" unique="false">
+            <column ascending="true" name="oi_name"/>
+            <column ascending="true" name="oi_archive_name"/>
+         </index>
+         <index name="oi_name_timestamp" unique="false">
+            <column ascending="true" name="oi_name"/>
+            <column ascending="true" name="oi_timestamp"/>
+         </index>
+         <index name="oi_sha1" unique="false">
+            <column ascending="true" name="oi_sha1"/>
+         </index>
+      </table>
+      <table name="page" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('page_page_id_seq'::regclass)" digits="0" id="0" name="page_id" nullable="false" remarks="" size="10" type="serial">
+            <child column="cl_from" foreignKey="categorylinks_cl_from_fkey" implied="false" onDeleteCascade="true" schema="public" table="categorylinks"/>
+            <child column="el_from" foreignKey="externallinks_el_from_fkey" implied="false" onDeleteCascade="true" schema="public" table="externallinks"/>
+            <child column="il_from" foreignKey="imagelinks_il_from_fkey" implied="false" onDeleteCascade="true" schema="public" table="imagelinks"/>
+            <child column="ll_from" foreignKey="langlinks_ll_from_fkey" implied="false" onDeleteCascade="true" schema="public" table="langlinks"/>
+            <child column="pp_page" foreignKey="page_props_pp_page_fkey" implied="false" onDeleteCascade="true" schema="public" table="page_props"/>
+            <child column="pr_page" foreignKey="page_restrictions_pr_page_fkey" implied="false" onDeleteCascade="true" schema="public" table="page_restrictions"/>
+            <child column="pl_from" foreignKey="pagelinks_pl_from_fkey" implied="false" onDeleteCascade="true" schema="public" table="pagelinks"/>
+            <child column="rd_from" foreignKey="redirect_rd_from_fkey" implied="false" onDeleteCascade="true" schema="public" table="redirect"/>
+            <child column="rev_page" foreignKey="revision_rev_page_fkey" implied="false" onDeleteCascade="true" schema="public" table="revision"/>
+            <child column="tl_from" foreignKey="templatelinks_tl_from_fkey" implied="false" onDeleteCascade="true" schema="public" table="templatelinks"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="page_namespace" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="2" name="page_title" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="page_restrictions" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="4" name="page_is_redirect" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="5" name="page_is_new" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" defaultValue="random()" digits="14" id="6" name="page_random" nullable="false" remarks="" size="15" type="numeric"/>
+         <column autoUpdated="false" digits="6" id="7" name="page_touched" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="6" id="8" name="page_links_updated" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="0" id="9" name="page_latest" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="10" name="page_len" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="11" name="page_content_model" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="12" name="page_lang" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="13" name="titlevector" nullable="true" remarks="" size="2147483647" type="tsvector"/>
+         <primaryKey column="page_id" sequenceNumberInPK="1"/>
+         <index name="page_pkey" unique="true">
+            <column ascending="true" name="page_id"/>
+         </index>
+         <index name="page_len_idx" unique="false">
+            <column ascending="true" name="page_len"/>
+         </index>
+         <index name="page_main_title" unique="false">
+            <column ascending="true" name="page_title"/>
+         </index>
+         <index name="page_mediawiki_title" unique="false">
+            <column ascending="true" name="page_title"/>
+         </index>
+         <index name="page_project_title" unique="false">
+            <column ascending="true" name="page_title"/>
+         </index>
+         <index name="page_random_idx" unique="false">
+            <column ascending="true" name="page_random"/>
+         </index>
+         <index name="page_talk_title" unique="false">
+            <column ascending="true" name="page_title"/>
+         </index>
+         <index name="page_unique_name" unique="true">
+            <column ascending="true" name="page_namespace"/>
+            <column ascending="true" name="page_title"/>
+         </index>
+         <index name="page_user_title" unique="false">
+            <column ascending="true" name="page_title"/>
+         </index>
+         <index name="page_utalk_title" unique="false">
+            <column ascending="true" name="page_title"/>
+         </index>
+         <index name="ts2_page_title" unique="false">
+            <column ascending="true" name="titlevector"/>
+         </index>
+      </table>
+      <table name="page_props" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="pp_page" nullable="false" remarks="" size="10" type="int4">
+            <parent column="page_id" foreignKey="page_props_pp_page_fkey" implied="false" onDeleteCascade="true" schema="public" table="page"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="pp_propname" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="pp_value" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="17" id="3" name="pp_sortkey" nullable="true" remarks="" size="17" type="float8"/>
+         <primaryKey column="pp_page" sequenceNumberInPK="1"/>
+         <primaryKey column="pp_propname" sequenceNumberInPK="2"/>
+         <index name="page_props_pk" unique="true">
+            <column ascending="true" name="pp_page"/>
+            <column ascending="true" name="pp_propname"/>
+         </index>
+         <index name="page_props_propname" unique="false">
+            <column ascending="true" name="pp_propname"/>
+         </index>
+         <index name="pp_propname_page" unique="true">
+            <column ascending="true" name="pp_propname"/>
+            <column ascending="true" name="pp_page"/>
+         </index>
+         <index name="pp_propname_sortkey_page" unique="false">
+            <column ascending="true" name="pp_propname"/>
+            <column ascending="true" name="pp_sortkey"/>
+            <column ascending="true" name="pp_page"/>
+         </index>
+      </table>
+      <table name="page_restrictions" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('page_restrictions_pr_id_seq'::regclass)" digits="0" id="0" name="pr_id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="pr_page" nullable="false" remarks="" size="10" type="int4">
+            <parent column="page_id" foreignKey="page_restrictions_pr_page_fkey" implied="false" onDeleteCascade="true" schema="public" table="page"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="pr_type" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="pr_level" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="pr_cascade" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="5" name="pr_user" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="6" id="6" name="pr_expiry" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <primaryKey column="pr_page" sequenceNumberInPK="1"/>
+         <primaryKey column="pr_type" sequenceNumberInPK="2"/>
+         <index name="page_restrictions_pk" unique="true">
+            <column ascending="true" name="pr_page"/>
+            <column ascending="true" name="pr_type"/>
+         </index>
+         <index name="page_restrictions_pr_id_key" unique="true">
+            <column ascending="true" name="pr_id"/>
+         </index>
+      </table>
+      <table name="pagecontent" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('text_old_id_seq'::regclass)" digits="0" id="0" name="old_id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="old_text" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="old_flags" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="textvector" nullable="true" remarks="" size="2147483647" type="tsvector"/>
+         <primaryKey column="old_id" sequenceNumberInPK="1"/>
+         <index name="pagecontent_pkey" unique="true">
+            <column ascending="true" name="old_id"/>
+         </index>
+         <index name="ts2_page_text" unique="false">
+            <column ascending="true" name="textvector"/>
+         </index>
+      </table>
+      <table name="pagelinks" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="pl_from" nullable="false" remarks="" size="10" type="int4">
+            <parent column="page_id" foreignKey="pagelinks_pl_from_fkey" implied="false" onDeleteCascade="true" schema="public" table="page"/>
+         </column>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="1" name="pl_from_namespace" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="pl_namespace" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="3" name="pl_title" nullable="false" remarks="" size="2147483647" type="text"/>
+         <index name="pagelink_unique" unique="true">
+            <column ascending="true" name="pl_from"/>
+            <column ascending="true" name="pl_namespace"/>
+            <column ascending="true" name="pl_title"/>
+         </index>
+         <index name="pagelinks_title" unique="false">
+            <column ascending="true" name="pl_title"/>
+         </index>
+      </table>
+      <table name="profiling" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" defaultValue="0" digits="0" id="0" name="pf_count" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="0" digits="17" id="1" name="pf_time" nullable="false" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" defaultValue="0" digits="17" id="2" name="pf_memory" nullable="false" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="0" id="3" name="pf_name" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="pf_server" nullable="true" remarks="" size="2147483647" type="text"/>
+         <index name="pf_name_server" unique="true">
+            <column ascending="true" name="pf_name"/>
+            <column ascending="true" name="pf_server"/>
+         </index>
+      </table>
+      <table name="protected_titles" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="pt_namespace" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="1" name="pt_title" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="pt_user" nullable="true" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="protected_titles_pt_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="mwuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="pt_reason" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="4" name="pt_timestamp" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="6" id="5" name="pt_expiry" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" defaultValue="''::text" digits="0" id="6" name="pt_create_perm" nullable="false" remarks="" size="2147483647" type="text"/>
+         <index name="protected_titles_unique" unique="true">
+            <column ascending="true" name="pt_namespace"/>
+            <column ascending="true" name="pt_title"/>
+         </index>
+      </table>
+      <table name="querycache" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="qc_type" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="1" name="qc_value" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="qc_namespace" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="3" name="qc_title" nullable="false" remarks="" size="2147483647" type="text"/>
+         <index name="querycache_type_value" unique="false">
+            <column ascending="true" name="qc_type"/>
+            <column ascending="true" name="qc_value"/>
+         </index>
+      </table>
+      <table name="querycache_info" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="qci_type" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="1" name="qci_timestamp" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <index name="querycache_info_qci_type_key" unique="true">
+            <column ascending="true" name="qci_type"/>
+         </index>
+      </table>
+      <table name="querycachetwo" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="qcc_type" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="1" name="qcc_value" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="2" name="qcc_namespace" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="''::text" digits="0" id="3" name="qcc_title" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="4" name="qcc_namespacetwo" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="''::text" digits="0" id="5" name="qcc_titletwo" nullable="false" remarks="" size="2147483647" type="text"/>
+         <index name="querycachetwo_title" unique="false">
+            <column ascending="true" name="qcc_type"/>
+            <column ascending="true" name="qcc_namespace"/>
+            <column ascending="true" name="qcc_title"/>
+         </index>
+         <index name="querycachetwo_titletwo" unique="false">
+            <column ascending="true" name="qcc_type"/>
+            <column ascending="true" name="qcc_namespacetwo"/>
+            <column ascending="true" name="qcc_titletwo"/>
+         </index>
+         <index name="querycachetwo_type_value" unique="false">
+            <column ascending="true" name="qcc_type"/>
+            <column ascending="true" name="qcc_value"/>
+         </index>
+      </table>
+      <table name="recentchanges" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('recentchanges_rc_id_seq'::regclass)" digits="0" id="0" name="rc_id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="6" id="1" name="rc_timestamp" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="6" id="2" name="rc_cur_time" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="0" id="3" name="rc_user" nullable="true" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="recentchanges_rc_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="mwuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="4" name="rc_user_text" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="5" name="rc_namespace" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="6" name="rc_title" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="7" name="rc_comment" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="8" name="rc_minor" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="9" name="rc_bot" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="10" name="rc_new" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="11" name="rc_cur_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="12" name="rc_this_oldid" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="13" name="rc_last_oldid" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="14" name="rc_type" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="15" name="rc_source" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="16" name="rc_patrolled" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="17" name="rc_ip" nullable="true" remarks="" size="2147483647" type="cidr"/>
+         <column autoUpdated="false" digits="0" id="18" name="rc_old_len" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="19" name="rc_new_len" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="20" name="rc_deleted" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="21" name="rc_logid" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="22" name="rc_log_type" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="23" name="rc_log_action" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="24" name="rc_params" nullable="true" remarks="" size="2147483647" type="text"/>
+         <primaryKey column="rc_id" sequenceNumberInPK="1"/>
+         <index name="recentchanges_pkey" unique="true">
+            <column ascending="true" name="rc_id"/>
+         </index>
+         <index name="new_name_timestamp" unique="false">
+            <column ascending="true" name="rc_new"/>
+            <column ascending="true" name="rc_namespace"/>
+            <column ascending="true" name="rc_timestamp"/>
+         </index>
+         <index name="rc_cur_id" unique="false">
+            <column ascending="true" name="rc_cur_id"/>
+         </index>
+         <index name="rc_ip" unique="false">
+            <column ascending="true" name="rc_ip"/>
+         </index>
+         <index name="rc_namespace_title" unique="false">
+            <column ascending="true" name="rc_namespace"/>
+            <column ascending="true" name="rc_title"/>
+         </index>
+         <index name="rc_timestamp" unique="false">
+            <column ascending="true" name="rc_timestamp"/>
+         </index>
+         <index name="rc_timestamp_bot" unique="false">
+            <column ascending="true" name="rc_timestamp"/>
+         </index>
+      </table>
+      <table name="redirect" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="rd_from" nullable="false" remarks="" size="10" type="int4">
+            <parent column="page_id" foreignKey="redirect_rd_from_fkey" implied="false" onDeleteCascade="true" schema="public" table="page"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="rd_namespace" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="2" name="rd_title" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="rd_interwiki" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="rd_fragment" nullable="true" remarks="" size="2147483647" type="text"/>
+         <index name="redirect_ns_title" unique="false">
+            <column ascending="true" name="rd_namespace"/>
+            <column ascending="true" name="rd_title"/>
+            <column ascending="true" name="rd_from"/>
+         </index>
+      </table>
+      <table name="revision" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('revision_rev_id_seq'::regclass)" digits="0" id="0" name="rev_id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="rev_page" nullable="true" remarks="" size="10" type="int4">
+            <parent column="page_id" foreignKey="revision_rev_page_fkey" implied="false" onDeleteCascade="true" schema="public" table="page"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="rev_text_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="rev_comment" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="rev_user" nullable="false" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="revision_rev_user_fkey" implied="false" onDeleteCascade="false" schema="public" table="mwuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="rev_user_text" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="6" name="rev_timestamp" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="7" name="rev_minor_edit" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="8" name="rev_deleted" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="9" name="rev_len" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="10" name="rev_parent_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="''::text" digits="0" id="11" name="rev_sha1" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="12" name="rev_content_model" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="13" name="rev_content_format" nullable="true" remarks="" size="2147483647" type="text"/>
+         <index name="rev_text_id_idx" unique="false">
+            <column ascending="true" name="rev_text_id"/>
+         </index>
+         <index name="rev_timestamp_idx" unique="false">
+            <column ascending="true" name="rev_timestamp"/>
+         </index>
+         <index name="rev_user_idx" unique="false">
+            <column ascending="true" name="rev_user"/>
+         </index>
+         <index name="rev_user_text_idx" unique="false">
+            <column ascending="true" name="rev_user_text"/>
+         </index>
+         <index name="revision_rev_id_key" unique="true">
+            <column ascending="true" name="rev_id"/>
+         </index>
+         <index name="revision_unique" unique="true">
+            <column ascending="true" name="rev_page"/>
+            <column ascending="true" name="rev_id"/>
+         </index>
+      </table>
+      <table name="site_identifiers" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="si_site" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="1" name="si_type" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="si_key" nullable="false" remarks="" size="2147483647" type="text"/>
+         <index name="si_key" unique="false">
+            <column ascending="true" name="si_key"/>
+         </index>
+         <index name="si_site" unique="false">
+            <column ascending="true" name="si_site"/>
+         </index>
+         <index name="si_type_key" unique="true">
+            <column ascending="true" name="si_type"/>
+            <column ascending="true" name="si_key"/>
+         </index>
+      </table>
+      <table name="site_stats" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="ss_row_id" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="1" name="ss_total_edits" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="2" name="ss_good_articles" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="(-1)" digits="0" id="3" name="ss_total_pages" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="(-1)" digits="0" id="4" name="ss_users" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="(-1)" digits="0" id="5" name="ss_active_users" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="(-1)" digits="0" id="6" name="ss_admins" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="7" name="ss_images" nullable="true" remarks="" size="10" type="int4"/>
+         <index name="site_stats_ss_row_id_key" unique="true">
+            <column ascending="true" name="ss_row_id"/>
+         </index>
+      </table>
+      <table name="sites" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('sites_site_id_seq'::regclass)" digits="0" id="0" name="site_id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="site_global_key" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="site_type" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="site_group" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="site_source" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="5" name="site_language" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="6" name="site_protocol" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="7" name="site_domain" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="8" name="site_data" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="9" name="site_forward" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="10" name="site_config" nullable="false" remarks="" size="2147483647" type="text"/>
+         <primaryKey column="site_id" sequenceNumberInPK="1"/>
+         <index name="sites_pkey" unique="true">
+            <column ascending="true" name="site_id"/>
+         </index>
+         <index name="site_domain" unique="false">
+            <column ascending="true" name="site_domain"/>
+         </index>
+         <index name="site_forward" unique="false">
+            <column ascending="true" name="site_forward"/>
+         </index>
+         <index name="site_global_key" unique="true">
+            <column ascending="true" name="site_global_key"/>
+         </index>
+         <index name="site_group" unique="false">
+            <column ascending="true" name="site_group"/>
+         </index>
+         <index name="site_language" unique="false">
+            <column ascending="true" name="site_language"/>
+         </index>
+         <index name="site_protocol" unique="false">
+            <column ascending="true" name="site_protocol"/>
+         </index>
+         <index name="site_source" unique="false">
+            <column ascending="true" name="site_source"/>
+         </index>
+         <index name="site_type" unique="false">
+            <column ascending="true" name="site_type"/>
+         </index>
+      </table>
+      <table name="tag_summary" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="ts_rc_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="1" name="ts_log_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="ts_rev_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="ts_tags" nullable="false" remarks="" size="2147483647" type="text"/>
+         <index name="tag_summary_log_id" unique="true">
+            <column ascending="true" name="ts_log_id"/>
+         </index>
+         <index name="tag_summary_rc_id" unique="true">
+            <column ascending="true" name="ts_rc_id"/>
+         </index>
+         <index name="tag_summary_rev_id" unique="true">
+            <column ascending="true" name="ts_rev_id"/>
+         </index>
+      </table>
+      <table name="templatelinks" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="tl_from" nullable="false" remarks="" size="10" type="int4">
+            <parent column="page_id" foreignKey="templatelinks_tl_from_fkey" implied="false" onDeleteCascade="true" schema="public" table="page"/>
+         </column>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="1" name="tl_from_namespace" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="tl_namespace" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="3" name="tl_title" nullable="false" remarks="" size="2147483647" type="text"/>
+         <index name="templatelinks_from" unique="false">
+            <column ascending="true" name="tl_from"/>
+         </index>
+         <index name="templatelinks_unique" unique="true">
+            <column ascending="true" name="tl_namespace"/>
+            <column ascending="true" name="tl_title"/>
+            <column ascending="true" name="tl_from"/>
+         </index>
+      </table>
+      <table name="transcache" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="tc_url" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="1" name="tc_contents" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="2" name="tc_time" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <index name="transcache_tc_url_key" unique="true">
+            <column ascending="true" name="tc_url"/>
+         </index>
+      </table>
+      <table name="updatelog" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="ul_key" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="1" name="ul_value" nullable="true" remarks="" size="2147483647" type="text"/>
+         <primaryKey column="ul_key" sequenceNumberInPK="1"/>
+         <index name="updatelog_pkey" unique="true">
+            <column ascending="true" name="ul_key"/>
+         </index>
+      </table>
+      <table name="uploadstash" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('uploadstash_us_id_seq'::regclass)" digits="0" id="0" name="us_id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="us_user" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="us_key" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="us_orig_path" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="us_path" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="5" name="us_props" nullable="true" remarks="" size="2147483647" type="bytea"/>
+         <column autoUpdated="false" digits="0" id="6" name="us_source_type" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="7" name="us_timestamp" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="0" id="8" name="us_status" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="9" name="us_chunk_inx" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="10" name="us_size" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="11" name="us_sha1" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="12" name="us_mime" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="13" name="us_media_type" nullable="true" remarks="" size="2147483647" type="media_type"/>
+         <column autoUpdated="false" digits="0" id="14" name="us_image_width" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="15" name="us_image_height" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="16" name="us_image_bits" nullable="true" remarks="" size="5" type="int2"/>
+         <primaryKey column="us_id" sequenceNumberInPK="1"/>
+         <index name="uploadstash_pkey" unique="true">
+            <column ascending="true" name="us_id"/>
+         </index>
+         <index name="us_key_idx" unique="true">
+            <column ascending="true" name="us_key"/>
+         </index>
+         <index name="us_timestamp_idx" unique="false">
+            <column ascending="true" name="us_timestamp"/>
+         </index>
+         <index name="us_user_idx" unique="false">
+            <column ascending="true" name="us_user"/>
+         </index>
+      </table>
+      <table name="user_former_groups" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="ufg_user" nullable="true" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="user_former_groups_ufg_user_fkey" implied="false" onDeleteCascade="true" schema="public" table="mwuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="ufg_group" nullable="false" remarks="" size="2147483647" type="text"/>
+         <index name="ufg_user_group" unique="true">
+            <column ascending="true" name="ufg_user"/>
+            <column ascending="true" name="ufg_group"/>
+         </index>
+      </table>
+      <table name="user_groups" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="ug_user" nullable="true" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="user_groups_ug_user_fkey" implied="false" onDeleteCascade="true" schema="public" table="mwuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="ug_group" nullable="false" remarks="" size="2147483647" type="text"/>
+         <index name="user_groups_unique" unique="true">
+            <column ascending="true" name="ug_user"/>
+            <column ascending="true" name="ug_group"/>
+         </index>
+      </table>
+      <table name="user_newtalk" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="user_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="user_newtalk_user_id_fkey" implied="false" onDeleteCascade="true" schema="public" table="mwuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="user_ip" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="2" name="user_last_timestamp" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <index name="user_newtalk_id_idx" unique="false">
+            <column ascending="true" name="user_id"/>
+         </index>
+         <index name="user_newtalk_ip_idx" unique="false">
+            <column ascending="true" name="user_ip"/>
+         </index>
+      </table>
+      <table name="user_properties" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="up_user" nullable="true" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="user_properties_up_user_fkey" implied="false" onDeleteCascade="true" schema="public" table="mwuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="up_property" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="up_value" nullable="true" remarks="" size="2147483647" type="text"/>
+         <index name="user_properties_property" unique="false">
+            <column ascending="true" name="up_property"/>
+         </index>
+         <index name="user_properties_user_property" unique="true">
+            <column ascending="true" name="up_user"/>
+            <column ascending="true" name="up_property"/>
+         </index>
+      </table>
+      <table name="valid_tag" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="vt_tag" nullable="false" remarks="" size="2147483647" type="text"/>
+         <primaryKey column="vt_tag" sequenceNumberInPK="1"/>
+         <index name="valid_tag_pkey" unique="true">
+            <column ascending="true" name="vt_tag"/>
+         </index>
+      </table>
+      <table name="watchlist" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="wl_user" nullable="false" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="watchlist_wl_user_fkey" implied="false" onDeleteCascade="true" schema="public" table="mwuser"/>
+         </column>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="1" name="wl_namespace" nullable="false" remarks="" size="5" type="int2"/>
+         <column autoUpdated="false" digits="0" id="2" name="wl_title" nullable="false" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="3" name="wl_notificationtimestamp" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <index name="wl_user" unique="false">
+            <column ascending="true" name="wl_user"/>
+         </index>
+         <index name="wl_user_namespace_title" unique="true">
+            <column ascending="true" name="wl_namespace"/>
+            <column ascending="true" name="wl_title"/>
+            <column ascending="true" name="wl_user"/>
+         </index>
+         <index name="wl_user_notificationtimestamp" unique="false">
+            <column ascending="true" name="wl_user"/>
+            <column ascending="true" name="wl_notificationtimestamp"/>
+         </index>
+      </table>
+   </tables>
+</database>

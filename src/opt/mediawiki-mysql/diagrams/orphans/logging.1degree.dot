@@ -1,0 +1,41 @@
+// dot 2.38.0 on Linux 3.14.35-28.38.amzn1.x86_64
+// SchemaSpy rev Unknown
+digraph "logging" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "logging" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">logging</TD></TR>
+      <TR><TD PORT="log_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">log_id</TD></TR>
+      <TR><TD PORT="log_type" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">log_type</TD></TR>
+      <TR><TD PORT="log_action" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">log_action</TD></TR>
+      <TR><TD PORT="log_timestamp" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">log_timestamp</TD></TR>
+      <TR><TD PORT="log_user" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">log_user</TD></TR>
+      <TR><TD PORT="log_user_text" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">log_user_text</TD></TR>
+      <TR><TD PORT="log_namespace" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">log_namespace</TD></TR>
+      <TR><TD PORT="log_title" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">log_title</TD></TR>
+      <TR><TD PORT="log_page" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">log_page</TD></TR>
+      <TR><TD PORT="log_comment" COLSPAN="3" ALIGN="LEFT">log_comment</TD></TR>
+      <TR><TD PORT="log_params" COLSPAN="3" ALIGN="LEFT">log_params</TD></TR>
+      <TR><TD PORT="log_deleted" COLSPAN="3" ALIGN="LEFT">log_deleted</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/logging.html"
+    tooltip="logging"
+  ];
+}

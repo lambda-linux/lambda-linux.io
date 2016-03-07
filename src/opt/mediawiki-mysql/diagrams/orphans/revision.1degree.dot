@@ -1,0 +1,43 @@
+// dot 2.38.0 on Linux 3.14.35-28.38.amzn1.x86_64
+// SchemaSpy rev Unknown
+digraph "revision" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "revision" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">revision</TD></TR>
+      <TR><TD PORT="rev_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">rev_id</TD></TR>
+      <TR><TD PORT="rev_page" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">rev_page</TD></TR>
+      <TR><TD PORT="rev_text_id" COLSPAN="3" ALIGN="LEFT">rev_text_id</TD></TR>
+      <TR><TD PORT="rev_comment" COLSPAN="3" ALIGN="LEFT">rev_comment</TD></TR>
+      <TR><TD PORT="rev_user" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">rev_user</TD></TR>
+      <TR><TD PORT="rev_user_text" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">rev_user_text</TD></TR>
+      <TR><TD PORT="rev_timestamp" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">rev_timestamp</TD></TR>
+      <TR><TD PORT="rev_minor_edit" COLSPAN="3" ALIGN="LEFT">rev_minor_edit</TD></TR>
+      <TR><TD PORT="rev_deleted" COLSPAN="3" ALIGN="LEFT">rev_deleted</TD></TR>
+      <TR><TD PORT="rev_len" COLSPAN="3" ALIGN="LEFT">rev_len</TD></TR>
+      <TR><TD PORT="rev_parent_id" COLSPAN="3" ALIGN="LEFT">rev_parent_id</TD></TR>
+      <TR><TD PORT="rev_sha1" COLSPAN="3" ALIGN="LEFT">rev_sha1</TD></TR>
+      <TR><TD PORT="rev_content_model" COLSPAN="3" ALIGN="LEFT">rev_content_model</TD></TR>
+      <TR><TD PORT="rev_content_format" COLSPAN="3" ALIGN="LEFT">rev_content_format</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/revision.html"
+    tooltip="revision"
+  ];
+}

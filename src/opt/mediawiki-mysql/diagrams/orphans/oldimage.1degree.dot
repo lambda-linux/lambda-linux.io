@@ -1,0 +1,45 @@
+// dot 2.38.0 on Linux 3.14.35-28.38.amzn1.x86_64
+// SchemaSpy rev Unknown
+digraph "oldimage" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "oldimage" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">oldimage</TD></TR>
+      <TR><TD PORT="oi_name" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">oi_name</TD></TR>
+      <TR><TD PORT="oi_archive_name" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">oi_archive_name</TD></TR>
+      <TR><TD PORT="oi_size" COLSPAN="3" ALIGN="LEFT">oi_size</TD></TR>
+      <TR><TD PORT="oi_width" COLSPAN="3" ALIGN="LEFT">oi_width</TD></TR>
+      <TR><TD PORT="oi_height" COLSPAN="3" ALIGN="LEFT">oi_height</TD></TR>
+      <TR><TD PORT="oi_bits" COLSPAN="3" ALIGN="LEFT">oi_bits</TD></TR>
+      <TR><TD PORT="oi_description" COLSPAN="3" ALIGN="LEFT">oi_description</TD></TR>
+      <TR><TD PORT="oi_user" COLSPAN="3" ALIGN="LEFT">oi_user</TD></TR>
+      <TR><TD PORT="oi_user_text" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">oi_user_text</TD></TR>
+      <TR><TD PORT="oi_timestamp" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">oi_timestamp</TD></TR>
+      <TR><TD PORT="oi_metadata" COLSPAN="3" ALIGN="LEFT">oi_metadata</TD></TR>
+      <TR><TD PORT="oi_media_type" COLSPAN="3" ALIGN="LEFT">oi_media_type</TD></TR>
+      <TR><TD PORT="oi_major_mime" COLSPAN="3" ALIGN="LEFT">oi_major_mime</TD></TR>
+      <TR><TD PORT="oi_minor_mime" COLSPAN="3" ALIGN="LEFT">oi_minor_mime</TD></TR>
+      <TR><TD PORT="oi_deleted" COLSPAN="3" ALIGN="LEFT">oi_deleted</TD></TR>
+      <TR><TD PORT="oi_sha1" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">oi_sha1</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/oldimage.html"
+    tooltip="oldimage"
+  ];
+}

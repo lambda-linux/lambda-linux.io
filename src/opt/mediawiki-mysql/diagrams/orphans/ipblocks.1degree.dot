@@ -1,0 +1,47 @@
+// dot 2.38.0 on Linux 3.14.35-28.38.amzn1.x86_64
+// SchemaSpy rev Unknown
+digraph "ipblocks" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "ipblocks" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">ipblocks</TD></TR>
+      <TR><TD PORT="ipb_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">ipb_id</TD></TR>
+      <TR><TD PORT="ipb_address" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">ipb_address</TD></TR>
+      <TR><TD PORT="ipb_user" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">ipb_user</TD></TR>
+      <TR><TD PORT="ipb_by" COLSPAN="3" ALIGN="LEFT">ipb_by</TD></TR>
+      <TR><TD PORT="ipb_by_text" COLSPAN="3" ALIGN="LEFT">ipb_by_text</TD></TR>
+      <TR><TD PORT="ipb_reason" COLSPAN="3" ALIGN="LEFT">ipb_reason</TD></TR>
+      <TR><TD PORT="ipb_timestamp" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">ipb_timestamp</TD></TR>
+      <TR><TD PORT="ipb_auto" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">ipb_auto</TD></TR>
+      <TR><TD PORT="ipb_anon_only" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">ipb_anon_only</TD></TR>
+      <TR><TD PORT="ipb_create_account" COLSPAN="3" ALIGN="LEFT">ipb_create_account</TD></TR>
+      <TR><TD PORT="ipb_enable_autoblock" COLSPAN="3" ALIGN="LEFT">ipb_enable_autoblock</TD></TR>
+      <TR><TD PORT="ipb_expiry" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">ipb_expiry</TD></TR>
+      <TR><TD PORT="ipb_range_start" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">ipb_range_start</TD></TR>
+      <TR><TD PORT="ipb_range_end" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">ipb_range_end</TD></TR>
+      <TR><TD PORT="ipb_deleted" COLSPAN="3" ALIGN="LEFT">ipb_deleted</TD></TR>
+      <TR><TD PORT="ipb_block_email" COLSPAN="3" ALIGN="LEFT">ipb_block_email</TD></TR>
+      <TR><TD PORT="ipb_allow_usertalk" COLSPAN="3" ALIGN="LEFT">ipb_allow_usertalk</TD></TR>
+      <TR><TD PORT="ipb_parent_block_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">ipb_parent_block_id</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/ipblocks.html"
+    tooltip="ipblocks"
+  ];
+}

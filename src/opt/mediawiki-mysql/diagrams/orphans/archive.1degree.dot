@@ -1,0 +1,48 @@
+// dot 2.38.0 on Linux 3.14.35-28.38.amzn1.x86_64
+// SchemaSpy rev Unknown
+digraph "archive" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "archive" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">archive</TD></TR>
+      <TR><TD PORT="ar_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">ar_id</TD></TR>
+      <TR><TD PORT="ar_namespace" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">ar_namespace</TD></TR>
+      <TR><TD PORT="ar_title" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">ar_title</TD></TR>
+      <TR><TD PORT="ar_text" COLSPAN="3" ALIGN="LEFT">ar_text</TD></TR>
+      <TR><TD PORT="ar_comment" COLSPAN="3" ALIGN="LEFT">ar_comment</TD></TR>
+      <TR><TD PORT="ar_user" COLSPAN="3" ALIGN="LEFT">ar_user</TD></TR>
+      <TR><TD PORT="ar_user_text" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">ar_user_text</TD></TR>
+      <TR><TD PORT="ar_timestamp" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">ar_timestamp</TD></TR>
+      <TR><TD PORT="ar_minor_edit" COLSPAN="3" ALIGN="LEFT">ar_minor_edit</TD></TR>
+      <TR><TD PORT="ar_flags" COLSPAN="3" ALIGN="LEFT">ar_flags</TD></TR>
+      <TR><TD PORT="ar_rev_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">ar_rev_id</TD></TR>
+      <TR><TD PORT="ar_text_id" COLSPAN="3" ALIGN="LEFT">ar_text_id</TD></TR>
+      <TR><TD PORT="ar_deleted" COLSPAN="3" ALIGN="LEFT">ar_deleted</TD></TR>
+      <TR><TD PORT="ar_len" COLSPAN="3" ALIGN="LEFT">ar_len</TD></TR>
+      <TR><TD PORT="ar_page_id" COLSPAN="3" ALIGN="LEFT">ar_page_id</TD></TR>
+      <TR><TD PORT="ar_parent_id" COLSPAN="3" ALIGN="LEFT">ar_parent_id</TD></TR>
+      <TR><TD PORT="ar_sha1" COLSPAN="3" ALIGN="LEFT">ar_sha1</TD></TR>
+      <TR><TD PORT="ar_content_model" COLSPAN="3" ALIGN="LEFT">ar_content_model</TD></TR>
+      <TR><TD PORT="ar_content_format" COLSPAN="3" ALIGN="LEFT">ar_content_format</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/archive.html"
+    tooltip="archive"
+  ];
+}

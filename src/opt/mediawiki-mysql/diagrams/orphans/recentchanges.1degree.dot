@@ -1,0 +1,53 @@
+// dot 2.38.0 on Linux 3.14.35-28.38.amzn1.x86_64
+// SchemaSpy rev Unknown
+digraph "recentchanges" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "recentchanges" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">recentchanges</TD></TR>
+      <TR><TD PORT="rc_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">rc_id</TD></TR>
+      <TR><TD PORT="rc_timestamp" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">rc_timestamp</TD></TR>
+      <TR><TD PORT="rc_user" COLSPAN="3" ALIGN="LEFT">rc_user</TD></TR>
+      <TR><TD PORT="rc_user_text" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">rc_user_text</TD></TR>
+      <TR><TD PORT="rc_namespace" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">rc_namespace</TD></TR>
+      <TR><TD PORT="rc_title" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">rc_title</TD></TR>
+      <TR><TD PORT="rc_comment" COLSPAN="3" ALIGN="LEFT">rc_comment</TD></TR>
+      <TR><TD PORT="rc_minor" COLSPAN="3" ALIGN="LEFT">rc_minor</TD></TR>
+      <TR><TD PORT="rc_bot" COLSPAN="3" ALIGN="LEFT">rc_bot</TD></TR>
+      <TR><TD PORT="rc_new" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">rc_new</TD></TR>
+      <TR><TD PORT="rc_cur_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">rc_cur_id</TD></TR>
+      <TR><TD PORT="rc_this_oldid" COLSPAN="3" ALIGN="LEFT">rc_this_oldid</TD></TR>
+      <TR><TD PORT="rc_last_oldid" COLSPAN="3" ALIGN="LEFT">rc_last_oldid</TD></TR>
+      <TR><TD PORT="rc_type" COLSPAN="3" ALIGN="LEFT">rc_type</TD></TR>
+      <TR><TD PORT="rc_source" COLSPAN="3" ALIGN="LEFT">rc_source</TD></TR>
+      <TR><TD PORT="rc_patrolled" COLSPAN="3" ALIGN="LEFT">rc_patrolled</TD></TR>
+      <TR><TD PORT="rc_ip" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">rc_ip</TD></TR>
+      <TR><TD PORT="rc_old_len" COLSPAN="3" ALIGN="LEFT">rc_old_len</TD></TR>
+      <TR><TD PORT="rc_new_len" COLSPAN="3" ALIGN="LEFT">rc_new_len</TD></TR>
+      <TR><TD PORT="rc_deleted" COLSPAN="3" ALIGN="LEFT">rc_deleted</TD></TR>
+      <TR><TD PORT="rc_logid" COLSPAN="3" ALIGN="LEFT">rc_logid</TD></TR>
+      <TR><TD PORT="rc_log_type" COLSPAN="3" ALIGN="LEFT">rc_log_type</TD></TR>
+      <TR><TD PORT="rc_log_action" COLSPAN="3" ALIGN="LEFT">rc_log_action</TD></TR>
+      <TR><TD PORT="rc_params" COLSPAN="3" ALIGN="LEFT">rc_params</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/recentchanges.html"
+    tooltip="recentchanges"
+  ];
+}
