@@ -1,0 +1,72 @@
+<dom-module id="home-epll">
+  <template>
+    <style>
+      :host {
+        @apply(--center-justified);
+        @apply(--layout-vertical);
+
+        display: block;
+        margin: 16px auto 0;
+        max-width: 948px;
+      }
+
+      #homeEPLLSection {
+        margin: 0 24px;
+        padding: 0 24px;
+      }
+
+      .epll-heading {
+        @apply(--paper-font-subhead);
+
+        color: var(--paper-grey-900);
+        max-width: 720px;
+        text-align: center;
+      }
+
+      .epll-content {
+        margin-top: 12px;
+      }
+
+      .epll-thankyou {
+        @apply(--paper-font-subhead);
+
+        color: var(--paper-grey-900);
+        margin-top: 24px;
+        max-width: 720px;
+        text-align: center;
+      }
+
+      ::content a {
+       color: var(--paper-light-blue-a700);
+      }
+    </style>
+    <div id="homeEPLLSection">
+      <div class="layout vertical center-justified">
+        <div class="layout horizontal center-justified">
+          <div class="epll-heading">
+             <content select="[epllhead]"></content>
+          </div>
+        </div>
+      </div>
+      <div class="layout vertical center-justified epll-content">
+        <div class="layout horizontal center-justified">
+          <div>
+             <content select="[epllstep]"></content>
+          </div>
+        </div>
+      </div>
+      <div class="layout vertical center-justified">
+        <div class="layout horizontal center-justified">
+          <div class="epll-thankyou">
+             <content select="[epllthankyou]"></content>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'home-epll'
+    });
+  </script>
+</dom-module>

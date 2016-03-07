@@ -1,0 +1,114 @@
+<dom-module id="home-hero">
+  <template>
+    <style>
+      :host {
+        @apply(--center-justified);
+        @apply(--layout-vertical);
+
+        display: block;
+        margin: 16px auto 0;
+        max-width: 948px;
+      }
+
+      #homeHeroSection {
+        @apply(--shadow-elevation-2dp);
+
+        background-color: var(--paper-grey-400);
+        background-image: url({{ assetPath "images/mooning.png" }});
+        margin: 0 24px;
+        padding: 24px;
+      }
+
+      .hero-logo {
+        background: url({{ assetPath "images/hero.png" }}) center center /contain no-repeat;
+        height: 96px;
+        padding-bottom: 12px;
+        width: 96px;
+      }
+      @media (-webkit-min-device-pixel-ratio:2) and (min-resolution: 192dpi) {
+        .hero-logo {
+          background: url({{ assetPath "images/hero@2x.png" }}) center center /contain no-repeat;
+        }
+      }
+
+      .announcing {
+        @apply(--paper-font-subhead);
+
+        color: #fff;
+        padding-top: 12px;
+        text-align: center;
+      }
+
+      .heading {
+        @apply(--paper-font-display1);
+
+        color: #fff;
+        padding-top: 6px;
+        text-align: center;
+      }
+
+      .sub-heading {
+        @apply(--paper-font-common-base);
+
+        color: #fff;
+        font-size: 20px;
+        font-weight: 400;
+        padding-top: 6px;
+        text-align: center;
+        max-width: 720px;
+      }
+
+      .hero-button {
+        padding-top: 24px;
+      }
+
+      ::content paper-button.hero-button {
+        @apply(--paper-font-common-base);
+        @apply(--paper-font-common-nowrap);
+
+        background-color: var(--paper-grey-400);
+        color: var(--paper-grey-50) !important;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    </style>
+    <div id="homeHeroSection">
+      <div class="layout vertical center-justified">
+        <div class="layout horizontal center-justified">
+          <div class="hero-logo"></div>
+        </div>
+      </div>
+      <div class="layout vertical center-justified">
+        <div class="layout horizontal center-justified">
+          <div class="announcing">ANNOUNCING</div>
+        </div>
+      </div>
+      <div class="layout vertical center-justified">
+        <div class="layout horizontal center-justified">
+          <div class="heading">
+            <content select="[herohead]"></content>
+          </div>
+        </div>
+      </div>
+      <div class="layout vertical center-justified">
+        <div class="layout horizontal center-justified">
+          <div class="sub-heading">
+            <content select="[herosubhead]"></content>
+          </div>
+        </div>
+      </div>
+      <div class="layout vertical center-justified">
+        <div class="layout horizontal center-justified">
+          <div class="hero-button">
+            <content select="[herobutton]"></content>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'home-hero'
+    });
+  </script>
+</dom-module>

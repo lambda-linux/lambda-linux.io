@@ -1,0 +1,40 @@
+<dom-module id="home-getting-started">
+  <template>
+    <style>
+      :host {
+        @apply(--center-justified);
+        @apply(--layout-vertical);
+
+        display: block;
+        margin: 16px auto 0;
+        max-width: 948px;
+      }
+
+      #homeGettingStartedSection {
+        margin: 0 24px;
+        padding: 24px 24px 0;
+      }
+
+      .getting-started {
+        @apply(--paper-font-headline);
+
+        color: var(--paper-grey-900);
+        text-align: center;
+      }
+    </style>
+    <div id="homeGettingStartedSection">
+      <div class="layout vertical center-justified">
+        <div class="layout horizontal center-justified">
+          <div class="getting-started">
+            <content></content>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'home-getting-started'
+    });
+  </script>
+</dom-module>
