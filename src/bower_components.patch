@@ -1,6 +1,6 @@
-From 3eec6c9ca250d184c96b7ec5a1e45c7b28a58335 Mon Sep 17 00:00:00 2001
+From 1e09d15d985189d31378672ba058a89da2147cf6 Mon Sep 17 00:00:00 2001
 From: Rajiv M Ranganath <rajiv.ranganath@atihita.com>
-Date: Tue, 23 Feb 2016 19:47:44 +0000
+Date: Fri, 26 Feb 2016 18:51:24 +0000
 Subject: [PATCH] Add `.bower.json`
 
 ---
@@ -19,6 +19,7 @@ Subject: [PATCH] Add `.bower.json`
  iron-resizable-behavior/.bower.json       | 41 ++++++++++++++++++++++++
  iron-selector/.bower.json                 | 43 +++++++++++++++++++++++++
  iron-validatable-behavior/.bower.json     | 44 ++++++++++++++++++++++++++
+ page/.bower.json                          | 41 ++++++++++++++++++++++++
  paper-behaviors/.bower.json               | 51 ++++++++++++++++++++++++++++++
  paper-button/.bower.json                  | 52 +++++++++++++++++++++++++++++++
  paper-material/.bower.json                | 44 ++++++++++++++++++++++++++
@@ -26,7 +27,7 @@ Subject: [PATCH] Add `.bower.json`
  paper-styles/.bower.json                  | 42 +++++++++++++++++++++++++
  polymer/.bower.json                       | 37 ++++++++++++++++++++++
  webcomponentsjs/.bower.json               | 30 ++++++++++++++++++
- 22 files changed, 930 insertions(+)
+ 23 files changed, 971 insertions(+)
  create mode 100644 font-roboto/.bower.json
  create mode 100644 iron-a11y-keys-behavior/.bower.json
  create mode 100644 iron-behaviors/.bower.json
@@ -42,6 +43,7 @@ Subject: [PATCH] Add `.bower.json`
  create mode 100644 iron-resizable-behavior/.bower.json
  create mode 100644 iron-selector/.bower.json
  create mode 100644 iron-validatable-behavior/.bower.json
+ create mode 100644 page/.bower.json
  create mode 100644 paper-behaviors/.bower.json
  create mode 100644 paper-button/.bower.json
  create mode 100644 paper-material/.bower.json
@@ -782,6 +784,54 @@ index 0000000..62842a4
 +  "_source": "git://github.com/PolymerElements/iron-validatable-behavior.git",
 +  "_target": "^1.0.0",
 +  "_originalSource": "PolymerElements/iron-validatable-behavior"
++}
+\ No newline at end of file
+diff --git a/page/.bower.json b/page/.bower.json
+new file mode 100644
+index 0000000..3fcef7e
+--- /dev/null
++++ b/page/.bower.json
+@@ -0,0 +1,41 @@
++{
++  "name": "page",
++  "description": "Tiny client-side router",
++  "keywords": [
++    "page",
++    "route",
++    "router",
++    "routes",
++    "pushState"
++  ],
++  "main": "page.js",
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/visionmedia/page.js"
++  },
++  "ignore": [
++    ".gitignore",
++    ".npmignore",
++    ".travis.yml",
++    "component.json",
++    "examples",
++    "History.md",
++    "Makefile",
++    "package.json",
++    "Readme.md",
++    "test"
++  ],
++  "license": "MIT",
++  "homepage": "https://github.com/visionmedia/page.js",
++  "version": "1.6.4",
++  "_release": "1.6.4",
++  "_resolution": {
++    "type": "version",
++    "tag": "1.6.4",
++    "commit": "d11509f1f0fed0309391d995919c25dce84b8abd"
++  },
++  "_source": "git://github.com/visionmedia/page.js.git",
++  "_target": "~1.6.4",
++  "_originalSource": "visionmedia/page.js",
++  "_direct": true
 +}
 \ No newline at end of file
 diff --git a/paper-behaviors/.bower.json b/paper-behaviors/.bower.json
