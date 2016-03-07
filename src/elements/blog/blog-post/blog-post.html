@@ -1,0 +1,228 @@
+<dom-module id="blog-post">
+  <template>
+    <style>
+      :host {
+        @apply(--layout-vertical);
+
+        display: block;
+      }
+
+      #blogPostHeaderSection {
+        border-bottom: 1px solid var(--paper-grey-300);
+      }
+
+      .blog-post-header {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 948px;
+        padding: 6px 16px;
+      }
+
+      .blog-post-header-main-text {
+        @apply(--paper-font-headline);
+
+        color: var(--paper-grey-800);
+      }
+
+      .blog-post-header-rss-text {
+        @apply(--paper-font-caption);
+
+        color: #f93;
+      }
+
+      .blog-post-body {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 948px;
+        padding: 0 16px;
+      }
+
+      ::content h1.blog-post-content-title {
+        @apply(--paper-font-headline);
+
+        margin-bottom: 4px;
+      }
+
+      ::content h1.blog-post-content-title a {
+        color: var(--paper-light-blue-a700);
+      }
+
+      ::content iron-icon.blog-post-content-meta-icon {
+        height: 16px;
+        width: 16px;
+        padding: 2px;
+      }
+
+      ::content .blog-post-content-meta {
+        @apply(--paper-font-common);
+
+        font-size: 12px;
+        color: var(--paper-grey-500);
+      }
+
+      ::content .pagination {
+        margin: 36px auto 0;
+      }
+
+      ::content .pagination .previous {
+        margin-left: 20px;
+        text-align: start;
+      }
+
+      ::content .pagination .next {
+        margin-right: 20px;
+        text-align: end;
+      }
+
+      ::content .pagination .pagination-text {
+        @apply(--paper-font-menu);
+
+        color: var(--paper-light-blue-a700);
+      }
+
+      ::content .markdown-body p {
+        @apply(--paper-font-common-base);
+
+        color: var(--paper-grey-900);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+
+      ::content .markdown-body a {
+        color: var(--paper-light-blue-a700);
+      }
+
+      ::content .markdown-body h2 {
+        @apply(--paper-font-headline);
+
+        color: var(--paper-grey-900);
+        border-bottom: 1px solid var(--paper-grey-300);
+      }
+
+      ::content .markdown-body h2 > code {
+        font-size: 20px !important;
+      }
+
+      ::content .markdown-body h3 {
+        @apply(--paper-font-title);
+
+        color: var(--paper-grey-900);
+        border-bottom: 1px solid var(--paper-grey-300);
+      }
+
+      ::content .markdown-body code {
+        @apply(--paper-font-code1);
+
+        color: var(--paper-grey-900);
+        padding: 2px;
+        background-color: var(--paper-grey-100);
+        border-radius: 4px;
+      }
+
+      ::content .markdown-body ol {
+        color: var(--paper-grey-900);
+      }
+
+      ::content .markdown-body ul {
+        color: var(--paper-grey-900);
+      }
+
+      ::content .markdown-body img {
+        border-radius: 4px;
+        padding: 4px;
+        border: 1px solid var(--paper-grey-300);
+      }
+
+      ::content .markdown-body .highlight pre {
+        background-color: var(--paper-grey-100);
+        border-radius: 4px;
+        padding: 8px;
+        border: 1px solid var(--paper-grey-300);
+      }
+
+      ::content .markdown-body .c { color: #999988; font-style: italic }
+      ::content .markdown-body .err { color: #a61717; background-color: #e3d2d2 }
+      ::content .markdown-body .k { color: #000000; font-weight: bold }
+      ::content .markdown-body .o { color: #000000; font-weight: bold }
+      ::content .markdown-body .cm { color: #999988; font-style: italic }
+      ::content .markdown-body .cp { color: #999999; font-weight: bold; font-style: italic }
+      ::content .markdown-body .c1 { color: #999988; font-style: italic }
+      ::content .markdown-body .cs { color: #999999; font-weight: bold; font-style: italic }
+      ::content .markdown-body .gd { color: #000000; background-color: #ffdddd }
+      ::content .markdown-body .ge { color: #000000; font-style: italic }
+      ::content .markdown-body .gr { color: #aa0000 }
+      ::content .markdown-body .gh { color: #999999 }
+      ::content .markdown-body .gi { color: #000000; background-color: #ddffdd }
+      ::content .markdown-body .go { color: #888888 }
+      ::content .markdown-body .gp { color: #555555 }
+      ::content .markdown-body .gs { font-weight: bold }
+      ::content .markdown-body .gu { color: #aaaaaa }
+      ::content .markdown-body .gt { color: #aa0000 }
+      ::content .markdown-body .kc { color: #000000; font-weight: bold }
+      ::content .markdown-body .kd { color: #000000; font-weight: bold }
+      ::content .markdown-body .kn { color: #000000; font-weight: bold }
+      ::content .markdown-body .kp { color: #000000; font-weight: bold }
+      ::content .markdown-body .kr { color: #000000; font-weight: bold }
+      ::content .markdown-body .kt { color: #445588; font-weight: bold }
+      ::content .markdown-body .m { color: #009999 }
+      ::content .markdown-body .s { color: #d01040 }
+      ::content .markdown-body .na { color: #008080 }
+      ::content .markdown-body .nb { color: #0086B3 }
+      ::content .markdown-body .nc { color: #445588; font-weight: bold }
+      ::content .markdown-body .no { color: #008080 }
+      ::content .markdown-body .nd { color: #3c5d5d; font-weight: bold }
+      ::content .markdown-body .ni { color: #800080 }
+      ::content .markdown-body .ne { color: #990000; font-weight: bold }
+      ::content .markdown-body .nf { color: #990000; font-weight: bold }
+      ::content .markdown-body .nl { color: #990000; font-weight: bold }
+      ::content .markdown-body .nn { color: #555555 }
+      ::content .markdown-body .nt { color: #000080 }
+      ::content .markdown-body .nv { color: #008080 }
+      ::content .markdown-body .ow { color: #000000; font-weight: bold }
+      ::content .markdown-body .w { color: #bbbbbb }
+      ::content .markdown-body .mf { color: #009999 }
+      ::content .markdown-body .mh { color: #009999 }
+      ::content .markdown-body .mi { color: #009999 }
+      ::content .markdown-body .mo { color: #009999 }
+      ::content .markdown-body .sb { color: #d01040 }
+      ::content .markdown-body .sc { color: #d01040 }
+      ::content .markdown-body .sd { color: #d01040 }
+      ::content .markdown-body .s2 { color: #d01040 }
+      ::content .markdown-body .se { color: #d01040 }
+      ::content .markdown-body .sh { color: #d01040 }
+      ::content .markdown-body .si { color: #d01040 }
+      ::content .markdown-body .sx { color: #d01040 }
+      ::content .markdown-body .sr { color: #009926 }
+      ::content .markdown-body .s1 { color: #d01040 }
+      ::content .markdown-body .ss { color: #990073 }
+      ::content .markdown-body .bp { color: #999999 }
+      ::content .markdown-body .vc { color: #008080 }
+      ::content .markdown-body .vg { color: #008080 }
+      ::content .markdown-body .vi { color: #008080 }
+      ::content .markdown-body .il { color: #009999 }
+    </style>
+    <div id="blogPostHeaderSection">
+      <div class="layout vertical center-justified blog-post-header">
+        <div class="layout horizontal center justified">
+          <div class="blog-post-header-main-text">Blog</div>
+          <div class="blog-post-header-rss-text"><a href="/blog/feed.xml">RSS</a></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="layout vertical center-justified blog-post-body">
+        <div>
+          <content></content>
+        </div>
+      </div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'blog-post'
+    });
+  </script>
+</dom-module>
