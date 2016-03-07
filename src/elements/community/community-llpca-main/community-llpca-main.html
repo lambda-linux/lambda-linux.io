@@ -1,0 +1,115 @@
+<dom-module id="community-llpca-main">
+  <template>
+    <style>
+      :host {
+        @apply(--layout-vertical);
+
+        display: block;
+      }
+
+      #communityLLPCAMainHeaderSection {
+        border-bottom: 1px solid var(--paper-grey-300);
+      }
+
+      .community-llpca-main-header {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 948px;
+        padding: 6px 16px;
+      }
+
+      .community-llpca-main-header-main-text {
+        @apply(--paper-font-headline);
+
+        color: var(--paper-grey-800);
+      }
+
+      .community-llpca-main-body {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 948px;
+        padding: 0 16px;
+      }
+
+      ::content p {
+        @apply(--paper-font-common-base);
+
+        color: var(--paper-grey-900);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+
+      ::content a {
+        color: var(--paper-light-blue-a700);
+      }
+
+      ::content code {
+        @apply(--paper-font-code1);
+
+        color: var(--paper-grey-900);
+      }
+
+      ::content ol {
+        color: var(--paper-grey-900);
+      }
+
+      ::content ul {
+        color: var(--paper-grey-900);
+      }
+
+      ::content h1.community-llpca-main-heading {
+        @apply(--paper-font-title);
+
+        color: var(--paper-grey-900);
+        margin-bottom: 4px;
+        padding-top: 10px;
+      }
+
+      ::content h2.community-llpca-main-sub-heading {
+        @apply(--paper-font-common-base);
+
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        margin: 0px;
+      }
+
+      ::content h2.community-llpca-main-sub-heading-bare {
+        @apply(--paper-font-common-base);
+
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        margin: 16px 0px 0px 0px;
+      }
+
+      ::content h3.community-llpca-main-sub-sub-heading {
+        @apply(--paper-font-common-base);
+
+        border-bottom: 1px solid var(--paper-grey-300);
+        font-size: 16px;
+        font-weight: 400;
+      }
+    </style>
+    <div id="communityLLPCAMainHeaderSection">
+      <div class="layout vertical center-justified community-llpca-main-header">
+        <div class="layout horizontal center start-justified">
+          <div class="community-llpca-main-header-main-text">Community</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="layout vertical center-justified community-llpca-main-body">
+        <content></content>
+      <div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'community-llpca-main'
+    });
+  </script>
+</dom-module>

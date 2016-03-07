@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0" name="viewport">
+<meta content="IE=Edge" http-equiv="X-UA-Compatible">
+<title>Community</title>
+
+<link rel="stylesheet" href="{{ assetPath "css/main.css" }}">
+
+<script src="{{ assetPath "js/webcomponents-lite.min.js" }}"></script>
+<link href="{{ assetPath "elements/elements.html" }}" rel="import">
+
+<style is="custom-style" include="shared-styles"></style>
+<link href="{{ assetPath "elements/community/elements.html" }}" rel="import">
+
+</head>
+
+<body unresolved>
+
+<template is="dom-bind" id="app">
+
+  <app-drawer-layout id="drawyerLayout" force-narrow drawer-position="right">
+
+{{> html-app_side_nav}}
+
+    <app-header-layout main>
+
+{{> html-app_main_header}}
+
+      <community-main>
+        <div>
+          <p>
+            Lambda Linux is a very young open-source project and community.
+          </p>
+          <p>
+            Even though as a project and community, we are very young, our foundation is built using some of the most proven, battle-hardened, enterprise-grade technologies that exists in Linux ecosystem.
+          </p>
+          <p>
+            Given our solid foundation, we hope to be able to do an awesome job for our users and contributors.
+          </p>
+          <p>
+            Following are the core values that define us.
+          </p>
+          <ul>
+            <li><p>We <i>care</i> about our users</p></li>
+            <li><p>We <i>plan</i> and <i>act</i> in the long-term interests of our users</p></li>
+          </ul>
+          <p>
+            While many aspects of our community and project will evolve, the best way to think of us is to ask this question &ndash; <i>If we built a Enterprise-grade Server-style Linux Operating System and Packages, learning from the community values of PostgreSQL, what would that look like and why?</i>
+          </p>
+        </div>
+
+        <div class="layout vertical">
+          <h2 class="community-main-sub-heading">User Resources</h2>
+        </div>
+
+        <div>
+          <ul>
+            <li><p><a href="/faqs/#!/general-questions">General FAQs</a></p></li>
+            <li><p><a href="/faqs/#!/technical-questions">Technical FAQs</a></p></li>
+          </ul>
+          <p>
+            If you have additional questions, please ask us on any of our <a href="/support/">support</a> channels.  </p>   <p>      As a user of our packages, we hope that you will be happy to note that our packages are <i>commercial friendly</i>. This means as you build and deliver your applications to your customers, you can freely use and redistribute unmodified versions of our binary RPMs in your Virtual Machines, Containers, etc.,
+          </p>
+          <p>
+            <i>Providing you, our users, with this freedom is very important to us!</i>
+          </p>
+          <p>
+            Our trademark policy is adapted from <a href="https://www.debian.org/trademark">Debian Trademark Policy</a>. You can review our trademark policy <a href="/community/lltp/">here</a>.
+          </p>
+        </div>
+
+        <div class="layout vertical">
+          <h2 class="community-main-sub-heading">Contributor Resources</h2>
+        </div>
+
+        <div>
+          <ul>
+            <li><a href="/faqs/#!/community-questions">Community FAQs</a></li>
+          </ul>
+          <p>
+            Our contributor agreement is adapted from <a href="https://fedoraproject.org/wiki/Legal:Fedora_Project_Contributor_Agreement">Fedora Project Contributors Agreement.</a>
+          </p>
+          <p>
+            You can review and sign <i>Lambda Linux Project Contributors Agreement</i> <a href="/community/llpca/">here</a>.
+          </p>
+        </div>
+      </community-main>
+
+{{> html-app_footer}}
+
+    </app-header-layout>
+  </app-drawer-layout>
+
+{{> html-app_media_query}}
+
+</template>
+<script>
+
+{{> js-app_drawer}}
+
+</script>
+</body>
+</html>

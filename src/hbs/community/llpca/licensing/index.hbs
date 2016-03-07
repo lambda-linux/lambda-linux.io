@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0" name="viewport">
+<meta content="IE=Edge" http-equiv="X-UA-Compatible">
+<title>Contributors Agreement</title>
+
+<link rel="stylesheet" href="{{ assetPath "css/main.css" }}">
+
+<script src="{{ assetPath "js/webcomponents-lite.min.js" }}"></script>
+<link href="{{ assetPath "elements/elements.html" }}" rel="import">
+
+<style is="custom-style" include="shared-styles"></style>
+<link href="{{ assetPath "elements/community/elements.html" }}" rel="import">
+
+</head>
+
+<body unresolved>
+
+<template is="dom-bind" id="app">
+
+  <app-drawer-layout id="drawyerLayout" force-narrow drawer-position="right">
+
+{{> html-app_side_nav}}
+
+    <app-header-layout main>
+
+{{> html-app_main_header}}
+
+      <community-llpca-main>
+
+        <div class="layout vertical">
+          <h1 class="community-llpca-main-heading">Lambda Linux Project Contributors Agreement</h1>
+        </div>
+
+        <div class="layout vertical">
+          <h2 class="community-llpca-main-sub-heading-bare">Acceptable Licenses For Lambda Linux</h2>
+        </div>
+
+        <div>
+          <p>
+            Please see <a href="https://fedoraproject.org/wiki/Licensing">https://fedoraproject.org/wiki/Licensing</a>
+          </p>
+        </div>
+
+        <div class="layout vertical">
+          <h2 id="modern-style-with-sublicense" class="community-llpca-main-sub-heading">Modern Style with sublicense</h2>
+        </div>
+
+        <div>
+          <p>
+            <code>Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd</code>
+          </p>
+          <p>
+            <code>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</code>
+          </p>
+          <p>
+            <code>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</code>
+          </p>
+          <p>
+            <code>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</code>
+          </p>
+        </div>
+
+      </community-llpca-main>
+
+{{> html-app_footer}}
+
+    </app-header-layout>
+  </app-drawer-layout>
+
+{{> html-app_media_query}}
+
+</template>
+<script>
+
+{{> js-app_drawer}}
+
+  window.addEventListener("WebComponentsReady", function() {
+    var top = function() {
+      el = document.querySelector("#communityLLPCAMainHeaderSection");
+      el.scrollIntoView(false);
+    };
+
+    page.base("/community/llpca/licensing/");
+
+    page("/", top);
+
+    page("/faqs/#!/", function(ctx, next) {
+      document.location.replace(window.location.origin + "/faqs/#!/")
+    });
+
+    page("/modern-style-with-sublicense", function(ctx, next) {
+      el = document.querySelector("#modern-style-with-sublicense");
+      el.scrollIntoView(true);
+    });
+
+    page({
+      hashbang: true
+    });
+  });
+</script>
+</body>
+</html>

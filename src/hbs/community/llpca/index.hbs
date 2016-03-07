@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0" name="viewport">
+<meta content="IE=Edge" http-equiv="X-UA-Compatible">
+<title>Contributors Agreement</title>
+
+<link rel="stylesheet" href="{{ assetPath "css/main.css" }}">
+
+<script src="{{ assetPath "js/webcomponents-lite.min.js" }}"></script>
+<link href="{{ assetPath "elements/elements.html" }}" rel="import">
+
+<style is="custom-style" include="shared-styles"></style>
+<link href="{{ assetPath "elements/community/elements.html" }}" rel="import">
+
+</head>
+
+<body unresolved>
+
+<template is="dom-bind" id="app">
+
+  <app-drawer-layout id="drawyerLayout" force-narrow drawer-position="right">
+
+{{> html-app_side_nav}}
+
+    <app-header-layout main>
+
+{{> html-app_main_header}}
+
+      <community-llpca-main>
+
+        <div class="layout vertical">
+          <h1 class="community-llpca-main-heading">Lambda Linux Project Contributors Agreement (Version 2014-11-30)</h1>
+        </div>
+
+        <div>
+          <p>
+            Our contributor agreement is adapted from <a href="https://fedoraproject.org/wiki/Legal:Fedora_Project_Contributor_Agreement">Fedora Project Contributors Agreement.</a> We would like to thank Fedora Project for creating it.
+          </p>
+        </div>
+
+        <div class="layout vertical">
+          <h2 class="community-llpca-main-sub-heading">Goal</h2>
+        </div>
+
+        <div>
+          <p>
+            We require that contributors to Lambda Linux (as defined below) agree to this Lambda Linux Project Contributor Agreement (LLPCA) to ensure that contributions to Lambda Linux have acceptable licensing terms.
+          </p>
+        </div>
+
+        <div class="layout vertical">
+          <h2 class="community-llpca-main-sub-heading">Non-Goals</h2>
+        </div>
+
+        <div>
+          <p>
+            The LLPCA does <b>not</b> somehow supersede the existing licensing terms that apply to Lambda Linux contributions. There are two important subpoints here.  First, the LLPCA does not apply to upstream code (or other material) that you didn't write; indeed, it would be preposterous for it to attempt to do so. Note the narrow way in which we have defined capital-c <i>"Contribution"</i>. Second, the main provision of the LLPCA specifies that a default license will apply to code that you wrote, but only to the extent that you have not bothered to put an explicit license on it. Therefore, the LLPCA is <b>not</b> some sort of special permissive license granted to any party, despite the explicit choice of a more restrictive license by you or by upstream developers.
+          </p>
+        </div>
+
+        <div class="layout vertical">
+          <h2 class="community-llpca-main-sub-heading">Terms</h2>
+        </div>
+
+        <div>
+          <h3 class="community-llpca-main-sub-sub-heading">0. Definitions.</h3>
+          <p>
+            <i>"Acceptable License For Lambda Linux"</i> means a license selected from the appropriate categorical sublist of the full list of acceptable licenses for Lambda Linux, currently located at <a href="/community/llpca/licensing/">https://lambda-linux.io/community/llpca/licensing/</a>, as that list may be revised from time to time by Atihita Inc. <i>"Acceptable Licenses For Lambda Linux"</i> means that full list.
+          </p>
+          <p>
+            <i>"CC-BY-SA"</i> means the Creative Commons Attribution-ShareAlike 3.0 Unported license, as published at <a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode">http://creativecommons.org/licenses/by-sa/3.0/legalcode</a>.
+          </p>
+          <p>
+            <i>"Code"</i> means (i) software code, (ii) any other functional material whose principal purpose is to control or facilitate the building of packages, such as an RPM spec file, (iii) font files, and (iv) other kinds of copyrightable material that Atihita Inc., has classified as <i>"code"</i> rather than <i>"content"</i>.
+          </p>
+          <p>
+            <i>"Content"</i> means any copyrightable material that is not Code, such as, without limitation, (i) non-functional data sets, (ii) documentation, (iii) wiki edits, (iv) music files, (v) graphic image files, (vi) help files, and (vii) other kinds of copyrightable material that Atihita Inc., has classified as <i>"content"</i> rather than <i>"code"</i>.
+          </p>
+          <p>
+            <i>"Contribution"</i> means a Work that You created, excluding any portion that was created by someone else. (For example, if You Submit a package to Lambda Linux, the spec file You write may be a Contribution, but all the upstream code in the associated SRPM that You did not write is not a Contribution for purposes of this LLPCA.) A Contribution consists either of Code or of Content.
+          </p>
+          <p>
+            <i>"Current Default License"</i>, with respect to a Contribution, means (i) if the Contribution is Code, the MIT License, and (ii) if the Contribution is Content, CC-BY-SA supplemented by Moral Rights Clause Waiver and GPL Relicensing Permission.
+          </p>
+          <p>
+            <i>"GPL"</i> means the GNU General Public License, version 2 or any later version published by the Free Software Foundation, or the GNU Affero General Public License, version 3 or any later version published by the Free Software Foundation.
+          </p>
+          <p>
+            <i>"GPL-Covered Derivative"</i> of a Contribution means an adaptation or derivative work of the Contribution, or a compilation that includes the Contribution (or such adaptation or derivative work), where such adaptation, derivative work, or compilation, if distributed or made available to the public, would be required to be licensed under the GPL because it is based on or includes a Work governed by the GPL.
+          </p>
+          <p>
+            <i>"GPL Relicensing Permission"</i>, with respect to a Contribution licensed under CC-BY-SA, means a grant of additional copyright permission to distribute or make available to the public a copy of a GPL-Covered Derivative of the Contribution under the terms of the applicable version of the GPL, with no conditions of CC-BY-SA that would be treated as <i>"further restrictions"</i> within the meaning of the applicable version of the GPL surviving such distribution with respect to that copy.
+          </p>
+          <p>
+            <i>"Lambda Linux"</i> means the community project led by Atihita Inc.
+          </p>
+          <p>
+            <i>"Lambda Linux Community"</i> (i) all Lambda Linux participants, and (ii) all persons receiving Contributions directly or indirectly from or through Lambda Linux.
+          </p>
+          <p>
+            <i>"Licensed"</i> means covered by explicit licensing terms that are conspicuous and readily discernible to recipients.</p>  <p><i>"MIT License"</i> means the license identified as <i>"Modern Style with    sublicense"</i> at <a href="/community/llpca/licensing/#!/modern-style-with-sublicense">https://lambda-linux.io/community/llpca/licensing/#!/modern-style-with-sublicense</a>
+          </p>
+          <p>
+            <i>"Moral Rights Clause Waiver"</i> means a waiver of the right to enforce,and an agreement not to assert, Section 4d of CC-BY-SA against Lambda Linux Community, to the fullest extent permitted by applicable law.
+          </p>
+          <p>
+            <i>"Submit"</i> means to use some mode of digital communication (for example,without limitation, mailing lists, bug tracking systems, and source code version control systems administered by Lambda Linux) to voluntarily provide a Contribution to Lambda Linux.</p>  <p><i>"Unlicensed"</i> means not Licensed.</p>  <p><i>"Work"</i> means a copyrightable work of authorship. A Work may be a portion of a larger Work, and a Work may be a modification of or addition to another Work.</p>  <p class="last"><i>"You"</i> means the individual accepting this instance of the LLPCA.
+          </p>
+          <h3 class="community-llpca-main-sub-sub-heading">1. Copyright Permission Required for All Contributions.</h3>
+          <p>
+            If You are not the copyright holder of a given Contribution that You  wish to Submit to Lambda Linux (for example, if Your employer or university holds copyright in it), it is Your responsibility to first obtain authorization from the copyright holder to Submit the Contribution under the terms of this LLPCA on behalf of, or otherwise with the permission of, that copyright holder. One form of such authorization is for the copyright holder to place, or permit You to place, an Acceptable License For Lambda Linux on the Contribution.
+          </p>
+          <h3 class="community-llpca-main-sub-sub-heading">2. Licensed Contributions.</h3>
+          <p>
+            If Your Contribution is Licensed, Your Contribution will be governed by the terms under which it has been licensed.
+          </p>
+          <h3 class="community-llpca-main-sub-sub-heading">3. Default Licensing of Unlicensed Contributions.</h3>
+          <p>
+            If You Submit an Unlicensed Contribution to Lambda Linux, the license to the Lambda Linux Community for that Contribution shall be the Current Default License.
+          </p>
+          <p>
+            Atihita Inc., may, by public announcement, subsequently designate an additional or alternative default license for a given category of Contribution (a <i>"Later Default License"</i>). A Later Default License shall be chosen from the appropriate categorical sublist of Acceptable Licenses For Lambda Linux.
+          </p>
+          <p>
+            Once a Later Default License has been designated, Your Unlicensed Contribution shall also be licensed to the Lambda Linux Community under that Later Default License. Such designation shall not affect the continuing applicability of the Current Default License to Your Contribution.
+          </p>
+          <p>
+            You consent to having Lambda Linux provide reasonable notice of Your licensing of Your Contribution under the Current Default License (and, if applicable, a Later Default License) in a manner determined by Lambda Linux.
+          </p>
+          <h3 class="community-llpca-main-sub-sub-heading">4. Public Domain United States Government Works.</h3>
+          <p>
+            Sections 1 through 3 of this LLPCA do not apply to any Contribution to the extent that it is a work of the United States Government for which copyright is unavailable under 17 U.S.C. 105.
+          </p>
+          <h3 class="community-llpca-main-sub-sub-heading">5. Acceptance.</h3>
+          <p>
+            You must signify Your assent to the terms of this LLPCA through specific electronic means established by Lambda Linux (such as by click-through acceptance means).
+          </p>
+        </div>
+
+        <div class="layout vertical">
+          <iframe src="https://docs.google.com/forms/d/1u5pnNnDUUyF3AkPI0nvo4kSvX5cViQGywHbPrrrGbTY/viewform?embedded=true" width="760" height="780" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+        </div>
+
+      </community-llpca-main>
+
+{{> html-app_footer}}
+
+    </app-header-layout>
+  </app-drawer-layout>
+
+{{> html-app_media_query}}
+
+</template>
+<script>
+
+{{> js-app_drawer}}
+
+</script>
+</body>
+</html>

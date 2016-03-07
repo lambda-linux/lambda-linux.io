@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0" name="viewport">
+<meta content="IE=Edge" http-equiv="X-UA-Compatible">
+<title>Trademark Policy</title>
+
+<link rel="stylesheet" href="{{ assetPath "css/main.css" }}">
+
+<script src="{{ assetPath "js/webcomponents-lite.min.js" }}"></script>
+<link href="{{ assetPath "elements/elements.html" }}" rel="import">
+
+<style is="custom-style" include="shared-styles"></style>
+<link href="{{ assetPath "elements/community/elements.html" }}" rel="import">
+
+</head>
+
+<body unresolved>
+
+<template is="dom-bind" id="app">
+
+  <app-drawer-layout id="drawyerLayout" force-narrow drawer-position="right">
+
+{{> html-app_side_nav}}
+
+    <app-header-layout main>
+
+{{> html-app_main_header}}
+
+      <community-lltp-main>
+
+        <div class="layout vertical">
+          <h1 class="community-lltp-main-heading">Lambda Linux Project Trademark Policy (Version 2014-11-30)</h1>
+        </div>
+
+        <div>
+          <p>
+            Our Trademark Policy is adapted from <a href="Debian Trademark Policy">Debian Trademark Policy.</a> We would like to thank Debian for creating it.
+          </p>
+        </div>
+
+        <div class="layout vertical">
+          <h2 class="community-lltp-main-sub-heading">Trademarks</h2>
+        </div>
+
+        <div>
+          <p>
+            Lambda Linux Project and its sponsor Atihita Inc., are committed to protecting and ensuring consistent usage of our trademarks, logos, and styles and also make it easier for every <i>bonafide</i> user to use our trademarks. As a part of this process, the registered trademark Linux&reg; has been used pursuant to a sublicense from LMI, the exclusive licensee of Linux Torvalds, owner of the mark on a world-wide basis.
+          </p>
+        </div>
+
+        <div class="layout vertical">
+          <h2 class="community-lltp-main-sub-heading">Trademark Policy</h2>
+        </div>
+
+        <div>
+          <p>
+            The objective of this trademark policy is &ndash;
+          </p>
+          <ol>
+            <li><p>to encourage widespread use and adoption of Lambda Linux Project Packages (RPMs and SRPMs),</p></li>
+            <li><p>to clarify proper usage of Lambda Linux Project trademarks by third parties,</p></li>
+            <li><p>to prevent misuse of Lambda Linux Project trademarks that can confuse or mislead users with respect to Lambda Linux Project, Atihita Inc., or its affiliates.</p></li>
+          </ol>
+          <p>
+            Please note that it is <b>not</b> the goal of this policy to limit commercial activity around Lambda Linux Project Packages. We encourage businesses to work with Lambda Linux Project Packages while being compliant with this policy.
+          </p>
+          <p>
+            Following are the guidelines for the proper use of Lambda Linux Project trademarks by publishers and other third parties. Any use of or reference to Lambda Linux Project trademarks that is inconsistent with these guidelines, or other unauthorized use of or reference to Lambda Linux Project trademarks, or use of marks that are confusingly similar to Lambda Linux Project trademarks, is prohibited and may violate Lambda Linux Project trademark rights.
+          </p>
+          <p>
+            Any use of Lambda Linux Project trademarks in a misleading and false manner or in a manner that disparages Lambda Linux Project, such as untruthful advertising, is always prohibited.
+          </p>
+          <h3 class="community-lltp-main-sub-sub-heading">When You Can Use the Lambda Linux Project Trademarks Without Asking Permission</h3>
+          <ol>
+            <li>
+              <p>
+                <i>You can use and redistribute of unmodified Lambda Linux Project Packages (RPMs and SRPMs) containing Lambda Linux mark for commercial and non-commercial purposes.</i>
+              </p>
+            </li>
+            <li>
+              <p>
+                You can use Lambda Linux Project trademarks to make true factual statements about Lambda Linux Project.
+              </p>
+            </li>
+            <li>
+              <p>
+                Your intended use qualifies as <i>"nominative fair use"</i> of the Lambda Linux Project trademarks, i.e., merely identifying that you are talking about Lambda Linux Project in a text, without suggesting sponsorship or endorsement.
+              </p>
+            </li>
+            <li>
+              <p>
+                You can use Lambda Linux Project trademarks to describe Lambda Linux Project in articles, titles or blog posts.
+              </p>
+            </li>
+          </ol>
+          <h3 class="community-lltp-main-sub-sub-heading">When You Can NEVER Use the Lambda Linux Project Trademarks Without Asking Permission</h3>
+          <ol>
+            <li>
+              <p>
+                You cannot use Lambda Linux Project trademarks in any way that suggests an affiliation with or endorsement by the Lambda Linux Project or community.
+              </p>
+            </li>
+            <li>
+              <p>
+                You cannot use Lambda Linux Project trademarks in a company or organization name or as the name of a product or service.
+              </p>
+            </li>
+            <li>
+              <p>
+                You cannot use a name that is confusingly similar to Lambda Linux Project trademarks.
+              </p>
+            </li>
+            <li>
+              <p>
+                You cannot use Lambda Linux Project trademarks in a domain name, with or without commercial intent.
+              </p>
+            </li>
+          </ol>
+          <h3 class="community-lltp-main-sub-sub-heading">Newer Versions of this Policy</h3>
+          <p>
+            This policy may be revised from time to time and updated versions shall be available at <a href="/community/lltp/">https://lambda-linux.io/community/lltp/</a>
+          </p>
+        </div>
+      </community-lltp-main>
+
+{{> html-app_footer}}
+
+    </app-header-layout>
+  </app-drawer-layout>
+
+{{> html-app_media_query}}
+
+</template>
+<script>
+
+{{> js-app_drawer}}
+
+</script>
+</body>
+</html>
