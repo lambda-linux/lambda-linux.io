@@ -1,0 +1,32 @@
+<dom-module id="site-footer">
+  <template>
+    <style>
+      :host {
+        @apply(--layout-vertical);
+
+        display: block;
+        margin: 48px auto 0;
+        max-width: 948px;
+      }
+
+      .footer {
+        @apply(--paper-font-common);
+
+        border-top: 1px solid var(--paper-grey-300);
+        padding: 12px;
+        font-size: 12px;
+        color: var(--paper-grey-500);
+      }
+    </style>
+    <div class="footer">
+      <div class="layout horizontal end-justified">
+        <content></content>
+      </div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'site-footer'
+    });
+  </script>
+</dom-module>
