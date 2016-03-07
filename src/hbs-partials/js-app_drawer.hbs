@@ -1,0 +1,11 @@
+  var app = document.querySelector('#app');
+
+  app._closeDrawer = function() {
+    this.$.drawyerLayout.opened = false
+  };
+
+  app._toggleDrawer = function(e) {
+    if (e.keyCode === 13) {
+      this.$.drawerLayout.toggleDrawer();
+    }
+  };
