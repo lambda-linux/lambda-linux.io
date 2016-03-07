@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0" name="viewport">
+<meta content="IE=Edge" http-equiv="X-UA-Compatible">
+<title>Support</title>
+
+<link rel="stylesheet" href="{{ assetPath "css/main.css" }}">
+
+<script src="{{ assetPath "js/webcomponents-lite.min.js" }}"></script>
+<link href="{{ assetPath "elements/elements.html" }}" rel="import">
+
+<style is="custom-style" include="shared-styles"></style>
+<link href="{{ assetPath "elements/support/elements.html" }}" rel="import">
+
+</head>
+
+<body unresolved>
+
+<template is="dom-bind" id="app">
+
+  <app-drawer-layout id="drawyerLayout" force-narrow drawer-position="right">
+
+{{> html-app_side_nav}}
+
+    <app-header-layout main>
+
+{{> html-app_main_header}}
+
+      <support-main>
+
+        <div class="layout vertical">
+          <h1 class="support-main-heading">General Questions</h1>
+        </div>
+
+        <div class="layout vertical">
+          <p>
+            Lambda Linux community is knowledgeable, welcoming and friendly. You can get support through any of the following channels. So, please jump in, ask your questions and join the conversation.
+        </p>
+        </div>
+
+        <div class="layout vertical">
+          <h2 class="support-main-sub-heading">StackExchange Unix & Linux</h2>
+        </div>
+
+        <div class="layout vertical">
+          <p>
+            We review and answer questions tagged <a href="http://unix.stackexchange.com/questions/tagged/amazon-ec2">amazon-ec2</a> or <a href="http://unix.stackexchange.com/questions/tagged/lambda-linux">lambda-linux</a> on StackExchange Unix & Linux. Please <a href="https://unix.stackexchange.com/questions/ask">ask your question</a>.
+          </p>
+        </div>
+
+        <div class="layout vertical">
+          <h2 class="support-main-sub-heading">Google Groups Mailing List</h2>
+        </div>
+
+        <div class="layout vertical">
+          <p>
+            <a href="https://groups.google.com/group/lambda-linux">Lambda Linux Google Group</a> is also a good place to ask questions and find answers.
+          </p>
+        </div>
+
+        <div class="layout vertical">
+          <h2 class="support-main-sub-heading">IRC</h2>
+        </div>
+
+        <div class="layout vertical">
+          <p>
+            You can chat live with Lambda Linux developers and users at <a href="irc://irc.freenode.net:6697/lambda-linux">#lambda-linux on freenode.</a>
+          </p>
+        </div>
+
+        <div class="layout vertical">
+          <h2 class="support-main-sub-heading">Twitter</h2>
+        </div>
+
+        <div class="layout vertical">
+          <p>
+            We are <a href="https://twitter.com/lambda_linux">@lambda_linux.</a> Please send us a tweet.
+          </p>
+        </div>
+
+        <div class="layout vertical">
+          <h2 class="support-main-sub-heading">Advanced Support and Services</h2>
+        </div>
+
+        <div>
+          <p>
+            In case you require additional help and guidance, Atihita Inc., and our partners are available for paid consulting and support.
+          </p>
+          <p>
+            We can help you with your mission-critical challenges around &ndash; public and private cloud migration, security, compliance, devops, storage, databases, and networking. Please send us a direct-message on Twitter <a href="https://twitter.com/lambda_linux">@lambda_linux</a>
+          </p>
+        </div>
+
+      </support-main>
+
+{{> html-app_footer}}
+
+    </app-header-layout>
+  </app-drawer-layout>
+
+{{> html-app_media_query}}
+
+</template>
+<script>
+
+{{> js-app_drawer}}
+
+</script>
+</body>
+</html>
