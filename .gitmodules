@@ -64,3 +64,6 @@
 [submodule "src/bower_components/app-layout"]
 	path = src/bower_components/app-layout
 	url = https://github.com/PolymerLabs/app-layout.git
+[submodule "src/bower_components/iron-collapse"]
+	path = src/bower_components/iron-collapse
+	url = https://github.com/PolymerElements/iron-collapse.git
