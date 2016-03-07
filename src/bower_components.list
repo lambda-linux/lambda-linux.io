@@ -2,6 +2,7 @@ font-roboto#1.0.1
 iron-a11y-keys-behavior#1.1.1
 iron-behaviors#1.0.12
 iron-checked-element-behavior#1.0.4
+iron-collapse#1.0.6
 iron-flex-layout#1.2.2
 iron-form-element-behavior#1.0.6
 iron-icon#1.0.7
