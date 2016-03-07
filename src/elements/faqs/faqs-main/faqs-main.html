@@ -1,0 +1,62 @@
+<dom-module id="faqs-main">
+  <template>
+    <style>
+      :host {
+        @apply(--layout-vertical);
+
+        display: block;
+      }
+
+      #faqsMainHeaderSection {
+        border-bottom: 1px solid var(--paper-grey-300);
+      }
+
+      .faqs-main-header {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 948px;
+        padding: 6px 16px;
+      }
+
+      .faqs-main-header-main-text {
+        @apply(--paper-font-headline);
+
+        color: var(--paper-grey-800);
+      }
+
+      .faqs-main-body {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 948px;
+        padding: 0 16px;
+      }
+
+      ::content h1.faqs-main-questions-category {
+        @apply(--paper-font-title);
+
+        color: var(--paper-grey-900);
+        margin-bottom: 4px;
+        padding-top: 10px;
+      }
+    </style>
+    <div id="faqsMainHeaderSection">
+      <div class="layout vertical center-justified faqs-main-header">
+        <div class="layout horizontal center start-justified">
+          <div class="faqs-main-header-main-text">FAQs</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="layout vertical center-justified faqs-main-body">
+        <content></content>
+      <div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'faqs-main'
+    });
+  </script>
+</dom-module>

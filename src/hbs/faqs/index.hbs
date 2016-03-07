@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0" name="viewport">
+<meta content="IE=Edge" http-equiv="X-UA-Compatible">
+<title>FAQs</title>
+
+<link rel="stylesheet" href="{{ assetPath "css/main.css" }}">
+
+<script src="{{ assetPath "js/webcomponents-lite.min.js" }}"></script>
+<link href="{{ assetPath "elements/elements.html" }}" rel="import">
+
+<style is="custom-style" include="shared-styles"></style>
+<link href="{{ assetPath "elements/faqs/elements.html" }}" rel="import">
+
+<base href="/faqs/">
+
+</head>
+
+<body unresolved>
+
+<template is="dom-bind" id="app">
+
+  <app-drawer-layout id="drawyerLayout" force-narrow drawer-position="right">
+
+{{> html-app_side_nav}}
+
+    <app-header-layout main>
+
+{{> html-app_main_header}}
+
+      <faqs-main>
+
+        <div class="layout vertical">
+          <h1 class="faqs-main-questions-category" id="general-questions">General Questions</h1>
+        </div>
+
+        <faqs-question-answer>
+          <div question>What is Extra Packages for Amazon Linux (EPLL) repository?</div>
+          <div answer>
+            <p>
+              Extra Packages for Amazon Linux (EPLL) is the first project we are announcing under the Lambda Linux Project umbrella. The goal is to create high quality set of additional packages that complements <code>amzn*.repo</code> package repositories.
+            </p>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
+          <div question>What is Lambda Linux Project?</div>
+          <div answer>
+            <p>Lambda Linux is a community project sponsored by Atihita Inc.</p>
+            <p>Sometime back we realized that Amazon Linux is an excellent server-style operating system. Given all the innovation that is happening on AWS and EC2, we felt that it was a bit strange that there is no vibrant open source community around Amazon Linux.</p>
+            <p>One thing led to another and we now have <i>Lambda Linux Project</i>.</p>
+            <p>We look forward to creating a welcoming, commercial friendly, open-source community. So please, come on over, use our packages and give us your feedback!</p>
+            <p>Btw, we have to clarify that &ndash; <i>Lambda Linux Project is not related to, affiliated with, sponsored or endorsed by Amazon Web Services, Inc.</i></p>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
+          <div question>Why is the project called Lambda Linux?</div>
+          <div answer>
+            <blockquote>
+              <p>
+                There are two hard things in Computer Science: cache invalidation and naming things.
+              </p>
+              <cite>Phil Karlton</cite>
+            </blockquote>
+            <p>
+              Unfortunately this was not a Computer Science problem, but a trademark issue, that had to be taken care of.
+            </p>
+            <p>
+              Hence our project is called &ndash; <i>Lambda Linux<sup>&reg;</sup>. The registered trademark Linux&reg; has been used pursuant to a sublicence from LMI, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.</i>
+            </p>
+            <p>
+              By calling our project <i>Lambda Linux</i>, we are paying our respects to two Computer Scientists &ndash; <a href="http://en.wikipedia.org/wiki/Alan_Turing">Alan Turing</a> and <a href="http://en.wikipedia.org/wiki/Alonzo_Church">Alonzo Chruch</a>
+            </p>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
+          <div question>How is the Lambda Linux similar to Amazon Linux?</div>
+          <div answer>
+            <blockquote>
+              <p>
+                The future is already here &ndash; it's just not evenly distributed.
+              </p>
+              <cite>William Gibson</cite>
+            </blockquote>
+            <p>
+              In Lambda Linux Project we understand, agree and appreciate many of the design decisions that Amazon has taken around &ndash; Minimal Operating System, Security Configuration and Updates, Multiple Package/Library Versions, Rolling Releases, etc.,
+            </p>
+            <p>
+              We believe that these decisions will play a crucial role as we enter the new world of application specific virtual machines, containers, cloud security and devops. When building our packages, we look forward to learning as much as we can from Amazon Linux packages and repositories.
+            </p>
+            <p>
+              Thank you Amazon Linux AMI Team for leading the way!
+            </p>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
+          <div question>How is the Lambda Linux different from Amazon Linux?</div>
+          <div answer>
+            <p>
+              <i>Firstly</i>, as a open-source community project our direction is driven by our users and contributors. <i>Secondly</i>, we build all our packages (RPMs, SRPMs), using certain well established best practices for creating such a work. This gives us &ndash;
+            </p>
+            <ul>
+              <li>Ability to share our packages freely with the rest of AWS EC2 community</li>
+              <li>Ability to be commercial friendly with our packages</li>
+              <li>Ability to foster an Independent Software Vendor (ISV) ecosystem for the benefit of our users</li>
+            </ul>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
+          <div question>What packages can I expect in Extra Packages for Amazon Linux (EPLL) repository?</div>
+          <div answer>
+            <p>
+              You can expect to see following kinds of packages,
+            </p>
+            <ul>
+              <li>Packages used by the AWS EC2 community, but not available in <code>amzn*.repo</code> repositories</li>
+              <li>Packages useful to our users that landed in Red Hat&reg; Extras repository instead of Fedora's EPEL repository</li>
+              <li>Packages from Fedora's EPEL repository that breaks when used with <code>amzn*.repo</code> repositories</li>
+            </ul>
+            <p>
+            We are a open-source project. So, you can also contribute and maintain packages on behalf of our community.
+            </p>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
+          <div question>How can I get security and other updates?</div>
+          <div answer>
+            <p>
+              Our end-user security is extremely important to us. Security updates and other package updates are made available in the yum repositories. You can use <code>yum updateinfo</code> commands to identify and apply updates.
+            </p>
+            <p>
+              We will also provide a security portal similar to <a href="https://alas.aws.amazon.com/index.html">Amazon Linux AMI Security Center</a> and a RSS feed. Please stay tuned!
+            </p>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
+          <div question>How can I make package requests for EPLL repository?</div>
+          <div answer>
+            <p>
+              We track new package requests on GitHub under <code>epll-release</code> project. Kindly please raise your request <a href="https://github.com/lambda-linux-pkgs/epll-release/issues">here</a>.
+            </p>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
+          <div question>How can I view and download source RPM packages?</div>
+          <div answer>
+            <p>
+              All source RPMs (SRPMs) are available in yum repositories. You can use <code>yumdownloader --enablerepo=epll-source --source &lt;package_name&gt;</code> to download SRPM package.
+            </p>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
+          <div question>Will EPLL packages be supported alongside with Fedora's EPEL packages?</div>
+          <div answer>
+            <p>
+              No. We build, qualify and support our packages only against <code>amzn*.repo</code> repositories. You can think of EPLL as a community driven <i>layered product</i> on top of <code>amzn*.repo</code> repositories.
+            </p>
+          </div>
+        </faqs-question-answer>
+
+        <div class="layout vertical">
+          <h1 class="faqs-main-questions-category" id="technical-questions">Technical Questions</h1>
+        </div>
+
+        <faqs-question-answer>
+          <div question>How are duplicate packages handled?</div>
+          <div answer>
+            <p>
+              In general we avoid introducing duplicate packages (with the same RPM <i>name</i> and <i>version</i>) in EPLL repositories that might be present in <code>amzn*.repo</code> repositories.
+            </p>
+            <p>
+              However occasionally in order to support certain packages, we might introduce a newer <i>version</i> of an existing package that might be present in <code>amzn*.repo</code> repositories. These newer versions of packages are documented <a href="https://github.com/lambda-linux-pkgs/epll-release/wiki/Newer-Packages-Present-in-EPLL-Repository">here</a>. Once a package, originally in EPLL, lands in <code>amzn*.repo</code>, we will deprecate and remove it from EPLL repository. This process should be very seamless to you, our users.
+            </p>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
+          <div question>Can you provide secondary means of verifying RPM package signing public key?</div>
+          <div answer>
+            <p>
+              You can find our package signing public key on GitHub at <a href="https://github.com/lambda-linux-pkgs/epll-release/blob/master/RPM-GPG-KEY-lambda-epll">https://github.com/lambda-linux-pkgs/epll-release/blob/master/RPM-GPG-KEY-lambda-epll</a>
+            </p>
+          </div>
+        </faqs-question-answer>
+
+        <div class="layout vertical">
+          <h1 class="faqs-main-questions-category" id="community-questions">Community Questions</h1>
+        </div>
+
+        <faqs-question-answer>
+          <div question>How is Lambda Linux Project similar to Fedora Project?</div>
+          <div answer>
+            <p>
+              First and foremost, we would like to say thank you to Fedora community. We have learnt many good ideas from Fedora and where it makes sense, we will continue doing so.
+            </p>
+            <p>
+              If you are a Fedora or CentOS contributor, you will find yourself right at home in Lambda Linux project. If you come from other Linux distributions, we heartily welcome you too.
+            </p>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
+          <div question>How is Lambda Linux Project different from Fedora Project?</div>
+          <div answer>
+            <p>We are different from Fedora in the following ways &ndash;</p>
+            <ul>
+              <li>
+                <p>We aim to deliver free, secure, stable and latest software to our users all the time</p>
+                <p>This is a very important distinction because we think it is the right thing to do for our users.</p>
+                <p>To our critics who might say <i>it cannot be done!</i> We kindly ask you to <a href="https://signalvnoise.com/posts/3124-give-it-five-minutes">give it five minutes</a> and learn from Amazon Linux.</p>
+              </li>
+              <li>
+                <p>We are focused only on server-style use-cases</p>
+                <p>This means &ndash; container, cloud, server and data center. There is no workstation.</p>
+              </li>
+              <li>
+                <p>We are not controlled by Red Hat&reg; Inc.</p>
+                <p>While many things are yet to evolve, our governance structure will be very simple and modeled along the lines of &ndash; PostgreSQL and Linux Kernel project.</p>
+              </li>
+            </ul>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
+          <div question>Where can I find git repositories for Lambda Linux Project?</div>
+          <div answer>
+            <p>You can find git repositories for Lambda Linux Project on GitHub at <a href="https://github.com/lambda-linux-pkgs">https://github.com/lambda-linux-pkgs</a></p>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
+          <div question>Where can I find git blobs used by Lambda Linux Project git repositories?</div>
+          <div answer>
+            <p>You can find git blobs used by Lambda Linux Project git repositories at <a href="http://git-blobs.lambda-linux.io/">http://git-blobs.lambda-linux.io/</a></p>
+          </div>
+        </faqs-question-answer>
+
+      </faqs-main>
+
+{{> html-app_footer}}
+
+    </app-header-layout>
+  </app-drawer-layout>
+
+{{> html-app_media_query}}
+
+</template>
+<script>
+
+{{> js-app_drawer}}
+
+  window.addEventListener("WebComponentsReady", function() {
+    var top = function() {
+      el = document.querySelector("#faqsMainHeaderSection");
+      el.scrollIntoView(false);
+    };
+
+    page.base("/faqs/");
+
+    page("/", top);
+    page("/general-questions", top);
+
+    page("/technical-questions", function(ctx, next) {
+      el = document.querySelector("#technical-questions");
+      el.scrollIntoView(true);
+    });
+
+    page("/community-questions", function(ctx, next) {
+      el = document.querySelector("#community-questions");
+      el.scrollIntoView(true);
+    });
+
+    page({
+      hashbang: true
+    });
+  });
+</script>
+</body>
+</html>

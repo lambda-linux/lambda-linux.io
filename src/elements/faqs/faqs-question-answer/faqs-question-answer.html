@@ -1,0 +1,115 @@
+<dom-module id="faqs-question-answer">
+  <template>
+    <style>
+      :host {
+        @apply(--layout-vertical);
+
+        display: block;
+      }
+
+      button:focus {
+        outline: 0;
+      }
+
+      .question {
+        @apply(--paper-font-common-base);
+
+        background-color: var(--paper-grey-100);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border: 1px solid var(--paper-grey-300);
+        cursor: pointer;
+        color: var(--paper-light-blue-a700);
+        font-size: 16px;
+        font-weight: 400;
+        margin-top: 20px;
+        padding: 10px 15px;
+        text-align: left;
+        width: 100%;
+      }
+
+      .answer {
+        @apply(--shadow-elevation-2dp);
+
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-top: none;
+        border: 1px solid var(--paper-grey-300);
+        padding: 5px 15px;
+      }
+
+      ::content p {
+        @apply(--paper-font-common-base);
+
+        color: var(--paper-grey-900);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+
+      ::content a {
+        color: var(--paper-light-blue-a700);
+      }
+
+      ::content code {
+        @apply(--paper-font-code1);
+
+        color: var(--paper-grey-900);
+        padding: 2px;
+        background-color: var(--paper-grey-100);
+        border-radius: 4px;
+      }
+
+      ::content blockquote {
+        border-left: 2px solid var(--paper-grey-100);
+        margin: 5px 0;
+        padding-left: 12px;
+      }
+
+      ::content blockquote > p {
+        color: var(--paper-grey-700);
+      }
+
+      ::content cite {
+        color: var(--paper-grey-500);
+        font-size: 12px;
+        font-style: italic;
+        font-weight: 300;
+      }
+
+      ::content cite:before {
+        content: "\2014 \00A0";
+      }
+
+      ::content ul {
+        color: var(--paper-grey-900);
+      }
+
+      ::content li {
+        color: var(--paper-grey-900);
+      }
+    </style>
+    <div>
+      <div class="layout-vertical center-justified">
+        <button class="question" on-click="toggle"><content select="[question]"></content></button>
+      </div>
+    </div>
+    <div>
+      <div class="layout-vertical center-justified">
+        <iron-collapse id="collapse">
+          <div class="answer">
+            <content select="[answer]"></content>
+          </div>
+        </iron-collapse>
+      </div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'faqs-question-answer',
+      toggle: function() {
+        this.$.collapse.toggle();
+      }
+    });
+  </script>
+</dom-module>
