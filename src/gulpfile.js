@@ -242,7 +242,7 @@ gulp.task('copy-opt', function() {
 // Copy `extras` to dist
 gulp.task('copy-extras', function() {
   var copyEpllReleaseRPM =
-  gulp.src('extras/epll-release-2015.09-1.1.ll1.noarch.rpm')
+  gulp.src('extras/epll-release-2016.03-1.1.ll1.noarch.rpm')
     .pipe(gulp.dest('dist'));
 
   var copyRPMGPGKEY = gulp.src('extras/RPM-GPG-KEY-lambda-epll')
