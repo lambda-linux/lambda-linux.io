@@ -14,6 +14,7 @@ RUN \
   # nodejs, jekyll, bower
   yum install gcc48 && \
   yum install git && \
+  yum install patch && \
   yum install ruby20 && \
   yum install ruby20-devel && \
   yum install tree && \
