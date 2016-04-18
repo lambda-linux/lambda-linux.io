@@ -17,6 +17,8 @@ $ cd ~ll-user/lambda-linux.io/
 
 $ git submodule update --init
 
+$ cd src/
+
 $ npm install
 
 $ gulp
