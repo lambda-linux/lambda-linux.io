@@ -1,0 +1,20 @@
+{
+  "extends": "eslint:recommended",
+  "rules": {
+    "no-console": "off"
+  },
+  "env": {
+    "browser": true
+  },
+  "plugins": [
+    "html"
+  ],
+  "globals": {
+    "Polymer": false,
+    "__dirname": false,
+    "app": false,
+    "page": false,
+    "process": false,
+    "require": false
+  }
+}

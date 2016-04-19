@@ -277,19 +277,16 @@ gulp.task('gzip-post', function() {
 
 // Lint JavaScript
 gulp.task('lint', function() {
-  // NOTE: `.jscsrc` and `.jshintrc` files are required to be present
+  // NOTE: `.eslintrc.json` and `.eslintignore` files are required to be present
   return gulp.src([
     'scripts/**/*.js',
     'elements/**/*.js',
     'elements/**/*.html',
     'gulpfile.js'
   ])
-  // JSCS has not yet a extract option
-  .pipe($.if('*.html', $.htmlExtract()))
-  .pipe($.jshint())
-  .pipe($.jscs())
-  .pipe($.jscsStylish.combineWithHintResults())
-  .pipe($.jshint.reporter('jshint-stylish'));
+  .pipe($.eslint())
+  .pipe($.eslint.format())
+  .pipe($.eslint.failAfterError());
 });
 
 // Clean output directory
