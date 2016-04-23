@@ -1,5 +1,5 @@
-      <app-header class="main-header" scroller="window" effects="waterfall" fixed="[[smallLayout]]">
-        <app-toolbar class="main-toolbar">
+      <app-header class="main-header" effects="waterfall" fixed="[[smallLayout]]">
+        <app-toolbar class="main-toolbar" primary>
           <a class="main-logo" href="/"></a>
           <div class="layout horizontal flex center-justified">
             <iron-selector attr-for-selected="name" class="main-menubar-wide-only">
@@ -10,7 +10,7 @@
             </iron-selector>
           </div>
           <div class="layout horizontal flex main-menu-icon-layout">
-            <iron-icon class="main-menu-icon main-menu-icon-narrow-only" icon="menu" on-keyup="_toggleDrawer" tabindex="0" drawer-toggle>
+            <iron-icon class="main-menu-icon main-menu-icon-narrow-only" icon="menu" tabindex="0" drawer-toggle>
           </div>
         </app-toolbar>
       </app-header>
