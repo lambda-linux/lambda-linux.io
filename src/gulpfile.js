@@ -251,6 +251,19 @@ gulp.task('copy-extras', function() {
   return merge(copyEpllReleaseRPM, copyRPMGPGKEY);
 });
 
+gulp.task('copy-hbs-rev-jekyll', function() {
+  var hbsCopy = gulp.src(tmp('hbs-post/**/*.html'))
+      .pipe(gulp.dest(dist()));
+
+  var revCopy = gulp.src(tmp('rev-post/**/*'))
+      .pipe(gulp.dest(dist()));
+
+  var jekyllCopy = gulp.src(tmp('jekyll/**/*'))
+      .pipe(gulp.dest(dist()));
+
+  return merge(hbsCopy, revCopy, jekyllCopy);
+})
+
 gulp.task('gzip-pre', function() {
   var hbsPost = gulp.src(tmp('hbs-post/**/*.html'))
     .pipe(gulp.dest(tmp('gzip-pre')));
