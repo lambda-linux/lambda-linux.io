@@ -264,30 +264,6 @@ gulp.task('copy-hbs-rev-jekyll', function() {
   return merge(hbsCopy, revCopy, jekyllCopy);
 })
 
-gulp.task('gzip-pre', function() {
-  var hbsPost = gulp.src(tmp('hbs-post/**/*.html'))
-    .pipe(gulp.dest(tmp('gzip-pre')));
-
-  var revPost = gulp.src(tmp('rev-post/**/*'))
-    .pipe(gulp.dest(tmp('gzip-pre')));
-
-  var jekyllPost = gulp.src(tmp('jekyll/**/*'))
-    .pipe(gulp.dest(tmp('gzip-pre')));
-
-  return merge(hbsPost, revPost, jekyllPost);
-});
-
-gulp.task('gzip-post', function() {
-  var vanillaCopy = gulp.src(tmp('gzip-pre/**/*'))
-    .pipe(gulp.dest(dist()));
-
-  var gzipCopy = gulp.src(tmp('gzip-pre/**/*'))
-    .pipe($.gzip())
-    .pipe(gulp.dest(dist()));
-
-  return merge(vanillaCopy, gzipCopy);
-});
-
 // Lint JavaScript
 gulp.task('lint', function() {
   // NOTE: `.eslintrc.json` and `.eslintignore` files are required to be present
