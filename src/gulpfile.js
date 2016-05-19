@@ -219,6 +219,8 @@ gulp.task('jekyll-pre-copy', function() {
 // Run jekyll task
 gulp.task('jekyll', function(gulpCallBack) {
   var jekyll = spawn('jekyll',
+//  Uncomment when working with drafts
+//  ['build', '--drafts', '--incremental', '-s', 'jekyll', '-d', tmp('jekyll')],
     ['build', '--incremental', '-s', 'jekyll', '-d', tmp('jekyll')],
     {stdio: 'inherit'});
 
