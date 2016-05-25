@@ -4,7 +4,7 @@ title:  "Announcing Sqitch Support for Amazon Linux"
 date:   2016-05-25 10:00:01
 categories: ship
 ---
-We are happy to announce the availability of database change manangement tool [Sqitch](http://sqitch.org/) for Amazon Linux in [EPLL](/blog/2014/12/15/announcing-extra-packages-for-amazon-linux-and-lambda-linux-project/) Repository.
+We are happy to announce the availability of database change management tool [Sqitch](http://sqitch.org/) for Amazon Linux in [EPLL](/blog/2014/12/15/announcing-extra-packages-for-amazon-linux-and-lambda-linux-project/) Repository.
 
 At the core of most enterprise applications there are relational databases managing your data. [Peter van Hardenberg](https://twitter.com/pvh) from the Heroku Postgres Team succinctly explains the crucial importance of data in the following way,
 
