@@ -2,11 +2,8 @@ FROM baseimage-amzn:2016.03-002
 
 CMD ["/sbin/my_init"]
 
-COPY [ \
-  "./third_party/nodejs/nodejs-4.2.3-1.1.ll1.x86_64.rpm", \
-  "/tmp/docker-build/" \
-]
 RUN \
+  mkdir /tmp/docker-build && \
   # yum
   yum update && \
   \
@@ -19,11 +16,16 @@ RUN \
   yum install tree && \
   yum install vim && \
   yum install which && \
-  yum install /tmp/docker-build/nodejs-4.2.3-1.1.ll1.x86_64.rpm && \
+  # setup epll repository
+  curl -X GET -o /tmp/docker-build/RPM-GPG-KEY-lambda-epll https://lambda-linux.io/RPM-GPG-KEY-lambda-epll && \
+  rpm --import /tmp/docker-build/RPM-GPG-KEY-lambda-epll && \
+  curl -X GET -o /tmp/docker-build/epll-release-2016.03-1.1.ll1.noarch.rpm https://lambda-linux.io/epll-release-2016.03-1.1.ll1.noarch.rpm && \
+  yum install /tmp/docker-build/epll-release-2016.03-1.1.ll1.noarch.rpm && \
+  yum --enablerepo=epll-preview install nodejs4 && \
+  \
   gem2.2 install jekyll -v 3.0.1 && \
   gem2.2 install jekyll-paginate -v 1.1.0 && \
   npm install -g bower@1.7.9 gulp@3.9.1 && \
-  rm -f /tmp/build/nodejs-4.2.3-1.1.ll1.x86_64.rpm && \
   # awscli
   yum install python27-pip && \
   pip-2.7 install awscli && \
