@@ -50,7 +50,8 @@ To install Node.js version 6, you can do `sudo yum --enablerepo=epll-preview -y 
 {% highlight bash %}
 [ec2-user@ip-10-0-0-107 ~]$ sudo yum --enablerepo=epll-preview -y install nodejs6
 Loaded plugins: priorities, update-motd, upgrade-helper
-Resolving Dependencies--> Running transaction check
+Resolving Dependencies
+--> Running transaction check
 ---> Package nodejs6.x86_64 0:6.2.0-1.1.ll1 will be installed
 --> Finished Dependency Resolution
 
@@ -58,10 +59,10 @@ Resolving Dependencies--> Running transaction check
 
 Complete!
 
-[ec2-user@ip-10-0-0-161 ~]$ node --version
+[ec2-user@ip-10-0-0-107 ~]$ node --version
 v6.2.0
 
-[ec2-user@ip-10-0-0-161 ~]$ npm --version
+[ec2-user@ip-10-0-0-107 ~]$ npm --version
 3.8.9
 {% endhighlight %} 
 
