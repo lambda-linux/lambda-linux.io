@@ -30,4 +30,8 @@ RUN \
   yum install python27-pip && \
   pip-2.7 install awscli && \
   # cleanup
-  rm -rf /tmp/docker-build
+  rm -rf /tmp/docker-build && \
+  yum clean all && \
+  rm -rf /var/cache/yum/* && \
+  rm -rf /tmp/* && \
+  rm -rf /var/tmp/*
