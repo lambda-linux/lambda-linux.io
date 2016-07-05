@@ -115,3 +115,6 @@
 [submodule "src/bower_components/web-animations-js"]
 	path = src/bower_components/web-animations-js
 	url = https://github.com/web-animations/web-animations-js.git
+[submodule "src/bower_components/iron-pages"]
+	path = src/bower_components/iron-pages
+	url = https://github.com/PolymerElements/iron-pages.git
