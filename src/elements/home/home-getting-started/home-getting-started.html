@@ -15,18 +15,38 @@
         padding: 24px 24px 0;
       }
 
-      .getting-started {
+      .getting-started-head {
         @apply(--paper-font-headline);
 
         color: var(--paper-grey-900);
         text-align: center;
       }
+
+      .getting-started-subhead {
+        @apply(--paper-font-subhead);
+
+        color: var(--paper-grey-900);
+        margin: 16px 0;
+        max-width: 720px;
+        text-align: center;
+      }
+
+      ::content a {
+       color: var(--paper-light-blue-a700);
+      }
     </style>
     <div id="homeGettingStartedSection">
       <div class="layout vertical center-justified">
         <div class="layout horizontal center-justified">
-          <div class="getting-started">
-            <content></content>
+          <div class="getting-started-head">
+            <content select="[head]"></content>
+          </div>
+        </div>
+      </div>
+      <div class="layout vertical center-justified">
+        <div class="layout horizontal center-justified">
+          <div class="getting-started-subhead">
+             <content select="[subhead]"></content>
           </div>
         </div>
       </div>
