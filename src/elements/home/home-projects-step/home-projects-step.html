@@ -1,0 +1,100 @@
+<dom-module id="home-projects-step">
+  <template>
+    <style include="iron-flex iron-flex-alignment">
+      :host {
+        display: block;
+        width: 480px;
+        max-width: 480px;
+      }
+
+      .step-number {
+        @apply(--paper-font-display2);
+
+        color: var(--paper-grey-400);
+        padding: 12px 24px 0;
+        text-align: center;
+      }
+
+      .step-content {
+        @apply(--paper-font-body2);
+
+        color: var(--paper-grey-900);
+        padding: 12px 0 0 0;
+        text-align: left;
+      }
+
+      .step-code {
+        padding: 6px 0 0 0;
+        text-align: left;
+      }
+
+      ::content .code {
+        @apply(--paper-font-code2);
+
+        color: var(--paper-grey-900);
+        padding: 2px;
+        background-color: var(--paper-grey-100);
+        border-radius: 4px;
+      }
+
+      ::content a {
+        color: var(--paper-light-blue-a700);
+      }
+
+      textarea {
+        @apply(--paper-font-common-code);
+
+        background-color: var(--paper-grey-200);
+        border: none;
+        color: var(--paper-grey-700);
+        font-size: 12px;
+        line-height: 1.5;
+        padding: 6px;
+        resize: none;
+        width: 100%;
+        outline: 0;
+      }
+    </style>
+    <div class="layout horizontal">
+      <div class="step-number">{{stepNum}}</div>
+      <div class="layout flex">
+        <div class="layout vertical">
+          <div class="step-content">
+            <content select="[stepcontent]"></content>
+          </div>
+          <template is="dom-if" if="{{stepCodeRowsExists}}">
+            <div class="step-code">
+              <textarea readonly rows$="{{stepCodeRows}}" on-tap="_selectAll">{{stepCode}}</textarea>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'home-projects-step',
+      properties: {
+        stepNum: {
+          type: Number,
+          value: 0
+        },
+        stepCodeRows: {
+          type: Number,
+          value: 1
+        },
+        stepCodeRowsExists: {
+          type: Boolean,
+          value: false
+        },
+        stepCode: {
+          type: String,
+          value: ""
+        }
+      },
+      _selectAll: function(e) {
+        e.currentTarget.select();
+      }
+    });
+  </script>
+</dom-module>
