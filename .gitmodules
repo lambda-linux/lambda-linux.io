@@ -82,3 +82,36 @@
 [submodule "src/bower_components/paper-tabs"]
 	path = src/bower_components/paper-tabs
 	url = https://github.com/PolymerElements/paper-tabs.git
+[submodule "src/bower_components/iron-a11y-announcer"]
+	path = src/bower_components/iron-a11y-announcer
+	url = https://github.com/PolymerElements/iron-a11y-announcer.git
+[submodule "src/bower_components/iron-autogrow-textarea"]
+	path = src/bower_components/iron-autogrow-textarea
+	url = https://github.com/PolymerElements/iron-autogrow-textarea.git
+[submodule "src/bower_components/iron-dropdown"]
+	path = src/bower_components/iron-dropdown
+	url = https://github.com/PolymerElements/iron-dropdown.git
+[submodule "src/bower_components/iron-fit-behavior"]
+	path = src/bower_components/iron-fit-behavior
+	url = https://github.com/PolymerElements/iron-fit-behavior.git
+[submodule "src/bower_components/iron-input"]
+	path = src/bower_components/iron-input
+	url = https://github.com/PolymerElements/iron-input.git
+[submodule "src/bower_components/iron-overlay-behavior"]
+	path = src/bower_components/iron-overlay-behavior
+	url = https://github.com/PolymerElements/iron-overlay-behavior.git
+[submodule "src/bower_components/neon-animation"]
+	path = src/bower_components/neon-animation
+	url = https://github.com/PolymerElements/neon-animation.git
+[submodule "src/bower_components/paper-dropdown-menu"]
+	path = src/bower_components/paper-dropdown-menu
+	url = https://github.com/PolymerElements/paper-dropdown-menu.git
+[submodule "src/bower_components/paper-input"]
+	path = src/bower_components/paper-input
+	url = https://github.com/PolymerElements/paper-input.git
+[submodule "src/bower_components/paper-menu-button"]
+	path = src/bower_components/paper-menu-button
+	url = https://github.com/PolymerElements/paper-menu-button.git
+[submodule "src/bower_components/web-animations-js"]
+	path = src/bower_components/web-animations-js
+	url = https://github.com/web-animations/web-animations-js.git
