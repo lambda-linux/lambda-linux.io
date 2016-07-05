@@ -1,6 +1,6 @@
-From a0a5ff6c83b9960684d04707b38321470f2da8c3 Mon Sep 17 00:00:00 2001
+From 99f4d71915570eb124644b9b75f90445328ec527 Mon Sep 17 00:00:00 2001
 From: Rajiv M Ranganath <rajiv.ranganath@atihita.com>
-Date: Fri, 10 Jun 2016 13:50:50 +0000
+Date: Sun, 12 Jun 2016 07:26:37 +0000
 Subject: [PATCH] Add `.bower.json`
 
 ---
@@ -24,6 +24,7 @@ Subject: [PATCH] Add `.bower.json`
  iron-menu-behavior/.bower.json            | 46 +++++++++++++++++++++++
  iron-meta/.bower.json                     | 39 ++++++++++++++++++++
  iron-overlay-behavior/.bower.json         | 47 ++++++++++++++++++++++++
+ iron-pages/.bower.json                    | 45 +++++++++++++++++++++++
  iron-resizable-behavior/.bower.json       | 41 +++++++++++++++++++++
  iron-scroll-target-behavior/.bower.json   | 40 ++++++++++++++++++++
  iron-selector/.bower.json                 | 42 +++++++++++++++++++++
@@ -43,7 +44,7 @@ Subject: [PATCH] Add `.bower.json`
  polymer/.bower.json                       | 44 ++++++++++++++++++++++
  web-animations-js/.bower.json             | 41 +++++++++++++++++++++
  webcomponentsjs/.bower.json               | 30 +++++++++++++++
- 39 files changed, 1759 insertions(+)
+ 40 files changed, 1804 insertions(+)
  create mode 100644 app-layout/.bower.json
  create mode 100644 font-roboto/.bower.json
  create mode 100644 iron-a11y-announcer/.bower.json
@@ -64,6 +65,7 @@ Subject: [PATCH] Add `.bower.json`
  create mode 100644 iron-menu-behavior/.bower.json
  create mode 100644 iron-meta/.bower.json
  create mode 100644 iron-overlay-behavior/.bower.json
+ create mode 100644 iron-pages/.bower.json
  create mode 100644 iron-resizable-behavior/.bower.json
  create mode 100644 iron-scroll-target-behavior/.bower.json
  create mode 100644 iron-selector/.bower.json
@@ -1090,6 +1092,58 @@ index 0000000..d29d2b8
 +  "_source": "git://github.com/polymerelements/iron-overlay-behavior.git",
 +  "_target": "^1.0.0",
 +  "_originalSource": "polymerelements/iron-overlay-behavior"
++}
+\ No newline at end of file
+diff --git a/iron-pages/.bower.json b/iron-pages/.bower.json
+new file mode 100644
+index 0000000..b7bce23
+--- /dev/null
++++ b/iron-pages/.bower.json
+@@ -0,0 +1,45 @@
++{
++  "name": "iron-pages",
++  "version": "1.0.7",
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "description": "Organizes a set of pages and shows one at a time",
++  "main": "iron-pages.html",
++  "private": true,
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/iron-pages.git"
++  },
++  "keywords": [
++    "web-components",
++    "polymer",
++    "container"
++  ],
++  "dependencies": {
++    "iron-resizable-behavior": "polymerelements/iron-resizable-behavior#^1.0.0",
++    "iron-selector": "polymerelements/iron-selector#^1.0.0",
++    "polymer": "Polymer/polymer#^1.1.0"
++  },
++  "devDependencies": {
++    "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
++    "iron-demo-helpers": "polymerelements/iron-demo-helpers#^1.0.0",
++    "paper-styles": "polymerelements/paper-styles#^1.0.2",
++    "test-fixture": "polymerelements/test-fixture#^1.0.0",
++    "web-component-tester": "^4.0.0",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
++  },
++  "ignore": [],
++  "homepage": "https://github.com/PolymerElements/iron-pages",
++  "_release": "1.0.7",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.0.7",
++    "commit": "357acb8508da5093b22887a85cb785919c20cfde"
++  },
++  "_source": "git://github.com/PolymerElements/iron-pages.git",
++  "_target": "^1.0.7",
++  "_originalSource": "PolymerElements/iron-pages",
++  "_direct": true
 +}
 \ No newline at end of file
 diff --git a/iron-resizable-behavior/.bower.json b/iron-resizable-behavior/.bower.json
