@@ -1,33 +1,36 @@
-From ed16920eb1f996565f39756890aa53762dcbafed Mon Sep 17 00:00:00 2001
+From 956efd1a1aebb4402eccdd53734399c7fb713ba0 Mon Sep 17 00:00:00 2001
 From: Rajiv M Ranganath <rajiv.ranganath@atihita.com>
-Date: Fri, 10 Jun 2016 07:18:41 +0000
+Date: Fri, 10 Jun 2016 09:30:27 +0000
 Subject: [PATCH] Add `.bower.json`
 
 ---
- font-roboto/.bower.json                   | 31 +++++++++++++++++++
- iron-a11y-keys-behavior/.bower.json       | 43 ++++++++++++++++++++++++++
+ app-layout/.bower.json                    | 52 +++++++++++++++++++++++++++++++
+ font-roboto/.bower.json                   | 31 ++++++++++++++++++
+ iron-a11y-keys-behavior/.bower.json       | 43 +++++++++++++++++++++++++
  iron-behaviors/.bower.json                | 42 +++++++++++++++++++++++++
- iron-checked-element-behavior/.bower.json | 43 ++++++++++++++++++++++++++
- iron-collapse/.bower.json                 | 43 ++++++++++++++++++++++++++
- iron-flex-layout/.bower.json              | 41 +++++++++++++++++++++++++
- iron-form-element-behavior/.bower.json    | 41 +++++++++++++++++++++++++
- iron-icon/.bower.json                     | 45 +++++++++++++++++++++++++++
+ iron-checked-element-behavior/.bower.json | 43 +++++++++++++++++++++++++
+ iron-collapse/.bower.json                 | 43 +++++++++++++++++++++++++
+ iron-flex-layout/.bower.json              | 41 ++++++++++++++++++++++++
+ iron-form-element-behavior/.bower.json    | 41 ++++++++++++++++++++++++
+ iron-icon/.bower.json                     | 45 ++++++++++++++++++++++++++
  iron-icons/.bower.json                    | 47 ++++++++++++++++++++++++++++
- iron-iconset-svg/.bower.json              | 43 ++++++++++++++++++++++++++
- iron-media-query/.bower.json              | 41 +++++++++++++++++++++++++
+ iron-iconset-svg/.bower.json              | 43 +++++++++++++++++++++++++
+ iron-media-query/.bower.json              | 41 ++++++++++++++++++++++++
  iron-meta/.bower.json                     | 39 +++++++++++++++++++++++
- iron-resizable-behavior/.bower.json       | 41 +++++++++++++++++++++++++
+ iron-resizable-behavior/.bower.json       | 41 ++++++++++++++++++++++++
+ iron-scroll-target-behavior/.bower.json   | 40 ++++++++++++++++++++++++
  iron-selector/.bower.json                 | 42 +++++++++++++++++++++++++
  iron-validatable-behavior/.bower.json     | 42 +++++++++++++++++++++++++
  page/.bower.json                          | 40 ++++++++++++++++++++++++
- paper-behaviors/.bower.json               | 51 +++++++++++++++++++++++++++++++
- paper-button/.bower.json                  | 50 ++++++++++++++++++++++++++++++
+ paper-behaviors/.bower.json               | 51 ++++++++++++++++++++++++++++++
+ paper-button/.bower.json                  | 50 +++++++++++++++++++++++++++++
  paper-material/.bower.json                | 44 ++++++++++++++++++++++++++
- paper-ripple/.bower.json                  | 45 +++++++++++++++++++++++++++
+ paper-ripple/.bower.json                  | 45 ++++++++++++++++++++++++++
  paper-styles/.bower.json                  | 42 +++++++++++++++++++++++++
  polymer/.bower.json                       | 44 ++++++++++++++++++++++++++
  webcomponentsjs/.bower.json               | 30 ++++++++++++++++++
- 23 files changed, 970 insertions(+)
+ 25 files changed, 1062 insertions(+)
+ create mode 100644 app-layout/.bower.json
  create mode 100644 font-roboto/.bower.json
  create mode 100644 iron-a11y-keys-behavior/.bower.json
  create mode 100644 iron-behaviors/.bower.json
@@ -41,6 +44,7 @@ Subject: [PATCH] Add `.bower.json`
  create mode 100644 iron-media-query/.bower.json
  create mode 100644 iron-meta/.bower.json
  create mode 100644 iron-resizable-behavior/.bower.json
+ create mode 100644 iron-scroll-target-behavior/.bower.json
  create mode 100644 iron-selector/.bower.json
  create mode 100644 iron-validatable-behavior/.bower.json
  create mode 100644 page/.bower.json
@@ -52,6 +56,65 @@ Subject: [PATCH] Add `.bower.json`
  create mode 100644 polymer/.bower.json
  create mode 100644 webcomponentsjs/.bower.json
 
+diff --git a/app-layout/.bower.json b/app-layout/.bower.json
+new file mode 100644
+index 0000000..c833a0b
+--- /dev/null
++++ b/app-layout/.bower.json
+@@ -0,0 +1,52 @@
++{
++  "name": "app-layout",
++  "version": "0.9.1",
++  "description": "A set of layout elements for your app",
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "private": true,
++  "homepage": "https://github.com/PolymerElements/app-layout",
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/app-layout"
++  },
++  "main": "app-layout.html",
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "ignore": [],
++  "dependencies": {
++    "polymer": "polymer/polymer#^1.0.0",
++    "iron-flex-layout": "polymerelements/iron-flex-layout#^1.0.0",
++    "iron-media-query": "polymerelements/iron-media-query#^1.0.0",
++    "iron-resizable-behavior": "polymerelements/iron-resizable-behavior#^1.0.0",
++    "iron-scroll-target-behavior": "polymerelements/iron-scroll-target-behavior#^1.0.0"
++  },
++  "devDependencies": {
++    "font-roboto": "polymerelements/font-roboto#^1.0.0",
++    "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
++    "iron-icon": "polymerelements/iron-icon#^1.0.0",
++    "iron-icons": "polymerelements/iron-icons#^1.0.0",
++    "iron-list": "polymerelements/iron-list#^1.0.0",
++    "iron-pages": "polymerelements/iron-pages#^1.0.0",
++    "paper-fab": "polymerelements/paper-fab#^1.0.0",
++    "paper-icon-button": "polymerelements/paper-icon-button#^1.0.0",
++    "paper-item": "polymerelements/paper-item#^1.0.0",
++    "paper-menu": "polymerelements/paper-menu#^1.0.0",
++    "paper-tabs": "polymerelements/paper-tabs#^1.0.0",
++    "paper-progress": "polymerelements/paper-progress#~1.0.2",
++    "paper-styles": "polymerelements/paper-styles#^1.0.0",
++    "test-fixture": "polymerelements/test-fixture#^1.0.0",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
++    "web-component-tester": "^4.0.0"
++  },
++  "_release": "0.9.1",
++  "_resolution": {
++    "type": "version",
++    "tag": "v0.9.1",
++    "commit": "6ecd4771eb3e529f63c41947b5eb64ff66cddf33"
++  },
++  "_source": "git://github.com/PolymerElements/app-layout.git",
++  "_target": "^0.9.1",
++  "_originalSource": "PolymerElements/app-layout",
++  "_direct": true
++}
+\ No newline at end of file
 diff --git a/font-roboto/.bower.json b/font-roboto/.bower.json
 new file mode 100644
 index 0000000..eafbb18
@@ -681,6 +744,53 @@ index 0000000..89cce3b
 +  "_source": "git://github.com/PolymerElements/iron-resizable-behavior.git",
 +  "_target": "^1.0.2",
 +  "_originalSource": "PolymerElements/iron-resizable-behavior"
++}
+\ No newline at end of file
+diff --git a/iron-scroll-target-behavior/.bower.json b/iron-scroll-target-behavior/.bower.json
+new file mode 100644
+index 0000000..14832b4
+--- /dev/null
++++ b/iron-scroll-target-behavior/.bower.json
+@@ -0,0 +1,40 @@
++{
++  "name": "iron-scroll-target-behavior",
++  "version": "1.0.6",
++  "description": "Allows to define a scroller target",
++  "private": true,
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "main": "iron-scroll-target-behavior.html",
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "keywords": [
++    "web-components",
++    "polymer",
++    "scroll"
++  ],
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/iron-scroll-target-behavior.git"
++  },
++  "homepage": "https://github.com/PolymerElements/iron-scroll-target-behavior",
++  "ignore": [],
++  "dependencies": {
++    "polymer": "Polymer/polymer#^1.0.0"
++  },
++  "devDependencies": {
++    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
++    "iron-test-helpers": "polymerelements/iron-test-helpers#^1.0.0",
++    "web-component-tester": "^4.0.0",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
++  },
++  "_release": "1.0.6",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.0.6",
++    "commit": "33d5864e0557212eb530dbac280bfc4b4d923880"
++  },
++  "_source": "git://github.com/polymerelements/iron-scroll-target-behavior.git",
++  "_target": "^1.0.0",
++  "_originalSource": "polymerelements/iron-scroll-target-behavior"
 +}
 \ No newline at end of file
 diff --git a/iron-selector/.bower.json b/iron-selector/.bower.json
