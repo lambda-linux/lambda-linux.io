@@ -118,3 +118,9 @@
 [submodule "src/bower_components/iron-pages"]
 	path = src/bower_components/iron-pages
 	url = https://github.com/PolymerElements/iron-pages.git
+[submodule "src/bower_components/paper-item"]
+	path = src/bower_components/paper-item
+	url = https://github.com/PolymerElements/paper-item.git
+[submodule "src/bower_components/paper-listbox"]
+	path = src/bower_components/paper-listbox
+	url = https://github.com/PolymerElements/paper-listbox.git
