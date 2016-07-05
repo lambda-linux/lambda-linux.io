@@ -37,10 +37,31 @@
         </div>
 
         <faqs-question-answer>
+          <div question>What is baseimage-amzn Docker Base Image?</div>
+          <div answer>
+            <p>
+              baseimage-amzn is the second project we are announcing under the Lambda Linux Project umbrella.
+            </p>
+            <p>
+              Sometime back, we wanted a Docker Base Image based on Amazon Linux RPM packages to make our container based development and deployment workflow on AWS more efficient and secure. It seemed like there was a <a href="https://forums.aws.amazon.com/thread.jspa?messageID=725944">need</a> for a secure, stable Docker Base Image based on Amazon Linux packages.
+            </p>
+            <p>
+              So we created baseimage-amzn.
+            </p>
+            <p>
+              baseimage-amzn is inspired by <a href="https://github.com/phusion/baseimage-docker/">baseimage-docker</a> project. We would like to say thank you to Phusion for providing some good ideas and code. We would also like to say thank you to <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI Team</a> for providing excellent Amazon Linux RPM packages.
+            </p>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
           <div question>What is Extra Packages for Amazon Linux (EPLL) repository?</div>
           <div answer>
             <p>
-              Extra Packages for Amazon Linux (EPLL) is the first project we are announcing under the Lambda Linux Project umbrella. The goal is to create high quality set of additional packages that complements <code>amzn*.repo</code> package repositories.
+              Extra Packages for Amazon Linux (EPLL) is the first project we are announcing under the Lambda Linux Project umbrella.
+            </p>
+            <p>
+              The goal is to create high quality set of additional packages that complements <code>amzn*.repo</code> package repositories.
             </p>
           </div>
         </faqs-question-answer>
@@ -49,9 +70,8 @@
           <div question>What is Lambda Linux Project?</div>
           <div answer>
             <p>Lambda Linux is a community project sponsored by Atihita Inc.</p>
-            <p>Sometime back we realized that Amazon Linux is an excellent server-style operating system. Given all the innovation that is happening on AWS and EC2, we felt that it was a bit strange that there is no vibrant open source community around Amazon Linux.</p>
-            <p>One thing led to another and we now have <i>Lambda Linux Project</i>.</p>
-            <p>We look forward to creating a welcoming, commercial friendly, open-source community. So please, come on over, use our packages and give us your feedback!</p>
+            <p>A while back we realized that Amazon Linux is an excellent server-style operating system. Given all the innovation that is happening on AWS and EC2, we felt that it was a bit strange that there is no vibrant open source community around Amazon Linux.</p>
+            <p>One thing led to another and we now have <i>Lambda Linux Project</i>. We look forward to creating a welcoming, commercial friendly, open-source community.</p>
             <p>Btw, we have to clarify that &ndash; <i>Lambda Linux Project is not related to, affiliated with, sponsored or endorsed by Amazon Web Services, Inc.</i></p>
           </div>
         </faqs-question-answer>
@@ -90,7 +110,7 @@
               In Lambda Linux Project we understand, agree and appreciate many of the design decisions that Amazon has taken around &ndash; Minimal Operating System, Security Configuration and Updates, Multiple Package/Library Versions, Rolling Releases, etc.,
             </p>
             <p>
-              We believe that these decisions will play a crucial role as we enter the new world of application specific virtual machines, containers, cloud security and devops. When building our packages, we look forward to learning as much as we can from Amazon Linux packages and repositories.
+              We believe that these decisions will play a crucial role as we enter the new world of application specific virtual machines, containers, cloud security and devops. When building our packages and images, we look forward to learning as much as we can from Amazon Linux packages and repositories.
             </p>
             <p>
               Thank you Amazon Linux AMI Team for leading the way!
@@ -102,15 +122,79 @@
           <div question>How is the Lambda Linux different from Amazon Linux?</div>
           <div answer>
             <p>
-              <i>Firstly</i>, as a open-source community project our direction is driven by our users and contributors. <i>Secondly</i>, we build all our packages (RPMs, SRPMs), using certain well established best practices for creating such a work. This gives us &ndash;
+              On most technical and design issues, Lambda Linux is not that different from Amazon Linux. We consider this as a feature, not a bug! The <i>key difference</i> perhaps is that we are an open-source project, where our direction us driven by our users and contributors.
             </p>
-            <ul>
-              <li><p>Ability to share our packages freely with the rest of AWS EC2 community</p></li>
-              <li><p>Ability to be commercial friendly with our packages</p></li>
-              <li><p>Ability to foster an Independent Software Vendor (ISV) ecosystem for the benefit of our users</p></li>
-            </ul>
           </div>
         </faqs-question-answer>
+
+        <div class="layout vertical">
+          <h1 class="faqs-main-questions-category" id="baseimage-amzn-questions">baseimage-amzn Docker Base Image Questions</h1>
+        </div>
+
+        <faqs-question-answer>
+          <div question>Why should I use baseimage-amzn instead of a Docker Image based on Ubuntu, RedHat, Debian or CentOS?</div>
+          <div answer>
+            <p>
+              To us this discussion comes down to three aspects &ndash; operational security, trust and availability of newer & multiple package versions.
+            </p>
+            <p>
+              Ubuntu, RedHat, Debian, CentOS are designed to be general purpose Linux distributions. In contrast Amazon Linux is designed as a <i>minimal server-style rolling</i> Linux distribution. The design of Amazon Linux naturally provides much smaller exploit surface area when compared to general purpose Linux distributions. You can estimate the exploit surface area of a distribution by looking at the following metric - <i>number of CVEs per distribution per month</i>. Smaller exploit surface area is more easier to secure and automate.
+            </p>
+            <p>
+              Minimizing the number of entities we trust is a security best practice. By using AWS we are directly or in-directly trusting Amazon Linux. baseimage-amzn lets us extend our existing chain of trust with Amazon Linux to the container layer.
+            </p>
+            <p>
+              Amazon Linux is a <i>stable</i> rolling distribution. It provides the latest and multiple versions of language runtimes, databases and other packages. This allows us to decouple application dependent packages and language runtimes from OS dependent packages. Package and language runtime migrations can be managed at their own cadence. By providing a Docker based workflow, with baseimage-amzn we further simplify management and packaging of application dependencies.
+            </p>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
+          <div question>Why can't I download baseimage-amzn Docker Images from outside EC2?</div>
+          <div answer>
+            <p>
+              Amazon Linux RPM package header contains <i>Amazon</i> trademark. This is a common practice across all RPM based Linux distributions.
+            <p>
+              You can check the embedded trademark in an RPM package using the following command.
+            </p>
+<pre><code>[ec2-user@ip-10-0-0-161 ~]$ rpm -q --qf '%{DISTRIBUTION}\n' bash
+Amazon Linux</code></pre>
+            <p>
+              Therefore, <i>Only</i> Amazon can make Amazon Linux RPM packages <i>publicly</i> available outside of AWS. Not us!
+            </p>
+            <p>
+              baseimage-amzn also depends on Amazon Linux AMI repositories which is only available from within EC2.
+            </p>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
+          <div question>How can I access baseimage-amzn Docker Base Image from a VPC endpoint?</div>
+          <div answer>
+            <p>
+              baseimage-amzn Docker Base Images are stored in S3 buckets in each region. If you want EC2 instances in your VPC to access baseimage-amzn through a VPC endpoint, you can create an endpoint policy that enables access to these buckets.
+            </p>
+<pre><code>{
+  "Statement": [
+    {
+      "Sid": "baseimageAmznAccess",
+      "Principal": "*",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::baseimage-amzn-*/*"
+      ]
+    }
+  ]
+}</code></pre>
+          </div>
+        </faqs-question-answer>
+
+        <div class="layout vertical">
+          <h1 class="faqs-main-questions-category" id="epll-repository-questions">EPLL Repository Questions</h1>
+        </div>
 
         <faqs-question-answer>
           <div question>What packages can I expect in Extra Packages for Amazon Linux (EPLL) repository?</div>
@@ -168,10 +252,6 @@
           </div>
         </faqs-question-answer>
 
-        <div class="layout vertical">
-          <h1 class="faqs-main-questions-category" id="technical-questions">Technical Questions</h1>
-        </div>
-
         <faqs-question-answer>
           <div question>How are duplicate packages handled?</div>
           <div answer>
@@ -193,6 +273,20 @@
           </div>
         </faqs-question-answer>
 
+        <faqs-question-answer>
+          <div question>Where can I find git repositories for EPLL RPM packages?</div>
+          <div answer>
+            <p>You can find git repositories for EPLL RPM packages on GitHub at <a href="https://github.com/lambda-linux-pkgs">https://github.com/lambda-linux-pkgs</a></p>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
+          <div question>Where can I find git blobs used by EPLL RPM package sources?</div>
+          <div answer>
+            <p>You can find git blobs used by EPLL RPM packages sources at <a href="http://git-blobs.lambda-linux.io/">http://git-blobs.lambda-linux.io/</a></p>
+          </div>
+        </faqs-question-answer>
+
         <div class="layout vertical">
           <h1 class="faqs-main-questions-category" id="community-questions">Community Questions</h1>
         </div>
@@ -201,7 +295,7 @@
           <div question>How is Lambda Linux Project similar to Fedora Project?</div>
           <div answer>
             <p>
-              First and foremost, we would like to say thank you to Fedora community. We have learnt many good ideas from Fedora and where it makes sense, we will continue doing so.
+              First and foremost, we would like to say thank you to Fedora community. We have learned many good ideas from Fedora and where it makes sense, we will continue doing so.
             </p>
             <p>
               If you are a Fedora or CentOS contributor, you will find yourself right at home in Lambda Linux project. If you come from other Linux distributions, we heartily welcome you too.
@@ -231,20 +325,6 @@
           </div>
         </faqs-question-answer>
 
-        <faqs-question-answer>
-          <div question>Where can I find git repositories for Lambda Linux Project?</div>
-          <div answer>
-            <p>You can find git repositories for Lambda Linux Project on GitHub at <a href="https://github.com/lambda-linux-pkgs">https://github.com/lambda-linux-pkgs</a></p>
-          </div>
-        </faqs-question-answer>
-
-        <faqs-question-answer>
-          <div question>Where can I find git blobs used by Lambda Linux Project git repositories?</div>
-          <div answer>
-            <p>You can find git blobs used by Lambda Linux Project git repositories at <a href="http://git-blobs.lambda-linux.io/">http://git-blobs.lambda-linux.io/</a></p>
-          </div>
-        </faqs-question-answer>
-
       </faqs-main>
 
 {{> html-app_footer}}
@@ -270,8 +350,13 @@
     page("/", top);
     page("/general-questions", top);
 
-    page("/technical-questions", function(ctx, next) {
-      el = document.querySelector("#technical-questions");
+    page("/baseimage-amzn-questions", function(ctx, next) {
+      el = document.querySelector("#baseimage-amzn-questions");
+      el.scrollIntoView(true);
+    });
+
+    page("/epll-repository-questions", function(ctx, next) {
+      el = document.querySelector("#epll-repository-questions");
       el.scrollIntoView(true);
     });
 
