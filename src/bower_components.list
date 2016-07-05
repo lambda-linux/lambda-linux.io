@@ -10,6 +10,7 @@ iron-icon#1.0.8
 iron-icons#1.1.3
 iron-iconset-svg#1.0.9
 iron-media-query#1.0.8
+iron-menu-behavior#1.1.7
 iron-meta#1.1.1
 iron-resizable-behavior#1.0.3
 iron-scroll-target-behavior#1.0.6
@@ -18,8 +19,10 @@ iron-validatable-behavior#1.1.1
 page#1.7.1
 paper-behaviors#1.0.11
 paper-button#1.0.12
+paper-icon-button#1.1.1
 paper-material#1.0.6
 paper-ripple#1.0.5
 paper-styles#1.1.4
+paper-tabs#1.6.0
 polymer#1.5.0
 webcomponentsjs#0.7.22
