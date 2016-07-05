@@ -1,0 +1,198 @@
+<dom-module id="home-projects">
+  <template>
+    <style include="iron-flex iron-flex-alignment">
+      :host {
+        @apply(--center-justified);
+
+        display: block;
+        margin: 0 auto;
+        max-width: 720px;
+        height: 608px;
+        border-bottom: 1px solid var(--paper-grey-300);
+      }
+
+      paper-tabs {
+        --paper-tabs-selection-bar-color: var(--paper-deep-orange-800);
+
+        --paper-tabs: {
+          border-bottom: 1px solid var(--paper-grey-300);
+        };
+      }
+
+      paper-tab {
+        --paper-tab-content: {
+          color: var(--paper-grey-900);
+          font-size: 16px;
+        };
+
+        --paper-tab-content-unselected: {
+          color: var(--paper-grey-500);
+          font-size: 16px;
+        };
+      }
+
+      paper-dropdown-menu-light {
+        --paper-dropdown-menu-focus-color: var(--paper-grey-500);
+
+        --paper-dropdown-menu-input: {
+          border-bottom: 1px solid var(--paper-grey-500);
+        };
+
+        padding-bottom: 8px;
+      }
+
+      #homeProjectsSection {
+      }
+
+      .project-content {
+        padding-top: 16px;
+      }
+    </style>
+    <div id="homeProjectsSection">
+      <div class="layout vertical center-justified">
+        <paper-tabs selected="{{selectedTab}}" autoselect noink>
+          <paper-tab>DOCKER BASE IMAGE</paper-tab>
+          <paper-tab>EPLL REPOSITORY</paper-tab>
+        </paper-tabs>
+      </div>
+      <div class="layout vertical center-justified">
+        <div class="layout horizontal center-justified">
+          <div class="project-content">
+            <iron-pages selected="{{selectedTab}}">
+              <div>
+                <div class="layout vertical center-justified">
+                  <div class="layout horizontal center-justified">
+                    <paper-dropdown-menu-light label="Please Select Your AWS Region" noink no-animations>
+                      <paper-listbox class="dropdown-content" selected="{{selectedRegion}}" attr-for-selected="name">
+                        <paper-item name="us-east-1">US East (N. Virginia)</paper-item>
+                        <paper-item name="us-west-2">US West (Oregon)</paper-item>
+                        <paper-item name="us-west-1">US West (Northern California)</paper-item>
+                        <paper-item name="eu-west-1">EU (Ireland)</paper-item>
+                        <paper-item name="eu-central-1">EU (Frankfurt)</paper-item>
+                        <paper-item name="ap-southeast-1">Asia Pacific (Singapore)</paper-item>
+                        <paper-item name="ap-northeast-1">Asia Pacific (Tokyo)</paper-item>
+                        <paper-item name="ap-southeast-2">Asia Pacific (Sydney)</paper-item>
+                        <paper-item name="ap-northeast-2">Asia Pacific (Seoul)</paper-item>
+                        <paper-item name="ap-south-1">Asia Pacific (Mumbai)</paper-item>
+                        <paper-item name="sa-east-1">South America (Sao Paulo)</paper-item>
+                      </paper-listbox>
+                    </paper-dropdown-menu-light>
+                  </div>
+                </div>
+                <div class="layout vertical center-justified">
+                  <home-projects-step
+                    step-code-rows-exists
+                    step-num=1
+                    step-code="sudo yum install -y docker && sudo service docker start">
+                    <div stepcontent>Install and start docker engine</div>
+                  </home-projects-step>
+                  <home-projects-step
+                    step-code-rows-exists
+                    step-num=2
+                    step-code-rows=2
+                    step-code="sudo usermod -a -G docker ec2-user && sg docker newgrp ec2-user">
+                    <div stepcontent>Add <span class="code">ec2-user</span> to <span class="code">docker</span> unix group</div>
+                  </home-projects-step>
+                  <home-projects-step
+                    step-code-rows-exists
+                    step-num=3
+                    step-code-rows=3
+                    step-code="{{_dockerImportCmd}}">
+                    <div stepcontent>Import baseimage-amzn docker base image using HTTPS</div>
+                  </home-projects-step>
+                  <home-projects-step
+                    step-code-rows-exists
+                    step-num=4
+                    step-code-rows=2
+                    step-code="{{_dockerRunCmd}}">
+                    <div stepcontent>Run baseimage-amzn docker image</div>
+                  </home-projects-step>
+                  <home-projects-step
+                    step-num=5>
+                    <div stepcontent>Please go to our GitHub repository for <a href="https://github.com/lambda-linux/baseimage-amzn/">documentation</a> on using baseimage-amzn</div>
+                  </home-projects-step>
+                </div>
+              </div>
+              <div>
+                <div class="layout vertical center-justified">
+                  <home-projects-step
+                    step-code-rows-exists
+                    step-num=1
+                    step-code-rows=2
+                    step-code="curl -X GET -o RPM-GPG-KEY-lambda-epll https://lambda-linux.io/RPM-GPG-KEY-lambda-epll">
+                    <div stepcontent>Download package signing public key using HTTPS</div>
+                  </home-projects-step>
+                  <home-projects-step
+                    step-code-rows-exists
+                    step-num=2
+                    step-code="sudo rpm --import RPM-GPG-KEY-lambda-epll">
+                    <div stepcontent>Import package signing public key</div>
+                  </home-projects-step>
+                  <home-projects-step
+                    step-code-rows-exists
+                    step-num=3
+                    step-code-rows=3
+                    step-code="curl -X GET -o epll-release-2016.03-1.1.ll1.noarch.rpm https://lambda-linux.io/epll-release-2016.03-1.1.ll1.noarch.rpm">
+                    <div stepcontent>Download EPLL Release (signed) RPM package using HTTPS</div>
+                  </home-projects-step>
+                  <home-projects-step
+                    step-code-rows-exists
+                    step-num=4
+                    step-code-rows=2
+                    step-code="sudo yum -y install epll-release-2016.03-1.1.ll1.noarch.rpm">
+                    <div stepcontent>Install EPLL Release RPM package</div>
+                  </home-projects-step>
+                  <home-projects-step
+                    step-code-rows-exists
+                    step-num=5
+                    step-code="sudo yum --enablerepo=epll install <package_name>">
+                    <div stepcontent>That's It! You can now start using our packages</div>
+                  </home-projects-step>
+                </div>
+              </div>
+            </iron-pages>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'home-projects',
+      properties: {
+        selectedTab: {
+          type: Number,
+          notify: true,
+          value: 0
+        },
+        selectedRegion: {
+          type: String,
+          notify: true,
+          value: "us-east-1"
+        },
+        _mainRelease: {
+          type: String,
+          value: "2016.03"
+        },
+        _mainSubRelease: {
+          type: String,
+          value: "003"
+        },
+        _dockerImportCmd: {
+          type: String,
+          computed: "_getDockerImportCmd(selectedRegion, _mainRelease, _mainSubRelease)"
+        },
+        _dockerRunCmd: {
+          type: String,
+          computed: "_getDockerRunCmd(_mainRelease, _mainSubRelease)"
+        }
+      },
+      _getDockerImportCmd: function(region, mainRelease, subRelease) {
+        return "docker import https://s3-" + region + ".amazonaws.com/baseimage-amzn-" + region + "/baseimage-amzn-" + mainRelease + "-" + subRelease + ".tar.xz baseimage-amzn:" + mainRelease + "-" + subRelease
+      },
+      _getDockerRunCmd: function(mainRelease, subRelease) {
+        return "docker run --rm -t -i baseimage-amzn:" + mainRelease + "-" + subRelease + " /sbin/my_init -- /sbin/setuser ll-user /bin/bash -l"
+      }
+    });
+  </script>
+</dom-module>
