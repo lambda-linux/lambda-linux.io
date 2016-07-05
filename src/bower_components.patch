@@ -1,6 +1,6 @@
-From 99f4d71915570eb124644b9b75f90445328ec527 Mon Sep 17 00:00:00 2001
+From f96afde8fde3ba7aee606328a4d5690abb4a422c Mon Sep 17 00:00:00 2001
 From: Rajiv M Ranganath <rajiv.ranganath@atihita.com>
-Date: Sun, 12 Jun 2016 07:26:37 +0000
+Date: Mon, 13 Jun 2016 04:08:12 +0000
 Subject: [PATCH] Add `.bower.json`
 
 ---
@@ -36,6 +36,8 @@ Subject: [PATCH] Add `.bower.json`
  paper-dropdown-menu/.bower.json           | 58 +++++++++++++++++++++++++++++
  paper-icon-button/.bower.json             | 50 +++++++++++++++++++++++++
  paper-input/.bower.json                   | 60 ++++++++++++++++++++++++++++++
+ paper-item/.bower.json                    | 52 ++++++++++++++++++++++++++
+ paper-listbox/.bower.json                 | 47 ++++++++++++++++++++++++
  paper-material/.bower.json                | 44 ++++++++++++++++++++++
  paper-menu-button/.bower.json             | 55 ++++++++++++++++++++++++++++
  paper-ripple/.bower.json                  | 45 +++++++++++++++++++++++
@@ -44,7 +46,7 @@ Subject: [PATCH] Add `.bower.json`
  polymer/.bower.json                       | 44 ++++++++++++++++++++++
  web-animations-js/.bower.json             | 41 +++++++++++++++++++++
  webcomponentsjs/.bower.json               | 30 +++++++++++++++
- 40 files changed, 1804 insertions(+)
+ 42 files changed, 1903 insertions(+)
  create mode 100644 app-layout/.bower.json
  create mode 100644 font-roboto/.bower.json
  create mode 100644 iron-a11y-announcer/.bower.json
@@ -77,6 +79,8 @@ Subject: [PATCH] Add `.bower.json`
  create mode 100644 paper-dropdown-menu/.bower.json
  create mode 100644 paper-icon-button/.bower.json
  create mode 100644 paper-input/.bower.json
+ create mode 100644 paper-item/.bower.json
+ create mode 100644 paper-listbox/.bower.json
  create mode 100644 paper-material/.bower.json
  create mode 100644 paper-menu-button/.bower.json
  create mode 100644 paper-ripple/.bower.json
@@ -1756,6 +1760,119 @@ index 0000000..1c8fb4a
 +  "_source": "git://github.com/PolymerElements/paper-input.git",
 +  "_target": "^1.0.9",
 +  "_originalSource": "PolymerElements/paper-input"
++}
+\ No newline at end of file
+diff --git a/paper-item/.bower.json b/paper-item/.bower.json
+new file mode 100644
+index 0000000..ff94785
+--- /dev/null
++++ b/paper-item/.bower.json
+@@ -0,0 +1,52 @@
++{
++  "name": "paper-item",
++  "version": "1.2.1",
++  "description": "A material-design styled list item",
++  "authors": [
++    "The Polymer Authors"
++  ],
++  "keywords": [
++    "web-components",
++    "polymer",
++    "item"
++  ],
++  "main": [
++    "paper-item.html",
++    "paper-icon-item.html",
++    "paper-item-body.html"
++  ],
++  "private": true,
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/paper-item"
++  },
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "homepage": "https://github.com/PolymerElements/paper-item",
++  "ignore": [],
++  "dependencies": {
++    "polymer": "Polymer/polymer#^1.1.0",
++    "paper-styles": "PolymerElements/paper-styles#^1.0.0",
++    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.0.0",
++    "iron-behaviors": "polymerelements/iron-behaviors#^1.0.0"
++  },
++  "devDependencies": {
++    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
++    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
++    "iron-icon": "PolymerElements/iron-icon#^1.0.0",
++    "iron-icons": "PolymerElements/iron-icons#^1.0.0",
++    "paper-icon-button": "PolymerElements/paper-icon-button#^1.0.0",
++    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
++    "web-component-tester": "^4.0.0",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
++    "iron-test-helpers": "PolymerElements/iron-test-helpers#^1.0.0"
++  },
++  "_release": "1.2.1",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.2.1",
++    "commit": "1eab91333b318ae19e315866575b2dddd38e6abc"
++  },
++  "_source": "git://github.com/PolymerElements/paper-item.git",
++  "_target": "^1.2.1",
++  "_originalSource": "PolymerElements/paper-item"
++}
+\ No newline at end of file
+diff --git a/paper-listbox/.bower.json b/paper-listbox/.bower.json
+new file mode 100644
+index 0000000..3040052
+--- /dev/null
++++ b/paper-listbox/.bower.json
+@@ -0,0 +1,47 @@
++{
++  "name": "paper-listbox",
++  "version": "1.1.2",
++  "description": "Implements an accessible material design listbox",
++  "authors": "The Polymer Authors",
++  "keywords": [
++    "web-components",
++    "polymer",
++    "listbox"
++  ],
++  "main": [
++    "paper-listbox.html",
++    "paper-sublistbox.html"
++  ],
++  "private": true,
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/PolymerElements/paper-listbox"
++  },
++  "license": "http://polymer.github.io/LICENSE.txt",
++  "homepage": "https://github.com/PolymerElements/paper-listbox",
++  "ignore": [],
++  "dependencies": {
++    "polymer": "Polymer/polymer#^1.1.0",
++    "iron-behaviors": "PolymerElements/iron-behaviors#^1.0.0",
++    "iron-collapse": "PolymerElements/iron-collapse#^1.0.0",
++    "iron-menu-behavior": "PolymerElements/iron-menu-behavior#^1.0.0",
++    "paper-styles": "PolymerElements/paper-styles#^1.0.0"
++  },
++  "devDependencies": {
++    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
++    "iron-test-helpers": "PolymerElements/iron-test-helpers#^1.0.0",
++    "paper-item": "PolymerElements/paper-item#^1.0.0",
++    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
++    "web-component-tester": "Polymer/web-component-tester#^3.4.0",
++    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
++  },
++  "_release": "1.1.2",
++  "_resolution": {
++    "type": "version",
++    "tag": "v1.1.2",
++    "commit": "b0fde50f57db3e8e4926e9d046be9d3c159a2bff"
++  },
++  "_source": "git://github.com/PolymerElements/paper-listbox.git",
++  "_target": "^1.1.2",
++  "_originalSource": "PolymerElements/paper-listbox"
 +}
 \ No newline at end of file
 diff --git a/paper-material/.bower.json b/paper-material/.bower.json
