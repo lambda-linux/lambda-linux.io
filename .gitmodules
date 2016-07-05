@@ -73,3 +73,12 @@
 [submodule "src/bower_components/app-layout"]
 	path = src/bower_components/app-layout
 	url = https://github.com/PolymerElements/app-layout.git
+[submodule "src/bower_components/iron-menu-behavior"]
+	path = src/bower_components/iron-menu-behavior
+	url = https://github.com/PolymerElements/iron-menu-behavior.git
+[submodule "src/bower_components/paper-icon-button"]
+	path = src/bower_components/paper-icon-button
+	url = https://github.com/PolymerElements/paper-icon-button.git
+[submodule "src/bower_components/paper-tabs"]
+	path = src/bower_components/paper-tabs
+	url = https://github.com/PolymerElements/paper-tabs.git
