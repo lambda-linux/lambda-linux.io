@@ -41,41 +41,6 @@
         Getting started is secure and easy!
       </home-getting-started>
 
-      <home-epll>
-        <div epllhead>Please review and enter the following commands in your Amazon Linux Instance. If you have any questions, please <a href="/support/">contact us.</a></div>
-        <div epllstep>
-          <home-epll-step
-            step-num="1"
-            step-content="Download Package Signing Public Key using HTTPS"
-            step-code="curl -X GET -o RPM-GPG-KEY-lambda-epll https://lambda-linux.io/RPM-GPG-KEY-lambda-epll"
-            step-code-rows="2"></home-epll-step>
-
-          <home-epll-step
-            step-num="2"
-            step-content="Import Package Signing Public Key"
-            step-code="sudo rpm --import RPM-GPG-KEY-lambda-epll"
-            step-code-rows="1"></home-epll-step>
-
-          <home-epll-step
-            step-num="3"
-            step-content="Download EPLL Release (Signed) RPM Package using HTTPS"
-            step-code="curl -X GET -o epll-release-2016.03-1.1.ll1.noarch.rpm https://lambda-linux.io/epll-release-2016.03-1.1.ll1.noarch.rpm"
-            step-code-rows="3"></home-epll-step>
-
-          <home-epll-step
-            step-num="4"
-            step-content="Install EPLL Release RPM Package"
-            step-code="sudo yum -y install epll-release-2016.03-1.1.ll1.noarch.rpm"
-            step-code-rows="2"></home-epll-step>
-
-          <home-epll-step
-            step-num="5"
-            step-content="That's It! You can now start using our packages"
-            step-code="sudo yum --enablerepo=epll install <package_name>"
-            step-code-rows="1"></home-epll-step>
-        </div>
-        <div epllthankyou>Thank you and welcome to our <a href="/community/">community.</a></div>
-      </home-epll>
 
 {{> html-app_footer}}
 
