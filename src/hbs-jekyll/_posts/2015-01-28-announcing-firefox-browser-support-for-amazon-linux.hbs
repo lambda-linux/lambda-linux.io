@@ -4,6 +4,8 @@ title:  "Announcing Firefox Browser Support for Amazon Linux"
 date:   2015-01-28 15:00:00
 categories: ship
 ---
+**PLEASE NOTE:** The following instructions works _only_ with Firefox 45 [Extended Support Release (ESR)](https://www.mozilla.org/en-US/firefox/organizations/faq/). You can download Firefox ESR from [here](https://www.mozilla.org/en-US/firefox/organizations/all/).
+
 To our fellow Amazon Linux AMI users, we are happy to announce that we have pushed packages needed to run Firefox browser on Amazon Linux into [EPLL](/blog/2014/12/15/announcing-extra-packages-for-amazon-linux-and-lambda-linux-project/) Repository.
 
 Amazon Linux is a _minimal_, _server-style_, _rolling_ Linux distribution. This approach of building a Linux distribution has many development, operational and security benefits. As mentioned in one of our [FAQs](/faqs/#How_is_the_Lambda_Linux_similar_to_Amazon_Linux), in Lambda Linux Project, we appreciate the underlying design philosophy of Amazon Linux.
@@ -65,10 +67,10 @@ localhost:10.0
 Let us now download the latest version of Firefox, extract and run it.
 
 {% highlight bash %}
-[ec2-user@ip-10-0-0-85 ~]$ wget -O firefox-latest.tar.bz2 \
-  "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
+[ec2-user@ip-10-0-0-85 ~]$ wget -O firefox-esr.tar.bz2 \
+  "https://download.mozilla.org/?product=firefox-45.3.0esr-SSL&os=linux64&lang=en-US"
 
-[ec2-user@ip-10-0-0-85 ~]$ bzcat firefox-latest.tar.bz2 | tar xvf -
+[ec2-user@ip-10-0-0-85 ~]$ bzcat firefox-esr.tar.bz2 | tar xvf -
 
 [ec2-user@ip-10-0-0-85 ~]$ cd firefox
 
