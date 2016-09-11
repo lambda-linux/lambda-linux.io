@@ -188,7 +188,12 @@
         }
       },
       _getDockerImportCmd: function(region, mainRelease, subRelease) {
-        return "docker import https://s3-" + region + ".amazonaws.com/baseimage-amzn-" + region + "/baseimage-amzn-" + mainRelease + "-" + subRelease + ".tar.xz baseimage-amzn:" + mainRelease + "-" + subRelease
+        if (region === "us-east-1") {
+            return "docker import https://s3.amazonaws.com/baseimage-amzn-" + region + "/baseimage-amzn-" + mainRelease + "-" + subRelease + ".tar.xz baseimage-amzn:" + mainRelease + "-" + subRelease
+        }
+        else {
+            return "docker import https://s3-" + region + ".amazonaws.com/baseimage-amzn-" + region + "/baseimage-amzn-" + mainRelease + "-" + subRelease + ".tar.xz baseimage-amzn:" + mainRelease + "-" + subRelease;
+        }
       },
       _getDockerRunCmd: function(mainRelease, subRelease) {
         return "docker run --rm -t -i baseimage-amzn:" + mainRelease + "-" + subRelease + " /sbin/my_init -- /sbin/setuser ll-user /bin/bash -l"
