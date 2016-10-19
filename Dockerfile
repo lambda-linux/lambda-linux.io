@@ -1,4 +1,4 @@
-FROM baseimage-amzn:2016.03-003
+FROM baseimage-amzn:2016.09-000
 
 CMD ["/sbin/my_init"]
 
@@ -19,8 +19,8 @@ RUN \
   # setup epll repository
   curl -X GET -o /tmp/docker-build/RPM-GPG-KEY-lambda-epll https://lambda-linux.io/RPM-GPG-KEY-lambda-epll && \
   rpm --import /tmp/docker-build/RPM-GPG-KEY-lambda-epll && \
-  curl -X GET -o /tmp/docker-build/epll-release-2016.03-1.1.ll1.noarch.rpm https://lambda-linux.io/epll-release-2016.03-1.1.ll1.noarch.rpm && \
-  yum install /tmp/docker-build/epll-release-2016.03-1.1.ll1.noarch.rpm && \
+  curl -X GET -o /tmp/docker-build/epll-release-2016.09-1.1.ll1.noarch.rpm https://lambda-linux.io/epll-release-2016.09-1.1.ll1.noarch.rpm && \
+  yum install /tmp/docker-build/epll-release-2016.09-1.1.ll1.noarch.rpm && \
   yum --enablerepo=epll-preview install nodejs4 && \
   \
   gem2.2 install jekyll -v 3.0.1 && \
