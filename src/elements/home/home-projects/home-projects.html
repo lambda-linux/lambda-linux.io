@@ -7,7 +7,7 @@
         display: block;
         margin: 0 auto;
         max-width: 720px;
-        height: 608px;
+        height: 528px;
         border-bottom: 1px solid var(--paper-grey-300);
       }
 
@@ -51,7 +51,7 @@
     <div id="homeProjectsSection">
       <div class="layout vertical center-justified">
         <paper-tabs selected="{{selectedTab}}" autoselect noink>
-          <paper-tab>DOCKER BASE IMAGE</paper-tab>
+          <paper-tab>BASEIMAGE-AMZN DOCKER IMAGE</paper-tab>
           <paper-tab>EPLL REPOSITORY</paper-tab>
         </paper-tabs>
       </div>
@@ -61,55 +61,21 @@
             <iron-pages selected="{{selectedTab}}">
               <div>
                 <div class="layout vertical center-justified">
-                  <div class="layout horizontal center-justified">
-                    <paper-dropdown-menu-light label="Please Select Your AWS Region" noink no-animations>
-                      <paper-listbox class="dropdown-content" selected="{{selectedRegion}}" attr-for-selected="name">
-                        <paper-item name="us-east-1">US East (N. Virginia)</paper-item>
-                        <paper-item name="us-east-2">US East (Ohio)</paper-item>
-                        <paper-item name="us-west-2">US West (Oregon)</paper-item>
-                        <paper-item name="us-west-1">US West (Northern California)</paper-item>
-                        <paper-item name="eu-west-1">EU (Ireland)</paper-item>
-                        <paper-item name="eu-central-1">EU (Frankfurt)</paper-item>
-                        <paper-item name="ap-southeast-1">Asia Pacific (Singapore)</paper-item>
-                        <paper-item name="ap-northeast-1">Asia Pacific (Tokyo)</paper-item>
-                        <paper-item name="ap-southeast-2">Asia Pacific (Sydney)</paper-item>
-                        <paper-item name="ap-northeast-2">Asia Pacific (Seoul)</paper-item>
-                        <paper-item name="ap-south-1">Asia Pacific (Mumbai)</paper-item>
-                        <paper-item name="sa-east-1">South America (Sao Paulo)</paper-item>
-                      </paper-listbox>
-                    </paper-dropdown-menu-light>
-                  </div>
-                </div>
-                <div class="layout vertical center-justified">
                   <home-projects-step
                     step-code-rows-exists
                     step-num=1
-                    step-code="sudo yum install -y docker && sudo service docker start">
-                    <div stepcontent>Install and start docker engine</div>
+                    step-code="docker pull lambdalinux/baseimage-amzn:2016.09-000">
+                    <div stepcontent>Pull baseimage-amzn from <a href="https://hub.docker.com/r/lambdalinux/baseimage-amzn/">Docker Hub</a></div>
                   </home-projects-step>
                   <home-projects-step
                     step-code-rows-exists
                     step-num=2
                     step-code-rows=2
-                    step-code="sudo usermod -a -G docker ec2-user && sg docker newgrp ec2-user">
-                    <div stepcontent>Add <span class="code">ec2-user</span> to <span class="code">docker</span> unix group</div>
+                    step-code="docker run --rm -t -i lambdalinux/baseimage-amzn:2016.09-000 /sbin/my_init -- /bin/bash -l">
+                    <div stepcontent>That's it! You can now start using baseimage-amzn</div>
                   </home-projects-step>
                   <home-projects-step
-                    step-code-rows-exists
-                    step-num=3
-                    step-code-rows=3
-                    step-code="{{_dockerImportCmd}}">
-                    <div stepcontent>Import baseimage-amzn docker base image using HTTPS</div>
-                  </home-projects-step>
-                  <home-projects-step
-                    step-code-rows-exists
-                    step-num=4
-                    step-code-rows=2
-                    step-code="{{_dockerRunCmd}}">
-                    <div stepcontent>Run baseimage-amzn docker image</div>
-                  </home-projects-step>
-                  <home-projects-step
-                    step-num=5>
+                    step-num=3>
                     <div stepcontent>Please go to our GitHub repository for <a href="https://github.com/lambda-linux/baseimage-amzn/">documentation</a> on using baseimage-amzn</div>
                   </home-projects-step>
                 </div>
@@ -165,39 +131,7 @@
           type: Number,
           notify: true,
           value: 0
-        },
-        selectedRegion: {
-          type: String,
-          notify: true,
-          value: "us-east-1"
-        },
-        _mainRelease: {
-          type: String,
-          value: "2016.09"
-        },
-        _mainSubRelease: {
-          type: String,
-          value: "000"
-        },
-        _dockerImportCmd: {
-          type: String,
-          computed: "_getDockerImportCmd(selectedRegion, _mainRelease, _mainSubRelease)"
-        },
-        _dockerRunCmd: {
-          type: String,
-          computed: "_getDockerRunCmd(_mainRelease, _mainSubRelease)"
         }
-      },
-      _getDockerImportCmd: function(region, mainRelease, subRelease) {
-        if (region === "us-east-1") {
-            return "docker import https://s3.amazonaws.com/baseimage-amzn-" + region + "/baseimage-amzn-" + mainRelease + "-" + subRelease + ".tar.xz baseimage-amzn:" + mainRelease + "-" + subRelease
-        }
-        else {
-            return "docker import https://s3-" + region + ".amazonaws.com/baseimage-amzn-" + region + "/baseimage-amzn-" + mainRelease + "-" + subRelease + ".tar.xz baseimage-amzn:" + mainRelease + "-" + subRelease;
-        }
-      },
-      _getDockerRunCmd: function(mainRelease, subRelease) {
-        return "docker run --rm -t -i baseimage-amzn:" + mainRelease + "-" + subRelease + " /sbin/my_init -- /sbin/setuser ll-user /bin/bash -l"
       }
     });
   </script>
