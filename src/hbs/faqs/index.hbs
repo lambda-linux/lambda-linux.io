@@ -149,49 +149,6 @@
           </div>
         </faqs-question-answer>
 
-        <faqs-question-answer>
-          <div question>Why can't I download baseimage-amzn Docker Images from outside EC2?</div>
-          <div answer>
-            <p>
-              Amazon Linux RPM package header contains <i>Amazon</i> trademark. This is a common practice across all RPM based Linux distributions.
-            <p>
-              You can check the embedded trademark in an RPM package using the following command.
-            </p>
-<pre><code>[ec2-user@ip-10-0-0-161 ~]$ rpm -q --qf '%{DISTRIBUTION}\n' bash
-Amazon Linux</code></pre>
-            <p>
-              Therefore, <i>Only</i> Amazon can make Amazon Linux RPM packages <i>publicly</i> available outside of AWS. Not us!
-            </p>
-            <p>
-              baseimage-amzn also depends on Amazon Linux AMI repositories which is only available from within EC2.
-            </p>
-          </div>
-        </faqs-question-answer>
-
-        <faqs-question-answer>
-          <div question>How can I access baseimage-amzn Docker Base Image from a VPC endpoint?</div>
-          <div answer>
-            <p>
-              baseimage-amzn Docker Base Images are stored in S3 buckets in each region. If you want EC2 instances in your VPC to access baseimage-amzn through a VPC endpoint, you can create an endpoint policy that enables access to these buckets.
-            </p>
-<pre><code>{
-  "Statement": [
-    {
-      "Sid": "baseimageAmznAccess",
-      "Principal": "*",
-      "Action": [
-        "s3:GetObject"
-      ],
-      "Effect": "Allow",
-      "Resource": [
-        "arn:aws:s3:::baseimage-amzn-*/*"
-      ]
-    }
-  ]
-}</code></pre>
-          </div>
-        </faqs-question-answer>
-
         <div class="layout vertical">
           <h1 class="faqs-main-questions-category" id="epll-repository-questions">EPLL Repository Questions</h1>
         </div>
