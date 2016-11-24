@@ -59,6 +59,6 @@ uid=500(ll-user) gid=500(ll-user) groups=500(ll-user)
 
 ## Epilogue
 
-We hope you will enjoy baseimage-amzn. If you need additional help, please reach out to us on [Slack](http://slack.lambda-linux.io/) or on [@lambda_linux](https://twitter.com/lambda_linux) on Twitter.
+We hope you will enjoy baseimage-amzn. If you need additional help, please reach out to us on [Slack](http://slack.lambda-linux.io/) or at [@lambda_linux](https://twitter.com/lambda_linux) on Twitter.
 
 Thank you for using baseimage-amzn.
