@@ -1,4 +1,4 @@
-FROM lambdalinux/baseimage-amzn:2016.09-000
+FROM lambdalinux/baseimage-amzn:2016.09-001
 
 CMD ["/sbin/my_init"]
 
