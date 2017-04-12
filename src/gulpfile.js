@@ -243,14 +243,18 @@ gulp.task('copy-opt', function() {
 
 // Copy `extras` to dist
 gulp.task('copy-extras', function() {
-  var copyEpllReleaseRPM =
+  var copyEpllReleaseRPM1 =
   gulp.src('extras/epll-release-2016.09-1.2.ll1.noarch.rpm')
+    .pipe(gulp.dest('dist'));
+
+  var copyEpllReleaseRPM2 =
+  gulp.src('extras/epll-release-2017.03-1.2.ll1.noarch.rpm')
     .pipe(gulp.dest('dist'));
 
   var copyRPMGPGKEY = gulp.src('extras/RPM-GPG-KEY-lambda-epll')
     .pipe(gulp.dest('dist'));
 
-  return merge(copyEpllReleaseRPM, copyRPMGPGKEY);
+  return merge(copyEpllReleaseRPM1, copyEpllReleaseRPM2, copyRPMGPGKEY);
 });
 
 gulp.task('copy-hbs-rev-jekyll', function() {
