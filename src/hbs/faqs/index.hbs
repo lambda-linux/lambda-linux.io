@@ -37,6 +37,24 @@
         </div>
 
         <faqs-question-answer>
+          <div question>What is Lambda Machine Local?</div>
+          <div answer>
+            <p>
+              Lambda Machine Local is the third project we are announcing under the Lambda Linux Project umbrella.
+            </p>
+            <p>
+              Lambda Machine Local provides a stable and secure local development environment that is designed to complement a stable and secure production environment on AWS.
+            </p>
+            <p>
+              Under the hood Lambda Machine Local uses <a href="https://github.com/lambda-linux/lambda-linux-vbox">Lambda Linux VirtualBox Flavor</a> as its local container host virtual machine. Lambda Linux VirtualBox Flavor is based on <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux</a>, the Linux operating system that powers AWS. We also use <a href="">libmachine</a> from Docker Machine Project for managing local container host virtual machines.
+            </p>
+            <p>
+              We would also like to say thank you to <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI Team</a> and Docker Machine Contributors for providing for providing some good ideas and code.
+            </p>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
           <div question>What is baseimage-amzn Docker Base Image?</div>
           <div answer>
             <p>
@@ -123,6 +141,37 @@
           <div answer>
             <p>
               On most technical and design issues, Lambda Linux is not that different from Amazon Linux. We consider this as a feature, not a bug! The <i>key difference</i> perhaps is that we are an open-source project, where our direction us driven by our users and contributors.
+            </p>
+          </div>
+        </faqs-question-answer>
+
+        <div class="layout vertical">
+          <h1 class="faqs-main-questions-category" id="lambda-machine-local-questions">Lambda Machine Local Questions</h1>
+        </div>
+
+        <faqs-question-answer>
+          <div question>Why isn't Lambda Machine VirtualBox Flavor using the latest version of Docker Engine?</div>
+          <div answer>
+            <p>
+              In Lambda Machine Local, we want to provide a stable docker development environment for our users and that includes a stable Docker Engine.
+            </p>
+            <p>
+              Our users would be relying on Lambda Machine Local to develop applications to serve the needs of their customers. We need to be careful when migrating to newer docker releases because it can create issues for our users.
+            </p>
+            <p>
+              At this time vendors who have a high bar for operational excellence are either on Docker version 1.11 or 1.12. We feel supporting Docker version 1.12.6 is the right thing to do for our users. This is the same version available on AWS <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">ECS</a> Optimized AMI.
+            </p>
+          </div>
+        </faqs-question-answer>
+
+        <faqs-question-answer>
+          <div question>Why is there no support for Hyper-V or xhvye?</div>
+          <div answer>
+            <p>
+              We are aware of support for Hyper-V and xhvye in projects such as &ndash; Docker Machine and Minikube. We are following the issues users are reporting when using Hyper-V and xhvye drivers.
+            </p>
+            <p>
+              For us, using OS native hypervisors is interesting, but we need to give it more time before supporting them in Lambda Machine Local.
             </p>
           </div>
         </faqs-question-answer>
