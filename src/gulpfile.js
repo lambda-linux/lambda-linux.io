@@ -286,7 +286,7 @@ gulp.task('lint', function() {
 
 // Clean output directory
 gulp.task('clean-pre', function() {
-  return del([tmp(), dist()]);
+  return del([tmp(), "dist/*"]);
 });
 
 // Clean artifacts not present in `tmp/` and `dist/`
