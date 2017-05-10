@@ -29,6 +29,9 @@ RUN \
   # awscli
   yum install python27-pip && \
   pip-2.7 install awscli && \
+  # watchmedo
+  yum install python27-PyYAML && \
+  pip-2.7 install watchdog==0.8.3 && \
   # cleanup
   rm -rf /tmp/docker-build && \
   yum clean all && \
