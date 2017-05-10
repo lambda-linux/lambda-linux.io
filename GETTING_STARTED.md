@@ -22,6 +22,8 @@ $ cd src/
 $ npm install
 
 $ gulp
+
+$ watchmedo tricks-from tricks.yaml
 ```
 
 # Running web server
@@ -37,5 +39,5 @@ Once you are inside the container,
 
 ```
 # cd ~ll-user/lambda-linux.io/src/dist/
-# cd ../dist/; ~ll-user/lambda-linux.io/third_party/gohttpserver/gohttpserver
+# ~ll-user/lambda-linux.io/third_party/gohttpserver/gohttpserver
 ```

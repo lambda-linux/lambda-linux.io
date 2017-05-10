@@ -1,0 +1,6 @@
+tricks:
+- watchdog.tricks.ShellCommandTrick:
+    shell_command: 'gulp && sleep 5s'
+    patterns: ["*.js", "*.html", "*.hbs", "*.md"]
+    ignore_directories: true
+    drop_during_process: true
