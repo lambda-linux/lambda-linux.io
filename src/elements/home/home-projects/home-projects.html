@@ -51,6 +51,7 @@
     <div id="homeProjectsSection">
       <div class="layout vertical center-justified">
         <paper-tabs selected="{{selectedTab}}" autoselect noink>
+          <paper-tab>LAMBDA MACHINE LOCAL</paper-tab>
           <paper-tab>BASEIMAGE-AMZN DOCKER IMAGE</paper-tab>
           <paper-tab>EPLL REPOSITORY</paper-tab>
         </paper-tabs>
@@ -59,6 +60,25 @@
         <div class="layout horizontal center-justified">
           <div class="project-content">
             <iron-pages selected="{{selectedTab}}">
+              <div>
+                <div class="layout vertical center-justified">
+                  <home-projects-step
+                    step-num=1>
+                    <div stepcontent>Download Lambda Machine Local <a href="https://github.com/lambda-linux/lambda-machine-local/releases/">release</a> for your Mac OS X, Windows or Linux from GitHub</div>
+                  </home-projects-step>
+                  <home-projects-step
+                    step-code-rows-exists
+                    step-num=2
+                    step-code-rows=1
+                    step-code="lambda-machine-local create ll-default">
+                    <div stepcontent>That's it! You can now start using Lambda Machine Local</div>
+                  </home-projects-step>
+                  <home-projects-step
+                    step-num=3>
+                    <div stepcontent>Please go to our GitHub repository for <a href="https://github.com/lambda-linux/lambda-machine-local/">documentation</a> on using Lambda Machine Local</div>
+                  </home-projects-step>
+                </div>
+              </div>
               <div>
                 <div class="layout vertical center-justified">
                   <home-projects-step
