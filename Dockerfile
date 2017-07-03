@@ -21,7 +21,7 @@ RUN \
   rpm --import /tmp/docker-build/RPM-GPG-KEY-lambda-epll && \
   curl -X GET -o /tmp/docker-build/epll-release-2017.03-1.2.ll1.noarch.rpm https://lambda-linux.io/epll-release-2017.03-1.2.ll1.noarch.rpm && \
   yum install /tmp/docker-build/epll-release-2017.03-1.2.ll1.noarch.rpm && \
-  yum --enablerepo=epll-preview install nodejs4 && \
+  yum --enablerepo=epll install nodejs4 && \
   \
   gem2.2 install jekyll -v 3.0.1 && \
   gem2.2 install jekyll-paginate -v 1.1.0 && \
