@@ -11,8 +11,8 @@ RUN \
   yum install gcc48 && \
   yum install git && \
   yum install patch && \
-  yum install ruby22 && \
-  yum install ruby22-devel && \
+  yum install ruby23 && \
+  yum install ruby23-devel && \
   yum install tree && \
   yum install vim && \
   yum install which && \
@@ -23,8 +23,8 @@ RUN \
   yum install /tmp/docker-build/epll-release-2017.03-1.2.ll1.noarch.rpm && \
   yum --enablerepo=epll install nodejs4 && \
   \
-  gem2.2 install jekyll -v 3.0.1 && \
-  gem2.2 install jekyll-paginate -v 1.1.0 && \
+  gem2.3 install jekyll -v 3.0.1 && \
+  gem2.3 install jekyll-paginate -v 1.1.0 && \
   npm install -g bower@1.7.9 gulp@3.9.1 && \
   # awscli
   yum install python27-pip && \
